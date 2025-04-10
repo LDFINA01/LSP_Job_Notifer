@@ -1,0 +1,1281 @@
+2025-03-17 14:37:55,295 - LSPScraper - ERROR - Login failed with status code: 400
+2025-03-17 14:37:55,296 - LSPScraper - ERROR - Failed to login, retrying in 60 seconds...
+2025-03-17 14:37:55,296 - LSPScraper - ERROR - Error in main loop: name 'asyncio' is not defined
+2025-03-17 14:39:41,367 - LSPScraper - ERROR - Login failed with status code: 400
+2025-03-17 14:39:41,367 - LSPScraper - ERROR - Failed to login, retrying in 60 seconds...
+2025-03-17 14:40:41,557 - LSPScraper - ERROR - Login failed with status code: 400
+2025-03-17 14:40:41,557 - LSPScraper - ERROR - Failed to login, retrying in 60 seconds...
+2025-03-17 14:41:48,066 - LSPScraper - INFO - Attempting login with username: your_email@example.com
+2025-03-17 14:41:48,067 - LSPScraper - INFO - Login URL: https://kyrm.lspware.com/workforce/info/company/logon
+2025-03-17 14:41:48,070 - LSPScraper - INFO - Headers: {'Content-Type': 'application/json;charset=UTF-8', 'Accept': 'application/json, text/plain, */*', 'Accept-Language': 'en-US,en;q=0.9', 'Accept-Encoding': 'gzip, deflate, br', 'Origin': 'https://kyrm.lspware.com', 'Referer': 'https://kyrm.lspware.com/scheduler/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', 'sec-ch-ua': '"Chromium";v="122", "Not(A:Brand";v="24", "Google Chrome";v="122"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'same-origin'}
+2025-03-17 14:41:48,071 - LSPScraper - INFO - Payload: {
+  "userName": "your_email@example.com",
+  "userPassword": "your_password",
+  "company": {
+    "companyWebsite": "kyrm.lspware.com"
+  },
+  "changePassword": "N",
+  "id": null,
+  "loginWith2fa": false,
+  "otpFor2fa": null,
+  "canAccessMobile": false,
+  "employeeId": "",
+  "loginFromWidget": "N",
+  "deviceInfo": {
+    "deviceType": "web",
+    "browser": "Chrome",
+    "browserVersion": "134.0.0.0",
+    "os": "Windows",
+    "osVersion": "10.0.19045"
+  }
+}
+2025-03-17 14:41:48,410 - LSPScraper - INFO - Response status: 401
+2025-03-17 14:41:48,410 - LSPScraper - INFO - Response headers: {'Date': 'Mon, 17 Mar 2025 18:41:47 GMT', 'Content-Type': 'application/json', 'Content-Length': '27', 'Connection': 'keep-alive', 'Server': 'nginx/1.24.0'}
+2025-03-17 14:41:48,410 - LSPScraper - INFO - Response body: User authentication failed.
+2025-03-17 14:41:48,411 - LSPScraper - ERROR - Login failed with status code: 401
+2025-03-17 14:41:48,411 - LSPScraper - ERROR - Response body: User authentication failed.
+2025-03-17 14:41:48,411 - LSPScraper - ERROR - Failed to login, retrying in 60 seconds...
+2025-03-17 14:49:50,583 - LSPScraper - ERROR - Login error: [WinError 193] %1 is not a valid Win32 application
+2025-03-17 14:49:50,584 - LSPScraper - ERROR - Failed to login, retrying in 60 seconds...
+2025-03-17 14:51:55,119 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-17 14:51:57,327 - LSPScraper - INFO - Chrome WebDriver installed at: C:\Users\LuisF\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-03-17 14:51:57,328 - LSPScraper - ERROR - Failed to initialize Chrome WebDriver: [WinError 193] %1 is not a valid Win32 application
+2025-03-17 14:51:57,328 - LSPScraper - INFO - Trying alternative approach without WebDriver Manager
+2025-03-17 14:52:03,308 - LSPScraper - INFO - Chrome WebDriver initialized with alternative approach
+2025-03-17 14:52:03,309 - LSPScraper - INFO - Initializing browser for login...
+2025-03-17 14:52:07,603 - LSPScraper - INFO - Visited login page
+2025-03-17 14:52:17,736 - LSPScraper - ERROR - Login error: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF71CE4FE45+26629]
+	(No symbol) [0x00007FF71CDB6010]
+	(No symbol) [0x00007FF71CC4931A]
+	(No symbol) [0x00007FF71CC9F8E7]
+	(No symbol) [0x00007FF71CC9FB1C]
+	(No symbol) [0x00007FF71CCF34A7]
+	(No symbol) [0x00007FF71CCC7AEF]
+	(No symbol) [0x00007FF71CCF0169]
+	(No symbol) [0x00007FF71CCC7883]
+	(No symbol) [0x00007FF71CC90550]
+	(No symbol) [0x00007FF71CC91803]
+	GetHandleVerifier [0x00007FF71D1A72BD+3529853]
+	GetHandleVerifier [0x00007FF71D1BDA22+3621858]
+	GetHandleVerifier [0x00007FF71D1B24D3+3575443]
+	GetHandleVerifier [0x00007FF71CF1B77A+860474]
+	(No symbol) [0x00007FF71CDC088F]
+	(No symbol) [0x00007FF71CDBCBC4]
+	(No symbol) [0x00007FF71CDBCD66]
+	(No symbol) [0x00007FF71CDAC2C9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-17 14:52:17,739 - LSPScraper - ERROR - Failed to login, retrying in 60 seconds...
+2025-03-17 15:20:11,469 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-17 15:20:13,628 - LSPScraper - INFO - Chrome WebDriver installed at: C:\Users\LuisF\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-03-17 15:20:13,629 - LSPScraper - ERROR - Failed to initialize Chrome WebDriver: [WinError 193] %1 is not a valid Win32 application
+2025-03-17 15:20:13,629 - LSPScraper - INFO - Trying alternative approach without WebDriver Manager
+2025-03-17 15:20:15,124 - LSPScraper - INFO - Chrome WebDriver initialized with alternative approach
+2025-03-17 15:20:15,125 - LSPScraper - INFO - Initializing browser for login...
+2025-03-17 15:20:15,125 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-17 15:20:19,583 - LSPScraper - INFO - Visited login page
+2025-03-17 15:20:19,587 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-03-17 15:20:19,591 - LSPScraper - INFO - Page title: Workforce OS
+2025-03-17 15:20:19,592 - LSPScraper - INFO - Page source preview:
+2025-03-17 15:20:19,596 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-03-17 15:20:19,597 - LSPScraper - INFO - Waiting for login form elements...
+2025-03-17 15:20:29,728 - LSPScraper - ERROR - Could not find username field: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF71CE4FE45+26629]
+	(No symbol) [0x00007FF71CDB6010]
+	(No symbol) [0x00007FF71CC4931A]
+	(No symbol) [0x00007FF71CC9F8E7]
+	(No symbol) [0x00007FF71CC9FB1C]
+	(No symbol) [0x00007FF71CCF34A7]
+	(No symbol) [0x00007FF71CCC7AEF]
+	(No symbol) [0x00007FF71CCF0169]
+	(No symbol) [0x00007FF71CCC7883]
+	(No symbol) [0x00007FF71CC90550]
+	(No symbol) [0x00007FF71CC91803]
+	GetHandleVerifier [0x00007FF71D1A72BD+3529853]
+	GetHandleVerifier [0x00007FF71D1BDA22+3621858]
+	GetHandleVerifier [0x00007FF71D1B24D3+3575443]
+	GetHandleVerifier [0x00007FF71CF1B77A+860474]
+	(No symbol) [0x00007FF71CDC088F]
+	(No symbol) [0x00007FF71CDBCBC4]
+	(No symbol) [0x00007FF71CDBCD66]
+	(No symbol) [0x00007FF71CDAC2C9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-17 15:20:29,731 - LSPScraper - ERROR - Available elements on page:
+2025-03-17 15:20:29,840 - LSPScraper - ERROR - Element: html - mdl-js
+2025-03-17 15:20:29,849 - LSPScraper - ERROR - Element: head - 
+2025-03-17 15:20:29,857 - LSPScraper - ERROR - Element: link - 
+2025-03-17 15:20:29,864 - LSPScraper - ERROR - Element: base - 
+2025-03-17 15:20:29,872 - LSPScraper - ERROR - Element: meta - 
+2025-03-17 15:20:29,879 - LSPScraper - ERROR - Element: meta - 
+2025-03-17 15:20:29,887 - LSPScraper - ERROR - Element: meta - 
+2025-03-17 15:20:29,894 - LSPScraper - ERROR - Element: meta - 
+2025-03-17 15:20:29,901 - LSPScraper - ERROR - Element: meta - 
+2025-03-17 15:20:29,909 - LSPScraper - ERROR - Element: meta - 
+2025-03-17 15:20:29,909 - LSPScraper - ERROR - Login error: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF71CE4FE45+26629]
+	(No symbol) [0x00007FF71CDB6010]
+	(No symbol) [0x00007FF71CC4931A]
+	(No symbol) [0x00007FF71CC9F8E7]
+	(No symbol) [0x00007FF71CC9FB1C]
+	(No symbol) [0x00007FF71CCF34A7]
+	(No symbol) [0x00007FF71CCC7AEF]
+	(No symbol) [0x00007FF71CCF0169]
+	(No symbol) [0x00007FF71CCC7883]
+	(No symbol) [0x00007FF71CC90550]
+	(No symbol) [0x00007FF71CC91803]
+	GetHandleVerifier [0x00007FF71D1A72BD+3529853]
+	GetHandleVerifier [0x00007FF71D1BDA22+3621858]
+	GetHandleVerifier [0x00007FF71D1B24D3+3575443]
+	GetHandleVerifier [0x00007FF71CF1B77A+860474]
+	(No symbol) [0x00007FF71CDC088F]
+	(No symbol) [0x00007FF71CDBCBC4]
+	(No symbol) [0x00007FF71CDBCD66]
+	(No symbol) [0x00007FF71CDAC2C9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-17 15:20:29,912 - LSPScraper - ERROR - Full error details:
+Traceback (most recent call last):
+  File "C:\Users\LuisF\Development\LSP_Job_Notifier\scraper.py", line 134, in login
+    username_field = WebDriverWait(self.driver, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='text']"))
+    )
+  File "C:\Users\LuisF\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF71CE4FE45+26629]
+	(No symbol) [0x00007FF71CDB6010]
+	(No symbol) [0x00007FF71CC4931A]
+	(No symbol) [0x00007FF71CC9F8E7]
+	(No symbol) [0x00007FF71CC9FB1C]
+	(No symbol) [0x00007FF71CCF34A7]
+	(No symbol) [0x00007FF71CCC7AEF]
+	(No symbol) [0x00007FF71CCF0169]
+	(No symbol) [0x00007FF71CCC7883]
+	(No symbol) [0x00007FF71CC90550]
+	(No symbol) [0x00007FF71CC91803]
+	GetHandleVerifier [0x00007FF71D1A72BD+3529853]
+	GetHandleVerifier [0x00007FF71D1BDA22+3621858]
+	GetHandleVerifier [0x00007FF71D1B24D3+3575443]
+	GetHandleVerifier [0x00007FF71CF1B77A+860474]
+	(No symbol) [0x00007FF71CDC088F]
+	(No symbol) [0x00007FF71CDBCBC4]
+	(No symbol) [0x00007FF71CDBCD66]
+	(No symbol) [0x00007FF71CDAC2C9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-17 15:20:29,917 - LSPScraper - ERROR - Failed to login, retrying in 60 seconds...
+2025-03-17 15:21:29,926 - LSPScraper - INFO - Initializing browser for login...
+2025-03-17 15:21:29,926 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-17 15:21:29,934 - LSPScraper - INFO - Visited login page
+2025-03-17 15:21:29,938 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-03-17 15:21:29,941 - LSPScraper - INFO - Page title: Workforce OS
+2025-03-17 15:21:29,941 - LSPScraper - INFO - Page source preview:
+2025-03-17 15:21:29,948 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-03-17 15:21:29,950 - LSPScraper - INFO - Waiting for login form elements...
+2025-03-17 15:21:40,082 - LSPScraper - ERROR - Could not find username field: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF71CE4FE45+26629]
+	(No symbol) [0x00007FF71CDB6010]
+	(No symbol) [0x00007FF71CC4931A]
+	(No symbol) [0x00007FF71CC9F8E7]
+	(No symbol) [0x00007FF71CC9FB1C]
+	(No symbol) [0x00007FF71CCF34A7]
+	(No symbol) [0x00007FF71CCC7AEF]
+	(No symbol) [0x00007FF71CCF0169]
+	(No symbol) [0x00007FF71CCC7883]
+	(No symbol) [0x00007FF71CC90550]
+	(No symbol) [0x00007FF71CC91803]
+	GetHandleVerifier [0x00007FF71D1A72BD+3529853]
+	GetHandleVerifier [0x00007FF71D1BDA22+3621858]
+	GetHandleVerifier [0x00007FF71D1B24D3+3575443]
+	GetHandleVerifier [0x00007FF71CF1B77A+860474]
+	(No symbol) [0x00007FF71CDC088F]
+	(No symbol) [0x00007FF71CDBCBC4]
+	(No symbol) [0x00007FF71CDBCD66]
+	(No symbol) [0x00007FF71CDAC2C9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-17 15:21:40,086 - LSPScraper - ERROR - Available elements on page:
+2025-03-17 15:21:40,113 - LSPScraper - ERROR - Element: html - mdl-js
+2025-03-17 15:21:40,123 - LSPScraper - ERROR - Element: head - 
+2025-03-17 15:21:40,135 - LSPScraper - ERROR - Element: link - 
+2025-03-17 15:21:40,146 - LSPScraper - ERROR - Element: base - 
+2025-03-17 15:21:40,156 - LSPScraper - ERROR - Element: meta - 
+2025-03-17 15:21:40,165 - LSPScraper - ERROR - Element: meta - 
+2025-03-17 15:21:40,175 - LSPScraper - ERROR - Element: meta - 
+2025-03-17 15:21:40,184 - LSPScraper - ERROR - Element: meta - 
+2025-03-17 15:21:40,193 - LSPScraper - ERROR - Element: meta - 
+2025-03-17 15:21:40,202 - LSPScraper - ERROR - Element: meta - 
+2025-03-17 15:21:40,202 - LSPScraper - ERROR - Login error: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF71CE4FE45+26629]
+	(No symbol) [0x00007FF71CDB6010]
+	(No symbol) [0x00007FF71CC4931A]
+	(No symbol) [0x00007FF71CC9F8E7]
+	(No symbol) [0x00007FF71CC9FB1C]
+	(No symbol) [0x00007FF71CCF34A7]
+	(No symbol) [0x00007FF71CCC7AEF]
+	(No symbol) [0x00007FF71CCF0169]
+	(No symbol) [0x00007FF71CCC7883]
+	(No symbol) [0x00007FF71CC90550]
+	(No symbol) [0x00007FF71CC91803]
+	GetHandleVerifier [0x00007FF71D1A72BD+3529853]
+	GetHandleVerifier [0x00007FF71D1BDA22+3621858]
+	GetHandleVerifier [0x00007FF71D1B24D3+3575443]
+	GetHandleVerifier [0x00007FF71CF1B77A+860474]
+	(No symbol) [0x00007FF71CDC088F]
+	(No symbol) [0x00007FF71CDBCBC4]
+	(No symbol) [0x00007FF71CDBCD66]
+	(No symbol) [0x00007FF71CDAC2C9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-17 15:21:40,205 - LSPScraper - ERROR - Full error details:
+Traceback (most recent call last):
+  File "C:\Users\LuisF\Development\LSP_Job_Notifier\scraper.py", line 134, in login
+    username_field = WebDriverWait(self.driver, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='text']"))
+    )
+  File "C:\Users\LuisF\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF71CE4FE45+26629]
+	(No symbol) [0x00007FF71CDB6010]
+	(No symbol) [0x00007FF71CC4931A]
+	(No symbol) [0x00007FF71CC9F8E7]
+	(No symbol) [0x00007FF71CC9FB1C]
+	(No symbol) [0x00007FF71CCF34A7]
+	(No symbol) [0x00007FF71CCC7AEF]
+	(No symbol) [0x00007FF71CCF0169]
+	(No symbol) [0x00007FF71CCC7883]
+	(No symbol) [0x00007FF71CC90550]
+	(No symbol) [0x00007FF71CC91803]
+	GetHandleVerifier [0x00007FF71D1A72BD+3529853]
+	GetHandleVerifier [0x00007FF71D1BDA22+3621858]
+	GetHandleVerifier [0x00007FF71D1B24D3+3575443]
+	GetHandleVerifier [0x00007FF71CF1B77A+860474]
+	(No symbol) [0x00007FF71CDC088F]
+	(No symbol) [0x00007FF71CDBCBC4]
+	(No symbol) [0x00007FF71CDBCD66]
+	(No symbol) [0x00007FF71CDAC2C9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-17 15:21:40,210 - LSPScraper - ERROR - Failed to login, retrying in 60 seconds...
+2025-03-17 15:22:17,986 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-17 15:22:20,133 - LSPScraper - INFO - Chrome WebDriver installed at: C:\Users\LuisF\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-03-17 15:22:20,135 - LSPScraper - ERROR - Failed to initialize Chrome WebDriver: [WinError 193] %1 is not a valid Win32 application
+2025-03-17 15:22:20,135 - LSPScraper - INFO - Trying alternative approach without WebDriver Manager
+2025-03-17 15:22:21,637 - LSPScraper - INFO - Chrome WebDriver initialized with alternative approach
+2025-03-17 15:22:21,638 - LSPScraper - INFO - Initializing browser for login...
+2025-03-17 15:22:21,638 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/workforce/info/company/logon
+2025-03-17 15:22:21,939 - LSPScraper - INFO - Visited login page
+2025-03-17 15:22:21,946 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/workforce/info/company/logon
+2025-03-17 15:22:21,950 - LSPScraper - INFO - Page title: HTTP Status 405 – Method Not Allowed
+2025-03-17 15:22:21,951 - LSPScraper - INFO - Page source preview:
+2025-03-17 15:22:21,954 - LSPScraper - INFO - <html lang="en"><head><title>HTTP Status 405 – Method Not Allowed</title><style type="text/css">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 405 – Method Not Allowed</h1><hr class="line"><p><b>Type</b> Status Report</p><p><b>Message</b> Method Not Allowe
+2025-03-17 15:22:21,955 - LSPScraper - INFO - Waiting for login form elements...
+2025-03-17 15:22:32,082 - LSPScraper - ERROR - Could not find username field: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF71CE4FE45+26629]
+	(No symbol) [0x00007FF71CDB6010]
+	(No symbol) [0x00007FF71CC4931A]
+	(No symbol) [0x00007FF71CC9F8E7]
+	(No symbol) [0x00007FF71CC9FB1C]
+	(No symbol) [0x00007FF71CCF34A7]
+	(No symbol) [0x00007FF71CCC7AEF]
+	(No symbol) [0x00007FF71CCF0169]
+	(No symbol) [0x00007FF71CCC7883]
+	(No symbol) [0x00007FF71CC90550]
+	(No symbol) [0x00007FF71CC91803]
+	GetHandleVerifier [0x00007FF71D1A72BD+3529853]
+	GetHandleVerifier [0x00007FF71D1BDA22+3621858]
+	GetHandleVerifier [0x00007FF71D1B24D3+3575443]
+	GetHandleVerifier [0x00007FF71CF1B77A+860474]
+	(No symbol) [0x00007FF71CDC088F]
+	(No symbol) [0x00007FF71CDBCBC4]
+	(No symbol) [0x00007FF71CDBCD66]
+	(No symbol) [0x00007FF71CDAC2C9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-17 15:22:32,085 - LSPScraper - ERROR - Available elements on page:
+2025-03-17 15:22:32,107 - LSPScraper - ERROR - Element: html - 
+2025-03-17 15:22:32,117 - LSPScraper - ERROR - Element: head - 
+2025-03-17 15:22:32,126 - LSPScraper - ERROR - Element: title - 
+2025-03-17 15:22:32,134 - LSPScraper - ERROR - Element: style - 
+2025-03-17 15:22:32,141 - LSPScraper - ERROR - Element: body - 
+2025-03-17 15:22:32,152 - LSPScraper - ERROR - Element: h1 - 
+2025-03-17 15:22:32,159 - LSPScraper - ERROR - Element: hr - line
+2025-03-17 15:22:32,167 - LSPScraper - ERROR - Element: p - 
+2025-03-17 15:22:32,178 - LSPScraper - ERROR - Element: b - 
+2025-03-17 15:22:32,188 - LSPScraper - ERROR - Element: p - 
+2025-03-17 15:22:32,189 - LSPScraper - ERROR - Login error: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF71CE4FE45+26629]
+	(No symbol) [0x00007FF71CDB6010]
+	(No symbol) [0x00007FF71CC4931A]
+	(No symbol) [0x00007FF71CC9F8E7]
+	(No symbol) [0x00007FF71CC9FB1C]
+	(No symbol) [0x00007FF71CCF34A7]
+	(No symbol) [0x00007FF71CCC7AEF]
+	(No symbol) [0x00007FF71CCF0169]
+	(No symbol) [0x00007FF71CCC7883]
+	(No symbol) [0x00007FF71CC90550]
+	(No symbol) [0x00007FF71CC91803]
+	GetHandleVerifier [0x00007FF71D1A72BD+3529853]
+	GetHandleVerifier [0x00007FF71D1BDA22+3621858]
+	GetHandleVerifier [0x00007FF71D1B24D3+3575443]
+	GetHandleVerifier [0x00007FF71CF1B77A+860474]
+	(No symbol) [0x00007FF71CDC088F]
+	(No symbol) [0x00007FF71CDBCBC4]
+	(No symbol) [0x00007FF71CDBCD66]
+	(No symbol) [0x00007FF71CDAC2C9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-17 15:22:32,191 - LSPScraper - ERROR - Full error details:
+Traceback (most recent call last):
+  File "C:\Users\LuisF\Development\LSP_Job_Notifier\scraper.py", line 134, in login
+    username_field = WebDriverWait(self.driver, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='text']"))
+    )
+  File "C:\Users\LuisF\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF71CE4FE45+26629]
+	(No symbol) [0x00007FF71CDB6010]
+	(No symbol) [0x00007FF71CC4931A]
+	(No symbol) [0x00007FF71CC9F8E7]
+	(No symbol) [0x00007FF71CC9FB1C]
+	(No symbol) [0x00007FF71CCF34A7]
+	(No symbol) [0x00007FF71CCC7AEF]
+	(No symbol) [0x00007FF71CCF0169]
+	(No symbol) [0x00007FF71CCC7883]
+	(No symbol) [0x00007FF71CC90550]
+	(No symbol) [0x00007FF71CC91803]
+	GetHandleVerifier [0x00007FF71D1A72BD+3529853]
+	GetHandleVerifier [0x00007FF71D1BDA22+3621858]
+	GetHandleVerifier [0x00007FF71D1B24D3+3575443]
+	GetHandleVerifier [0x00007FF71CF1B77A+860474]
+	(No symbol) [0x00007FF71CDC088F]
+	(No symbol) [0x00007FF71CDBCBC4]
+	(No symbol) [0x00007FF71CDBCD66]
+	(No symbol) [0x00007FF71CDAC2C9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-17 15:22:32,197 - LSPScraper - ERROR - Failed to login, retrying in 60 seconds...
+2025-03-19 20:37:17,648 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-19 20:37:17,649 - LSPScraper - INFO - Initializing Chrome directly
+2025-03-19 20:37:26,183 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-03-19 20:37:26,183 - LSPScraper - INFO - Initializing browser for login...
+2025-03-19 20:37:26,183 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-19 20:37:30,361 - LSPScraper - INFO - Visited login page
+2025-03-19 20:37:30,364 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-03-19 20:37:30,368 - LSPScraper - INFO - Page title: Workforce OS
+2025-03-19 20:37:30,368 - LSPScraper - INFO - Page source preview:
+2025-03-19 20:37:30,372 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-03-19 20:37:30,373 - LSPScraper - INFO - Waiting for login form elements...
+2025-03-19 20:37:33,383 - LSPScraper - INFO - Found username field
+2025-03-19 20:37:33,383 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-03-19 20:37:33,485 - LSPScraper - INFO - Entered username
+2025-03-19 20:37:33,485 - LSPScraper - INFO - Looking for password field
+2025-03-19 20:37:33,496 - LSPScraper - INFO - Found password field
+2025-03-19 20:37:33,553 - LSPScraper - INFO - Entered password
+2025-03-19 20:37:33,553 - LSPScraper - INFO - Looking for login button
+2025-03-19 20:37:34,566 - LSPScraper - INFO - Found login button
+2025-03-19 20:37:34,566 - LSPScraper - INFO - Clicking login button
+2025-03-19 20:37:34,613 - LSPScraper - INFO - Clicked login button
+2025-03-19 20:37:34,614 - LSPScraper - INFO - Waiting for successful login...
+2025-03-19 20:37:37,648 - LSPScraper - INFO - Successfully logged in
+2025-03-19 20:37:37,651 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-03-19 21:10:17,158 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-19 21:10:17,159 - LSPScraper - INFO - Initializing Chrome directly
+2025-03-19 21:10:18,740 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-03-19 21:10:18,740 - LSPScraper - INFO - Initializing browser for login...
+2025-03-19 21:10:18,740 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-19 21:10:24,579 - LSPScraper - INFO - Visited login page
+2025-03-19 21:10:24,583 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-03-19 21:10:24,587 - LSPScraper - INFO - Page title: Workforce OS
+2025-03-19 21:10:24,587 - LSPScraper - INFO - Page source preview:
+2025-03-19 21:10:24,591 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-03-19 21:10:24,591 - LSPScraper - INFO - Waiting for login form elements...
+2025-03-19 21:10:27,601 - LSPScraper - INFO - Found username field
+2025-03-19 21:10:27,602 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-03-19 21:10:27,713 - LSPScraper - INFO - Entered username
+2025-03-19 21:10:27,714 - LSPScraper - INFO - Looking for password field
+2025-03-19 21:10:27,725 - LSPScraper - INFO - Found password field
+2025-03-19 21:10:27,791 - LSPScraper - INFO - Entered password
+2025-03-19 21:10:27,792 - LSPScraper - INFO - Looking for login button
+2025-03-19 21:10:28,808 - LSPScraper - INFO - Found login button
+2025-03-19 21:10:28,808 - LSPScraper - INFO - Clicking login button
+2025-03-19 21:10:28,877 - LSPScraper - INFO - Clicked login button
+2025-03-19 21:10:28,877 - LSPScraper - INFO - Waiting for successful login...
+2025-03-19 21:10:32,002 - LSPScraper - INFO - Successfully logged in
+2025-03-19 21:10:32,006 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-03-19 21:10:42,175 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF72898FE65+26629]
+	(No symbol) [0x00007FF7288F6030]
+	(No symbol) [0x00007FF72878931A]
+	(No symbol) [0x00007FF7287DF8E7]
+	(No symbol) [0x00007FF7287DFB1C]
+	(No symbol) [0x00007FF7288334A7]
+	(No symbol) [0x00007FF728807AEF]
+	(No symbol) [0x00007FF728830169]
+	(No symbol) [0x00007FF728807883]
+	(No symbol) [0x00007FF7287D0550]
+	(No symbol) [0x00007FF7287D1803]
+	GetHandleVerifier [0x00007FF728CE72DD+3529853]
+	GetHandleVerifier [0x00007FF728CFDA42+3621858]
+	GetHandleVerifier [0x00007FF728CF24F3+3575443]
+	GetHandleVerifier [0x00007FF728A5B79A+860474]
+	(No symbol) [0x00007FF7289008AF]
+	(No symbol) [0x00007FF7288FCBE4]
+	(No symbol) [0x00007FF7288FCD86]
+	(No symbol) [0x00007FF7288EC2E9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-19 21:10:42,178 - LSPScraper - INFO - No new jobs found
+2025-03-20 14:12:51,558 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-20 14:12:51,558 - LSPScraper - INFO - Initializing Chrome directly
+2025-03-20 14:12:54,421 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-03-20 14:12:54,422 - LSPScraper - INFO - Initializing browser for login...
+2025-03-20 14:12:54,422 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 14:12:59,291 - LSPScraper - INFO - Visited login page
+2025-03-20 14:12:59,300 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 14:12:59,305 - LSPScraper - INFO - Page title: Workforce OS
+2025-03-20 14:12:59,305 - LSPScraper - INFO - Page source preview:
+2025-03-20 14:12:59,309 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-03-20 14:12:59,311 - LSPScraper - INFO - Waiting for login form elements...
+2025-03-20 14:13:02,332 - LSPScraper - INFO - Found username field
+2025-03-20 14:13:02,332 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-03-20 14:13:02,538 - LSPScraper - INFO - Entered username
+2025-03-20 14:13:02,538 - LSPScraper - INFO - Looking for password field
+2025-03-20 14:13:02,552 - LSPScraper - INFO - Found password field
+2025-03-20 14:13:02,639 - LSPScraper - INFO - Entered password
+2025-03-20 14:13:02,639 - LSPScraper - INFO - Looking for login button
+2025-03-20 14:13:03,655 - LSPScraper - INFO - Found login button
+2025-03-20 14:13:03,655 - LSPScraper - INFO - Clicking login button
+2025-03-20 14:13:03,715 - LSPScraper - INFO - Clicked login button
+2025-03-20 14:13:03,716 - LSPScraper - INFO - Waiting for successful login...
+2025-03-20 14:13:08,865 - LSPScraper - INFO - Successfully logged in
+2025-03-20 14:13:08,871 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-03-20 14:13:19,139 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF65CAEFE65+26629]
+	(No symbol) [0x00007FF65CA56030]
+	(No symbol) [0x00007FF65C8E931A]
+	(No symbol) [0x00007FF65C93F8E7]
+	(No symbol) [0x00007FF65C93FB1C]
+	(No symbol) [0x00007FF65C9934A7]
+	(No symbol) [0x00007FF65C967AEF]
+	(No symbol) [0x00007FF65C990169]
+	(No symbol) [0x00007FF65C967883]
+	(No symbol) [0x00007FF65C930550]
+	(No symbol) [0x00007FF65C931803]
+	GetHandleVerifier [0x00007FF65CE472DD+3529853]
+	GetHandleVerifier [0x00007FF65CE5DA42+3621858]
+	GetHandleVerifier [0x00007FF65CE524F3+3575443]
+	GetHandleVerifier [0x00007FF65CBBB79A+860474]
+	(No symbol) [0x00007FF65CA608AF]
+	(No symbol) [0x00007FF65CA5CBE4]
+	(No symbol) [0x00007FF65CA5CD86]
+	(No symbol) [0x00007FF65CA4C2E9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-20 14:13:19,142 - LSPScraper - INFO - No new jobs found
+2025-03-20 14:18:24,574 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-20 14:18:24,575 - LSPScraper - INFO - Initializing Chrome directly
+2025-03-20 14:18:26,667 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-03-20 14:18:26,667 - LSPScraper - INFO - Initializing browser for login...
+2025-03-20 14:18:26,668 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 14:18:31,423 - LSPScraper - INFO - Visited login page
+2025-03-20 14:18:31,435 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 14:18:31,441 - LSPScraper - INFO - Page title: Workforce OS
+2025-03-20 14:18:31,441 - LSPScraper - INFO - Page source preview:
+2025-03-20 14:18:31,446 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-03-20 14:18:31,448 - LSPScraper - INFO - Waiting for login form elements...
+2025-03-20 14:18:34,463 - LSPScraper - INFO - Found username field
+2025-03-20 14:18:34,463 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-03-20 14:18:34,822 - LSPScraper - INFO - Entered username
+2025-03-20 14:18:34,823 - LSPScraper - INFO - Looking for password field
+2025-03-20 14:18:34,836 - LSPScraper - INFO - Found password field
+2025-03-20 14:18:34,923 - LSPScraper - INFO - Entered password
+2025-03-20 14:18:34,923 - LSPScraper - INFO - Looking for login button
+2025-03-20 14:18:35,937 - LSPScraper - INFO - Found login button
+2025-03-20 14:18:35,938 - LSPScraper - INFO - Clicking login button
+2025-03-20 14:18:36,001 - LSPScraper - INFO - Clicked login button
+2025-03-20 14:18:36,001 - LSPScraper - INFO - Waiting for successful login...
+2025-03-20 14:18:39,555 - LSPScraper - INFO - Successfully logged in
+2025-03-20 14:18:39,560 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-03-20 14:18:52,468 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF73003FE65+26629]
+	(No symbol) [0x00007FF72FFA6030]
+	(No symbol) [0x00007FF72FE3931A]
+	(No symbol) [0x00007FF72FE8F8E7]
+	(No symbol) [0x00007FF72FE8FB1C]
+	(No symbol) [0x00007FF72FEE34A7]
+	(No symbol) [0x00007FF72FEB7AEF]
+	(No symbol) [0x00007FF72FEE0169]
+	(No symbol) [0x00007FF72FEB7883]
+	(No symbol) [0x00007FF72FE80550]
+	(No symbol) [0x00007FF72FE81803]
+	GetHandleVerifier [0x00007FF7303972DD+3529853]
+	GetHandleVerifier [0x00007FF7303ADA42+3621858]
+	GetHandleVerifier [0x00007FF7303A24F3+3575443]
+	GetHandleVerifier [0x00007FF73010B79A+860474]
+	(No symbol) [0x00007FF72FFB08AF]
+	(No symbol) [0x00007FF72FFACBE4]
+	(No symbol) [0x00007FF72FFACD86]
+	(No symbol) [0x00007FF72FF9C2E9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-20 14:18:52,472 - LSPScraper - INFO - No new jobs found
+2025-03-20 14:29:54,997 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-20 14:29:54,998 - LSPScraper - INFO - Initializing Chrome directly
+2025-03-20 14:29:57,863 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-03-20 14:29:57,863 - LSPScraper - INFO - Initializing browser for login...
+2025-03-20 14:29:57,864 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 14:30:03,085 - LSPScraper - INFO - Visited login page
+2025-03-20 14:30:03,095 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 14:30:03,105 - LSPScraper - INFO - Page title: Workforce OS
+2025-03-20 14:30:03,105 - LSPScraper - INFO - Page source preview:
+2025-03-20 14:30:03,114 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-03-20 14:30:03,116 - LSPScraper - INFO - Waiting for login form elements...
+2025-03-20 14:30:06,178 - LSPScraper - INFO - Found username field
+2025-03-20 14:30:06,178 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-03-20 14:30:06,560 - LSPScraper - INFO - Entered username
+2025-03-20 14:30:06,560 - LSPScraper - INFO - Looking for password field
+2025-03-20 14:30:06,580 - LSPScraper - INFO - Found password field
+2025-03-20 14:30:06,736 - LSPScraper - INFO - Entered password
+2025-03-20 14:30:06,737 - LSPScraper - INFO - Looking for login button
+2025-03-20 14:30:07,755 - LSPScraper - INFO - Found login button
+2025-03-20 14:30:07,755 - LSPScraper - INFO - Clicking login button
+2025-03-20 14:30:07,827 - LSPScraper - INFO - Clicked login button
+2025-03-20 14:30:07,827 - LSPScraper - INFO - Waiting for successful login...
+2025-03-20 14:30:11,007 - LSPScraper - INFO - Successfully logged in
+2025-03-20 14:30:11,013 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-03-20 14:30:11,963 - LSPScraper - WARNING - Failed to send login notification
+2025-03-20 14:30:22,268 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF647BAFE65+26629]
+	(No symbol) [0x00007FF647B16030]
+	(No symbol) [0x00007FF6479A931A]
+	(No symbol) [0x00007FF6479FF8E7]
+	(No symbol) [0x00007FF6479FFB1C]
+	(No symbol) [0x00007FF647A534A7]
+	(No symbol) [0x00007FF647A27AEF]
+	(No symbol) [0x00007FF647A50169]
+	(No symbol) [0x00007FF647A27883]
+	(No symbol) [0x00007FF6479F0550]
+	(No symbol) [0x00007FF6479F1803]
+	GetHandleVerifier [0x00007FF647F072DD+3529853]
+	GetHandleVerifier [0x00007FF647F1DA42+3621858]
+	GetHandleVerifier [0x00007FF647F124F3+3575443]
+	GetHandleVerifier [0x00007FF647C7B79A+860474]
+	(No symbol) [0x00007FF647B208AF]
+	(No symbol) [0x00007FF647B1CBE4]
+	(No symbol) [0x00007FF647B1CD86]
+	(No symbol) [0x00007FF647B0C2E9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-20 14:30:22,275 - LSPScraper - INFO - No new jobs found
+2025-03-20 15:22:31,808 - LSPScraper - INFO - Verifying notification systems...
+2025-03-20 15:22:34,030 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-20 15:22:34,031 - LSPScraper - INFO - Initializing Chrome directly
+2025-03-20 15:22:36,937 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-03-20 15:22:36,937 - LSPScraper - INFO - Initializing browser for login...
+2025-03-20 15:22:36,937 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 15:22:41,694 - LSPScraper - INFO - Visited login page
+2025-03-20 15:22:41,700 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 15:22:41,705 - LSPScraper - INFO - Page title: Workforce OS
+2025-03-20 15:22:41,705 - LSPScraper - INFO - Page source preview:
+2025-03-20 15:22:41,712 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-03-20 15:22:41,714 - LSPScraper - INFO - Waiting for login form elements...
+2025-03-20 15:22:44,733 - LSPScraper - INFO - Found username field
+2025-03-20 15:22:44,734 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-03-20 15:22:44,885 - LSPScraper - INFO - Entered username
+2025-03-20 15:22:44,885 - LSPScraper - INFO - Looking for password field
+2025-03-20 15:22:44,901 - LSPScraper - INFO - Found password field
+2025-03-20 15:22:45,005 - LSPScraper - INFO - Entered password
+2025-03-20 15:22:45,005 - LSPScraper - INFO - Looking for login button
+2025-03-20 15:22:46,050 - LSPScraper - INFO - Found login button
+2025-03-20 15:22:46,051 - LSPScraper - INFO - Clicking login button
+2025-03-20 15:22:46,157 - LSPScraper - INFO - Clicked login button
+2025-03-20 15:22:46,157 - LSPScraper - INFO - Waiting for successful login...
+2025-03-20 15:22:49,830 - LSPScraper - INFO - Successfully logged in
+2025-03-20 15:22:49,834 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-03-20 15:22:50,502 - LSPScraper - WARNING - Failed to send login notification
+2025-03-20 15:23:00,782 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6588FFE65+26629]
+	(No symbol) [0x00007FF658866030]
+	(No symbol) [0x00007FF6586F931A]
+	(No symbol) [0x00007FF65874F8E7]
+	(No symbol) [0x00007FF65874FB1C]
+	(No symbol) [0x00007FF6587A34A7]
+	(No symbol) [0x00007FF658777AEF]
+	(No symbol) [0x00007FF6587A0169]
+	(No symbol) [0x00007FF658777883]
+	(No symbol) [0x00007FF658740550]
+	(No symbol) [0x00007FF658741803]
+	GetHandleVerifier [0x00007FF658C572DD+3529853]
+	GetHandleVerifier [0x00007FF658C6DA42+3621858]
+	GetHandleVerifier [0x00007FF658C624F3+3575443]
+	GetHandleVerifier [0x00007FF6589CB79A+860474]
+	(No symbol) [0x00007FF6588708AF]
+	(No symbol) [0x00007FF65886CBE4]
+	(No symbol) [0x00007FF65886CD86]
+	(No symbol) [0x00007FF65885C2E9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-20 15:23:00,784 - LSPScraper - INFO - No new jobs found
+2025-03-20 16:19:01,525 - LSPScraper - INFO - Verifying notification systems...
+2025-03-20 16:19:01,963 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-20 16:19:01,963 - LSPScraper - INFO - Initializing Chrome directly
+2025-03-20 16:19:03,731 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-03-20 16:19:03,731 - LSPScraper - INFO - Initializing browser for login...
+2025-03-20 16:19:03,732 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 16:19:08,570 - LSPScraper - INFO - Visited login page
+2025-03-20 16:19:08,580 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 16:19:08,586 - LSPScraper - INFO - Page title: Workforce OS
+2025-03-20 16:19:08,586 - LSPScraper - INFO - Page source preview:
+2025-03-20 16:19:08,592 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-03-20 16:19:08,593 - LSPScraper - INFO - Waiting for login form elements...
+2025-03-20 16:19:11,666 - LSPScraper - INFO - Found username field
+2025-03-20 16:19:11,666 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-03-20 16:19:11,796 - LSPScraper - INFO - Entered username
+2025-03-20 16:19:11,797 - LSPScraper - INFO - Looking for password field
+2025-03-20 16:19:11,809 - LSPScraper - INFO - Found password field
+2025-03-20 16:19:11,880 - LSPScraper - INFO - Entered password
+2025-03-20 16:19:11,880 - LSPScraper - INFO - Looking for login button
+2025-03-20 16:19:12,894 - LSPScraper - INFO - Found login button
+2025-03-20 16:19:12,894 - LSPScraper - INFO - Clicking login button
+2025-03-20 16:19:12,947 - LSPScraper - INFO - Clicked login button
+2025-03-20 16:19:12,947 - LSPScraper - INFO - Waiting for successful login...
+2025-03-20 16:19:16,357 - LSPScraper - INFO - Successfully logged in
+2025-03-20 16:19:16,361 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-03-20 16:19:16,979 - LSPScraper - WARNING - Failed to send login notification
+2025-03-20 16:19:27,241 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6C21DFE65+26629]
+	(No symbol) [0x00007FF6C2146030]
+	(No symbol) [0x00007FF6C1FD931A]
+	(No symbol) [0x00007FF6C202F8E7]
+	(No symbol) [0x00007FF6C202FB1C]
+	(No symbol) [0x00007FF6C20834A7]
+	(No symbol) [0x00007FF6C2057AEF]
+	(No symbol) [0x00007FF6C2080169]
+	(No symbol) [0x00007FF6C2057883]
+	(No symbol) [0x00007FF6C2020550]
+	(No symbol) [0x00007FF6C2021803]
+	GetHandleVerifier [0x00007FF6C25372DD+3529853]
+	GetHandleVerifier [0x00007FF6C254DA42+3621858]
+	GetHandleVerifier [0x00007FF6C25424F3+3575443]
+	GetHandleVerifier [0x00007FF6C22AB79A+860474]
+	(No symbol) [0x00007FF6C21508AF]
+	(No symbol) [0x00007FF6C214CBE4]
+	(No symbol) [0x00007FF6C214CD86]
+	(No symbol) [0x00007FF6C213C2E9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-20 16:19:27,244 - LSPScraper - INFO - No new jobs found
+2025-03-20 16:21:35,286 - LSPScraper - INFO - Verifying notification systems...
+2025-03-20 16:21:35,830 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-20 16:21:35,831 - LSPScraper - INFO - Initializing Chrome directly
+2025-03-20 16:21:37,459 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-03-20 16:21:37,460 - LSPScraper - INFO - Initializing browser for login...
+2025-03-20 16:21:37,460 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 16:21:41,981 - LSPScraper - INFO - Visited login page
+2025-03-20 16:21:41,988 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 16:21:41,995 - LSPScraper - INFO - Page title: Workforce OS
+2025-03-20 16:21:41,996 - LSPScraper - INFO - Page source preview:
+2025-03-20 16:21:42,000 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-03-20 16:21:42,002 - LSPScraper - INFO - Waiting for login form elements...
+2025-03-20 16:21:45,014 - LSPScraper - INFO - Found username field
+2025-03-20 16:21:45,014 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-03-20 16:21:45,142 - LSPScraper - INFO - Entered username
+2025-03-20 16:21:45,143 - LSPScraper - INFO - Looking for password field
+2025-03-20 16:21:45,156 - LSPScraper - INFO - Found password field
+2025-03-20 16:21:45,229 - LSPScraper - INFO - Entered password
+2025-03-20 16:21:45,230 - LSPScraper - INFO - Looking for login button
+2025-03-20 16:21:46,244 - LSPScraper - INFO - Found login button
+2025-03-20 16:21:46,244 - LSPScraper - INFO - Clicking login button
+2025-03-20 16:21:46,298 - LSPScraper - INFO - Clicked login button
+2025-03-20 16:21:46,299 - LSPScraper - INFO - Waiting for successful login...
+2025-03-20 16:22:15,110 - LSPScraper - INFO - Verifying notification systems...
+2025-03-20 16:22:15,518 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-20 16:22:15,518 - LSPScraper - INFO - Initializing Chrome directly
+2025-03-20 16:22:17,041 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-03-20 16:22:17,042 - LSPScraper - INFO - Initializing browser for login...
+2025-03-20 16:22:17,042 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 16:24:11,939 - LSPScraper - INFO - Verifying notification systems...
+2025-03-20 16:24:12,335 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-20 16:24:12,336 - LSPScraper - INFO - Initializing Chrome directly
+2025-03-20 16:24:14,523 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-03-20 16:24:14,523 - LSPScraper - INFO - Initializing browser for login...
+2025-03-20 16:24:14,524 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 16:26:23,891 - LSPScraper - INFO - Verifying notification systems...
+2025-03-20 16:26:24,424 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-20 16:26:24,425 - LSPScraper - INFO - Initializing Chrome directly
+2025-03-20 16:26:25,940 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-03-20 16:26:25,940 - LSPScraper - INFO - Initializing browser for login...
+2025-03-20 16:26:25,941 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 16:26:31,563 - LSPScraper - INFO - Visited login page
+2025-03-20 16:26:31,567 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 16:26:31,571 - LSPScraper - INFO - Page title: Workforce OS
+2025-03-20 16:26:31,571 - LSPScraper - INFO - Page source preview:
+2025-03-20 16:26:31,576 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-03-20 16:26:31,578 - LSPScraper - INFO - Waiting for login form elements...
+2025-03-20 16:26:34,641 - LSPScraper - INFO - Found username field
+2025-03-20 16:26:34,642 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-03-20 16:26:34,750 - LSPScraper - INFO - Entered username
+2025-03-20 16:26:34,751 - LSPScraper - INFO - Looking for password field
+2025-03-20 16:27:22,980 - LSPScraper - INFO - Verifying notification systems...
+2025-03-20 16:27:23,618 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-20 16:27:23,618 - LSPScraper - INFO - Initializing Chrome directly
+2025-03-20 16:27:25,247 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-03-20 16:27:25,247 - LSPScraper - INFO - Initializing browser for login...
+2025-03-20 16:27:25,248 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 16:27:30,581 - LSPScraper - INFO - Visited login page
+2025-03-20 16:27:30,585 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-03-20 16:27:30,590 - LSPScraper - INFO - Page title: Workforce OS
+2025-03-20 16:27:30,590 - LSPScraper - INFO - Page source preview:
+2025-03-20 16:27:30,595 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-03-20 16:27:30,596 - LSPScraper - INFO - Waiting for login form elements...
+2025-03-20 16:27:33,612 - LSPScraper - INFO - Found username field
+2025-03-20 16:27:33,612 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-03-20 16:27:33,739 - LSPScraper - INFO - Entered username
+2025-03-20 16:27:33,740 - LSPScraper - INFO - Looking for password field
+2025-03-20 16:27:33,750 - LSPScraper - INFO - Found password field
+2025-03-20 16:27:33,815 - LSPScraper - INFO - Entered password
+2025-03-20 16:27:33,816 - LSPScraper - INFO - Looking for login button
+2025-03-20 16:27:34,830 - LSPScraper - INFO - Found login button
+2025-03-20 16:27:34,830 - LSPScraper - INFO - Clicking login button
+2025-03-20 16:27:34,888 - LSPScraper - INFO - Clicked login button
+2025-03-20 16:27:34,888 - LSPScraper - INFO - Waiting for successful login...
+2025-03-20 16:27:38,599 - LSPScraper - INFO - Successfully logged in
+2025-03-20 16:27:38,603 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-03-20 16:27:39,225 - LSPScraper - INFO - Login notification sent successfully
+2025-03-20 16:27:49,480 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6C21DFE65+26629]
+	(No symbol) [0x00007FF6C2146030]
+	(No symbol) [0x00007FF6C1FD931A]
+	(No symbol) [0x00007FF6C202F8E7]
+	(No symbol) [0x00007FF6C202FB1C]
+	(No symbol) [0x00007FF6C20834A7]
+	(No symbol) [0x00007FF6C2057AEF]
+	(No symbol) [0x00007FF6C2080169]
+	(No symbol) [0x00007FF6C2057883]
+	(No symbol) [0x00007FF6C2020550]
+	(No symbol) [0x00007FF6C2021803]
+	GetHandleVerifier [0x00007FF6C25372DD+3529853]
+	GetHandleVerifier [0x00007FF6C254DA42+3621858]
+	GetHandleVerifier [0x00007FF6C25424F3+3575443]
+	GetHandleVerifier [0x00007FF6C22AB79A+860474]
+	(No symbol) [0x00007FF6C21508AF]
+	(No symbol) [0x00007FF6C214CBE4]
+	(No symbol) [0x00007FF6C214CD86]
+	(No symbol) [0x00007FF6C213C2E9]
+	BaseThreadInitThunk [0x00007FFB96717374+20]
+	RtlUserThreadStart [0x00007FFB9829CC91+33]
+
+2025-03-20 16:27:49,483 - LSPScraper - INFO - No new jobs found
+2025-03-24 12:40:51,019 - LSPScraper - INFO - Verifying notification systems...
+2025-03-24 12:40:51,723 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-03-24 12:40:51,723 - LSPScraper - INFO - Initializing Chrome directly
+2025-03-24 12:40:56,230 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-03-24 12:40:56,231 - LSPScraper - INFO - Initializing browser for login...
+2025-03-24 12:40:56,231 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-03-24 12:41:00,272 - LSPScraper - INFO - Visited login page
+2025-03-24 12:41:00,276 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-03-24 12:41:00,280 - LSPScraper - INFO - Page title: Workforce OS
+2025-03-24 12:41:00,280 - LSPScraper - INFO - Page source preview:
+2025-03-24 12:41:00,284 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-03-24 12:41:00,285 - LSPScraper - INFO - Waiting for login form elements...
+2025-03-24 12:41:03,295 - LSPScraper - INFO - Found username field
+2025-03-24 12:41:03,295 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-03-24 12:41:03,393 - LSPScraper - INFO - Entered username
+2025-03-24 12:41:03,393 - LSPScraper - INFO - Looking for password field
+2025-03-24 12:41:03,404 - LSPScraper - INFO - Found password field
+2025-03-24 12:41:03,464 - LSPScraper - INFO - Entered password
+2025-03-24 12:41:03,465 - LSPScraper - INFO - Looking for login button
+2025-03-24 12:41:04,476 - LSPScraper - INFO - Found login button
+2025-03-24 12:41:04,477 - LSPScraper - INFO - Clicking login button
+2025-03-24 12:41:04,524 - LSPScraper - INFO - Clicked login button
+2025-03-24 12:41:04,524 - LSPScraper - INFO - Waiting for successful login...
+2025-03-24 12:41:07,632 - LSPScraper - INFO - Successfully logged in
+2025-03-24 12:41:07,678 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-03-24 12:41:08,351 - LSPScraper - INFO - Login notification sent successfully
+2025-03-24 12:41:18,538 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7CB834C25+3179557]
+	(No symbol) [0x00007FF7CB4988A0]
+	(No symbol) [0x00007FF7CB3291CA]
+	(No symbol) [0x00007FF7CB37FA67]
+	(No symbol) [0x00007FF7CB37FC9C]
+	(No symbol) [0x00007FF7CB3D3627]
+	(No symbol) [0x00007FF7CB3A7C6F]
+	(No symbol) [0x00007FF7CB3D02F3]
+	(No symbol) [0x00007FF7CB3A7A03]
+	(No symbol) [0x00007FF7CB3706D0]
+	(No symbol) [0x00007FF7CB371983]
+	GetHandleVerifier [0x00007FF7CB8967CD+3579853]
+	GetHandleVerifier [0x00007FF7CB8AD1D2+3672530]
+	GetHandleVerifier [0x00007FF7CB8A2153+3627347]
+	GetHandleVerifier [0x00007FF7CB60092A+868650]
+	(No symbol) [0x00007FF7CB4A2FFF]
+	(No symbol) [0x00007FF7CB49F4A4]
+	(No symbol) [0x00007FF7CB49F646]
+	(No symbol) [0x00007FF7CB48EAA9]
+	BaseThreadInitThunk [0x00007FF810B87374+20]
+	RtlUserThreadStart [0x00007FF81293CC91+33]
+
+2025-03-24 12:41:18,541 - LSPScraper - INFO - No new jobs found
+2025-04-03 11:54:08,503 - LSPScraper - INFO - Verifying notification systems...
+2025-04-03 11:54:09,434 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-03 11:54:09,434 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-03 11:54:12,643 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-03 11:54:12,646 - LSPScraper - INFO - Initializing browser for login...
+2025-04-03 11:54:12,646 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-03 11:54:12,860 - LSPScraper - INFO - Visited login page
+2025-04-03 11:54:17,592 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-03 11:54:17,609 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-03 11:54:17,609 - LSPScraper - INFO - Page source preview:
+2025-04-03 11:54:17,637 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-03 11:54:17,640 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-03 11:54:20,673 - LSPScraper - INFO - Found username field
+2025-04-03 11:54:20,676 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-03 11:54:21,068 - LSPScraper - INFO - Entered username
+2025-04-03 11:54:21,069 - LSPScraper - INFO - Looking for password field
+2025-04-03 11:54:21,112 - LSPScraper - INFO - Found password field
+2025-04-03 11:54:21,319 - LSPScraper - INFO - Entered password
+2025-04-03 11:54:21,320 - LSPScraper - INFO - Looking for login button
+2025-04-03 11:54:22,362 - LSPScraper - INFO - Found login button
+2025-04-03 11:54:22,363 - LSPScraper - INFO - Clicking login button
+2025-04-03 11:54:22,538 - LSPScraper - INFO - Clicked login button
+2025-04-03 11:54:22,539 - LSPScraper - INFO - Waiting for successful login...
+2025-04-03 11:54:26,529 - LSPScraper - INFO - Successfully logged in
+2025-04-03 11:54:26,533 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-03 11:54:27,133 - LSPScraper - INFO - Login notification sent successfully
+2025-04-03 11:58:35,269 - LSPScraper - INFO - Verifying notification systems...
+2025-04-03 11:58:35,754 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-03 11:58:35,754 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-03 11:58:37,179 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-03 11:58:37,179 - LSPScraper - INFO - Initializing browser for login...
+2025-04-03 11:58:37,179 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-03 11:58:40,680 - LSPScraper - INFO - Visited login page
+2025-04-03 11:58:40,684 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-03 11:58:40,687 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-03 11:58:40,687 - LSPScraper - INFO - Page source preview:
+2025-04-03 11:58:40,691 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-03 11:58:40,692 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-03 11:58:43,702 - LSPScraper - INFO - Found username field
+2025-04-03 11:58:43,702 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-03 11:58:43,808 - LSPScraper - INFO - Entered username
+2025-04-03 11:58:43,809 - LSPScraper - INFO - Looking for password field
+2025-04-03 11:58:43,820 - LSPScraper - INFO - Found password field
+2025-04-03 11:58:43,881 - LSPScraper - INFO - Entered password
+2025-04-03 11:58:43,882 - LSPScraper - INFO - Looking for login button
+2025-04-03 11:58:44,894 - LSPScraper - INFO - Found login button
+2025-04-03 11:58:44,894 - LSPScraper - INFO - Clicking login button
+2025-04-03 11:58:44,943 - LSPScraper - INFO - Clicked login button
+2025-04-03 11:58:44,943 - LSPScraper - INFO - Waiting for successful login...
+2025-04-03 11:58:48,125 - LSPScraper - INFO - Successfully logged in
+2025-04-03 11:58:48,128 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-03 11:58:48,908 - LSPScraper - INFO - Login notification sent successfully
+2025-04-03 11:58:59,088 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF669F74C25+3179557]
+	(No symbol) [0x00007FF669BD88A0]
+	(No symbol) [0x00007FF669A691CA]
+	(No symbol) [0x00007FF669ABFA67]
+	(No symbol) [0x00007FF669ABFC9C]
+	(No symbol) [0x00007FF669B13627]
+	(No symbol) [0x00007FF669AE7C6F]
+	(No symbol) [0x00007FF669B102F3]
+	(No symbol) [0x00007FF669AE7A03]
+	(No symbol) [0x00007FF669AB06D0]
+	(No symbol) [0x00007FF669AB1983]
+	GetHandleVerifier [0x00007FF669FD67CD+3579853]
+	GetHandleVerifier [0x00007FF669FED1D2+3672530]
+	GetHandleVerifier [0x00007FF669FE2153+3627347]
+	GetHandleVerifier [0x00007FF669D4092A+868650]
+	(No symbol) [0x00007FF669BE2FFF]
+	(No symbol) [0x00007FF669BDF4A4]
+	(No symbol) [0x00007FF669BDF646]
+	(No symbol) [0x00007FF669BCEAA9]
+	BaseThreadInitThunk [0x00007FF8EAD27374+20]
+	RtlUserThreadStart [0x00007FF8EB2DCC91+33]
+
+2025-04-03 11:58:59,090 - LSPScraper - INFO - No new jobs found
+2025-04-03 12:03:59,099 - LSPScraper - INFO - Initializing browser for login...
+2025-04-03 12:03:59,100 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-03 12:03:59,108 - LSPScraper - INFO - Visited login page
+2025-04-03 12:03:59,112 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-03 12:03:59,115 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-03 12:03:59,116 - LSPScraper - INFO - Page source preview:
+2025-04-03 12:03:59,133 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-03 12:03:59,134 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-03 12:04:02,141 - LSPScraper - INFO - Found username field
+2025-04-03 12:04:02,141 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-03 12:04:02,213 - LSPScraper - INFO - Entered username
+2025-04-03 12:04:02,213 - LSPScraper - INFO - Looking for password field
+2025-04-03 12:04:02,219 - LSPScraper - INFO - Found password field
+2025-04-03 12:04:02,282 - LSPScraper - INFO - Entered password
+2025-04-03 12:04:02,282 - LSPScraper - INFO - Looking for login button
+2025-04-03 12:04:03,293 - LSPScraper - INFO - Found login button
+2025-04-03 12:04:03,294 - LSPScraper - INFO - Clicking login button
+2025-04-03 12:04:03,336 - LSPScraper - INFO - Clicked login button
+2025-04-03 12:04:03,336 - LSPScraper - INFO - Waiting for successful login...
+2025-04-03 12:04:06,426 - LSPScraper - INFO - Successfully logged in
+2025-04-03 12:04:06,429 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-03 12:04:06,943 - LSPScraper - INFO - Login notification sent successfully
+2025-04-03 12:04:17,126 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF669F74C25+3179557]
+	(No symbol) [0x00007FF669BD88A0]
+	(No symbol) [0x00007FF669A691CA]
+	(No symbol) [0x00007FF669ABFA67]
+	(No symbol) [0x00007FF669ABFC9C]
+	(No symbol) [0x00007FF669B13627]
+	(No symbol) [0x00007FF669AE7C6F]
+	(No symbol) [0x00007FF669B102F3]
+	(No symbol) [0x00007FF669AE7A03]
+	(No symbol) [0x00007FF669AB06D0]
+	(No symbol) [0x00007FF669AB1983]
+	GetHandleVerifier [0x00007FF669FD67CD+3579853]
+	GetHandleVerifier [0x00007FF669FED1D2+3672530]
+	GetHandleVerifier [0x00007FF669FE2153+3627347]
+	GetHandleVerifier [0x00007FF669D4092A+868650]
+	(No symbol) [0x00007FF669BE2FFF]
+	(No symbol) [0x00007FF669BDF4A4]
+	(No symbol) [0x00007FF669BDF646]
+	(No symbol) [0x00007FF669BCEAA9]
+	BaseThreadInitThunk [0x00007FF8EAD27374+20]
+	RtlUserThreadStart [0x00007FF8EB2DCC91+33]
+
+2025-04-03 12:04:17,129 - LSPScraper - INFO - No new jobs found
+2025-04-03 12:08:46,451 - LSPScraper - INFO - Verifying notification systems...
+2025-04-03 12:08:47,024 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-03 12:08:47,025 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-03 12:08:48,483 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-03 12:08:48,483 - LSPScraper - INFO - Initializing browser for login...
+2025-04-03 12:08:48,484 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-03 12:08:52,007 - LSPScraper - INFO - Visited login page
+2025-04-03 12:08:52,011 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-03 12:08:52,015 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-03 12:08:52,015 - LSPScraper - INFO - Page source preview:
+2025-04-03 12:08:52,019 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-03 12:08:52,020 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-03 12:08:55,029 - LSPScraper - INFO - Found username field
+2025-04-03 12:08:55,030 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-03 12:08:55,131 - LSPScraper - INFO - Entered username
+2025-04-03 12:08:55,131 - LSPScraper - INFO - Looking for password field
+2025-04-03 12:08:55,141 - LSPScraper - INFO - Found password field
+2025-04-03 12:08:55,201 - LSPScraper - INFO - Entered password
+2025-04-03 12:08:55,201 - LSPScraper - INFO - Looking for login button
+2025-04-03 12:08:56,213 - LSPScraper - INFO - Found login button
+2025-04-03 12:08:56,213 - LSPScraper - INFO - Clicking login button
+2025-04-03 12:08:56,260 - LSPScraper - INFO - Clicked login button
+2025-04-03 12:08:56,261 - LSPScraper - INFO - Waiting for successful login...
+2025-04-03 12:08:59,330 - LSPScraper - INFO - Successfully logged in
+2025-04-03 12:08:59,334 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-03 12:09:00,051 - LSPScraper - INFO - Login notification sent successfully
+2025-04-03 12:09:00,106 - LSPScraper - INFO - Waiting for job listings grid to load...
+2025-04-03 12:09:10,243 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF669F74C25+3179557]
+	(No symbol) [0x00007FF669BD88A0]
+	(No symbol) [0x00007FF669A691CA]
+	(No symbol) [0x00007FF669ABFA67]
+	(No symbol) [0x00007FF669ABFC9C]
+	(No symbol) [0x00007FF669B13627]
+	(No symbol) [0x00007FF669AE7C6F]
+	(No symbol) [0x00007FF669B102F3]
+	(No symbol) [0x00007FF669AE7A03]
+	(No symbol) [0x00007FF669AB06D0]
+	(No symbol) [0x00007FF669AB1983]
+	GetHandleVerifier [0x00007FF669FD67CD+3579853]
+	GetHandleVerifier [0x00007FF669FED1D2+3672530]
+	GetHandleVerifier [0x00007FF669FE2153+3627347]
+	GetHandleVerifier [0x00007FF669D4092A+868650]
+	(No symbol) [0x00007FF669BE2FFF]
+	(No symbol) [0x00007FF669BDF4A4]
+	(No symbol) [0x00007FF669BDF646]
+	(No symbol) [0x00007FF669BCEAA9]
+	BaseThreadInitThunk [0x00007FF8EAD27374+20]
+	RtlUserThreadStart [0x00007FF8EB2DCC91+33]
+
+2025-04-03 12:09:10,247 - LSPScraper - ERROR - Detailed error: Traceback (most recent call last):
+  File "C:\Users\LuisF\Development\LSP_Job_Notifier\scraper.py", line 309, in check_jobs
+    WebDriverWait(self.driver, 10).until(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.presence_of_element_located((By.CLASS_NAME, "ag-center-cols-container"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\LuisF\Development\LSP_Job_Notifier\venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF669F74C25+3179557]
+	(No symbol) [0x00007FF669BD88A0]
+	(No symbol) [0x00007FF669A691CA]
+	(No symbol) [0x00007FF669ABFA67]
+	(No symbol) [0x00007FF669ABFC9C]
+	(No symbol) [0x00007FF669B13627]
+	(No symbol) [0x00007FF669AE7C6F]
+	(No symbol) [0x00007FF669B102F3]
+	(No symbol) [0x00007FF669AE7A03]
+	(No symbol) [0x00007FF669AB06D0]
+	(No symbol) [0x00007FF669AB1983]
+	GetHandleVerifier [0x00007FF669FD67CD+3579853]
+	GetHandleVerifier [0x00007FF669FED1D2+3672530]
+	GetHandleVerifier [0x00007FF669FE2153+3627347]
+	GetHandleVerifier [0x00007FF669D4092A+868650]
+	(No symbol) [0x00007FF669BE2FFF]
+	(No symbol) [0x00007FF669BDF4A4]
+	(No symbol) [0x00007FF669BDF646]
+	(No symbol) [0x00007FF669BCEAA9]
+	BaseThreadInitThunk [0x00007FF8EAD27374+20]
+	RtlUserThreadStart [0x00007FF8EB2DCC91+33]
+
+
+2025-04-03 12:09:10,250 - LSPScraper - INFO - No new jobs found
+2025-04-08 09:44:46,707 - LSPScraper - INFO - Verifying notification systems...
+2025-04-08 09:44:47,574 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-08 09:44:47,574 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-08 09:44:50,231 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-08 09:44:50,232 - LSPScraper - INFO - Initializing browser for login...
+2025-04-08 09:44:50,232 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-08 09:44:54,254 - LSPScraper - INFO - Visited login page
+2025-04-08 09:44:54,260 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-08 09:44:54,268 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-08 09:44:54,269 - LSPScraper - INFO - Page source preview:
+2025-04-08 09:44:54,275 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-08 09:44:54,277 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-08 09:44:57,289 - LSPScraper - INFO - Found username field
+2025-04-08 09:44:57,289 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-08 09:44:57,422 - LSPScraper - INFO - Entered username
+2025-04-08 09:44:57,422 - LSPScraper - INFO - Looking for password field
+2025-04-08 09:44:57,435 - LSPScraper - INFO - Found password field
+2025-04-08 09:44:57,515 - LSPScraper - INFO - Entered password
+2025-04-08 09:44:57,516 - LSPScraper - INFO - Looking for login button
+2025-04-08 09:44:58,532 - LSPScraper - INFO - Found login button
+2025-04-08 09:44:58,532 - LSPScraper - INFO - Clicking login button
+2025-04-08 09:44:58,604 - LSPScraper - INFO - Clicked login button
+2025-04-08 09:44:58,605 - LSPScraper - INFO - Waiting for successful login...
+2025-04-08 09:45:01,641 - LSPScraper - INFO - Successfully logged in
+2025-04-08 09:45:01,646 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-08 09:45:02,422 - LSPScraper - INFO - Login notification sent successfully
+2025-04-08 09:45:02,532 - LSPScraper - INFO - Waiting for job listings grid to load...
+2025-04-08 09:45:12,680 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7335F4C25+3179557]
+	(No symbol) [0x00007FF7332588A0]
+	(No symbol) [0x00007FF7330E91CA]
+	(No symbol) [0x00007FF73313FA67]
+	(No symbol) [0x00007FF73313FC9C]
+	(No symbol) [0x00007FF733193627]
+	(No symbol) [0x00007FF733167C6F]
+	(No symbol) [0x00007FF7331902F3]
+	(No symbol) [0x00007FF733167A03]
+	(No symbol) [0x00007FF7331306D0]
+	(No symbol) [0x00007FF733131983]
+	GetHandleVerifier [0x00007FF7336567CD+3579853]
+	GetHandleVerifier [0x00007FF73366D1D2+3672530]
+	GetHandleVerifier [0x00007FF733662153+3627347]
+	GetHandleVerifier [0x00007FF7333C092A+868650]
+	(No symbol) [0x00007FF733262FFF]
+	(No symbol) [0x00007FF73325F4A4]
+	(No symbol) [0x00007FF73325F646]
+	(No symbol) [0x00007FF73324EAA9]
+	BaseThreadInitThunk [0x00007FF8EAD27374+20]
+	RtlUserThreadStart [0x00007FF8EB2DCC91+33]
+
+2025-04-08 09:45:12,700 - LSPScraper - ERROR - Detailed error: Traceback (most recent call last):
+  File "C:\Users\LuisF\Development\LSP_Job_Notifier\scraper.py", line 309, in check_jobs
+    WebDriverWait(self.driver, 10).until(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.presence_of_element_located((By.CLASS_NAME, "ag-center-cols-container"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\LuisF\Development\LSP_Job_Notifier\venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7335F4C25+3179557]
+	(No symbol) [0x00007FF7332588A0]
+	(No symbol) [0x00007FF7330E91CA]
+	(No symbol) [0x00007FF73313FA67]
+	(No symbol) [0x00007FF73313FC9C]
+	(No symbol) [0x00007FF733193627]
+	(No symbol) [0x00007FF733167C6F]
+	(No symbol) [0x00007FF7331902F3]
+	(No symbol) [0x00007FF733167A03]
+	(No symbol) [0x00007FF7331306D0]
+	(No symbol) [0x00007FF733131983]
+	GetHandleVerifier [0x00007FF7336567CD+3579853]
+	GetHandleVerifier [0x00007FF73366D1D2+3672530]
+	GetHandleVerifier [0x00007FF733662153+3627347]
+	GetHandleVerifier [0x00007FF7333C092A+868650]
+	(No symbol) [0x00007FF733262FFF]
+	(No symbol) [0x00007FF73325F4A4]
+	(No symbol) [0x00007FF73325F646]
+	(No symbol) [0x00007FF73324EAA9]
+	BaseThreadInitThunk [0x00007FF8EAD27374+20]
+	RtlUserThreadStart [0x00007FF8EB2DCC91+33]
+
+
+2025-04-08 09:45:12,704 - LSPScraper - INFO - No new jobs found
