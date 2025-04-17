@@ -341,11 +341,10 @@ class LSPScraper:
                             'duration': duration,
                             'description': f"Duration: {duration} minutes\nTime: {appointment_time}\nClient: {client}"
                         }
-                        
-                        if job_id and job_id not in self.seen_jobs:
-                            self.logger.info(f"Found new job: {job_details}")
-                            new_jobs.append(job_details)
-                            self.seen_jobs.add(job_id)
+
+                        self.logger.info(f"Found new job: {job_details}")
+                        new_jobs.append(job_details)
+                        self.seen_jobs.add(job_id)
                 
                 except Exception as e:
                     self.logger.error(f"Error processing job element: {str(e)}")
