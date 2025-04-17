@@ -41,21 +41,16 @@ class LSPScraper:
         # File handler
         file_handler = logging.FileHandler(LOG_FILE)
         file_handler.setLevel(LOG_LEVEL)
-
-        # Console handler
-        console_handler = logging.StreamHandler()
-        console_handler.setLevel(LOG_LEVEL)
-
+        
         # Formatter
         formatter = logging.Formatter(
             '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
         )
         file_handler.setFormatter(formatter)
-        console_handler.setFormatter(formatter)
-
+        
+        # Only use file handler, not console handler for quieter operation
         logger.addHandler(file_handler)
-        logger.addHandler(console_handler)
-
+        
         return logger
 
     async def _init_session(self):
@@ -214,14 +209,81 @@ class LSPScraper:
             
             # Wait for successful login (wait for the job portal page to load)
             self.logger.info("Waiting for successful login...")
-            try:
-                # Allow more time for the SPA to navigate and load
-                time.sleep(3)
-                
-                # Check if we're redirected to another page
-                if "/jobs" in self.driver.current_url or "/dashboard" in self.driver.current_url:
-                    self.logger.info("Successfully logged in based on URL change")
-                    self.logger.info(f"Current URL after login: {self.driver.current_url}")
+            
+            # Allow more time for the SPA to navigate and load
+            time.sleep(5)
+            
+            # Save current URL for debugging
+            current_url = self.driver.current_url
+            self.logger.info(f"URL after login attempt: {current_url}")
+            
+            # Check if we're redirected to another page that indicates successful login
+            successful_login = False
+            
+            # Common URL patterns that indicate successful login
+            success_patterns = ["/jobs", "/dashboard", "/interpreter-portal", "/home"]
+            for pattern in success_patterns:
+                if pattern in current_url:
+                    self.logger.info(f"Successfully logged in based on URL change, found pattern: {pattern}")
+                    successful_login = True
+                    break
+            
+            # If we don't see a successful login pattern in the URL, try looking for elements that appear after login
+            if not successful_login:
+                try:
+                    self.logger.info("Checking for post-login elements...")
+                    
+                    # Try to find common elements that appear after login
+                    post_login_selectors = [
+                        (By.CLASS_NAME, "ag-body-viewport"),
+                        (By.CLASS_NAME, "dashboard-container"),
+                        (By.CSS_SELECTOR, ".logout-button"),
+                        (By.CSS_SELECTOR, "[class*='user-profile']"),
+                        (By.CSS_SELECTOR, ".main-content"),
+                        (By.XPATH, "//span[contains(text(), 'Log out')]"),
+                        (By.XPATH, "//div[contains(text(), 'Dashboard')]")
+                    ]
+                    
+                    for selector_type, selector in post_login_selectors:
+                        try:
+                            element = WebDriverWait(self.driver, 3).until(
+                                EC.presence_of_element_located((selector_type, selector))
+                            )
+                            self.logger.info(f"Found post-login element: {selector}")
+                            successful_login = True
+                            break
+                        except Exception:
+                            continue
+                except Exception as e:
+                    self.logger.warning(f"Error while checking for post-login elements: {str(e)}")
+            
+            # If we still can't confirm login, take a screenshot and check for key text in page
+            if not successful_login:
+                try:
+                    # Save screenshot for debugging
+                    self.driver.save_screenshot("login_result.png")
+                    self.logger.info("Saved screenshot of post-login page to login_result.png")
+                    
+                    # Check if page source contains any indication of successful login
+                    page_source = self.driver.page_source.lower()
+                    login_indicators = ["logout", "welcome", "dashboard", "profile", "interpreter portal"]
+                    
+                    for indicator in login_indicators:
+                        if indicator in page_source:
+                            self.logger.info(f"Found login indicator in page source: '{indicator}'")
+                            successful_login = True
+                            break
+                except Exception as e:
+                    self.logger.warning(f"Error while taking screenshot: {str(e)}")
+            
+            # Always try to navigate to interpreter portal, which is where we need to be
+            if successful_login or "/login" not in current_url:
+                try:
+                    # Navigate to the interpreter portal explicitly
+                    portal_url = f"{BASE_URL}/scheduler/#/interpreter-portal"
+                    self.logger.info(f"Login appears successful. Navigating to interpreter portal: {portal_url}")
+                    self.driver.get(portal_url)
+                    time.sleep(5)  # Wait for portal to load
                     
                     # Send Telegram notification on successful login
                     try:
@@ -233,31 +295,17 @@ class LSPScraper:
                     except Exception as e:
                         self.logger.error(f"Error sending login notification: {str(e)}")
                     
-                    return True
-                
-                self.driver.get("https://kyrm.lspware.com/scheduler/#/interpreter-portal")
+                    # Save portal page source for debugging
+                    with open("portal_after_login.html", "w", encoding="utf-8") as f:
+                        f.write(self.driver.page_source)
+                    self.logger.info("Saved portal page source to portal_after_login.html")
                     
-                # As a fallback, check for elements that appear after login
-                WebDriverWait(self.driver, 10).until(
-                    EC.presence_of_element_located((By.CLASS_NAME, "ag-body-viewport"))
-                )
-                self.logger.info("Successfully logged in")
-                self.logger.info(f"Current URL after login: {self.driver.current_url}")
-                
-                # Send Telegram notification on successful login (fallback path)
-                try:
-                    notification_sent = await self.notification_manager.send_telegram("LSP Job Notifier: Application has started and successfully logged in! Now monitoring for new job postings.")
-                    if notification_sent:
-                        self.logger.info("Login notification sent successfully")
-                    else:
-                        self.logger.warning("Failed to send login notification")
+                    return True
                 except Exception as e:
-                    self.logger.error(f"Error sending login notification: {str(e)}")
-                
-                return True
-            except Exception as e:
-                self.logger.error(f"Login failed: {str(e)}")
-                self.logger.error(f"Current URL after failed login: {self.driver.current_url}")
+                    self.logger.error(f"Error navigating to interpreter portal: {str(e)}")
+                    return False
+            else:
+                self.logger.error("Login failed: Still on login page or not redirected properly")
                 self.logger.error("Page source after failed login:")
                 self.logger.error(self.driver.page_source[:1000])  # First 1000 chars
                 return False
@@ -304,52 +352,290 @@ class LSPScraper:
         """Check for new job postings."""
         try:
             self._init_selenium()
-            self.driver.get(JOB_POSTINGS_URL)
             
-            # Wait for AG-Grid to load and be visible
-            self.logger.info("Waiting for the job listings grid to load...")
-            WebDriverWait(self.driver, 30).until(
-                EC.presence_of_element_located((By.CLASS_NAME, "ag-root-wrapper"))
-            )
+            # Navigate to the interpreter portal first - this is where we landed after login
+            portal_url = f"{BASE_URL}/scheduler/#/interpreter-portal"
+            self.logger.info(f"Navigating to interpreter portal: {portal_url}")
+            self.driver.get(portal_url)
             
-            # Additional wait to ensure grid data is loaded
-            time.sleep(2)
+            # Wait for page to load
+            self.logger.info("Waiting for interpreter portal to load...")
+            time.sleep(5)
             
-            # Find the grid container
-            grid_container = self.driver.find_element(By.CLASS_NAME, "ag-center-cols-container")
+            # Save page source for debugging portal page
+            with open("portal_page.html", "w", encoding="utf-8") as f:
+                f.write(self.driver.page_source)
+            self.logger.info("Saved portal page source to portal_page.html for debugging")
             
-            # Find all row elements within the grid
-            job_elements = grid_container.find_elements(By.CLASS_NAME, "ag-row")
+            # Look for the "Open Jobs" tab or link
+            self.logger.info("Looking for 'Open Jobs' tab or section...")
             
-            self.logger.info(f"Found {len(job_elements)} job elements in the grid")
+            # Try multiple selectors for the Open Jobs tab
+            selectors = [
+                "//span[contains(@class, 'tab-text') and text()='Open Jobs']",
+                "//span[text()='Open Jobs']",
+                "//a[contains(text(), 'Open Jobs')]",
+                "//div[contains(text(), 'Open Jobs')]",
+                "//button[contains(text(), 'Open Jobs')]"
+            ]
+            
+            tab_found = False
+            for selector in selectors:
+                try:
+                    self.logger.info(f"Trying selector: {selector}")
+                    open_jobs_element = WebDriverWait(self.driver, 5).until(
+                        EC.presence_of_element_located((By.XPATH, selector))
+                    )
+                    self.logger.info(f"Found 'Open Jobs' element with selector: {selector}")
+                    
+                    # Try to click on the element or its ancestor
+                    try:
+                        open_jobs_element.click()
+                        self.logger.info("Clicked directly on 'Open Jobs' element")
+                        tab_found = True
+                        break
+                    except Exception:
+                        try:
+                            # Try clicking on parent
+                            parent = open_jobs_element.find_element(By.XPATH, "./..")
+                            parent.click()
+                            self.logger.info("Clicked on parent of 'Open Jobs' element")
+                            tab_found = True
+                            break
+                        except Exception:
+                            try:
+                                # Try clicking via JavaScript
+                                self.driver.execute_script("arguments[0].click();", open_jobs_element)
+                                self.logger.info("Clicked 'Open Jobs' element via JavaScript")
+                                tab_found = True
+                                break
+                            except Exception as e:
+                                self.logger.warning(f"Found element but couldn't click: {str(e)}")
+                except Exception:
+                    continue
+            
+            if not tab_found:
+                # Direct navigation to jobs URL as fallback
+                self.logger.info(f"Could not find 'Open Jobs' tab, trying direct navigation to: {JOB_POSTINGS_URL}")
+                self.driver.get(JOB_POSTINGS_URL)
+            
+            # Wait after tab click or navigation
+            self.logger.info("Waiting for content to load after navigation...")
+            time.sleep(5)
+            
+            # Save page source after navigation
+            with open("jobs_page.html", "w", encoding="utf-8") as f:
+                f.write(self.driver.page_source)
+            self.logger.info("Saved jobs page source to jobs_page.html for debugging")
+            
+            # Try multiple approaches to find the grid or table
+            self.logger.info("Looking for job grid or table...")
+            
+            # We'll try to find any of these common grid/table structures
+            grid_selectors = [
+                (By.CLASS_NAME, "ag-root-wrapper"),
+                (By.CLASS_NAME, "ag-center-cols-container"),
+                (By.CSS_SELECTOR, "div[role='grid']"),
+                (By.CSS_SELECTOR, "table"),
+                (By.CSS_SELECTOR, ".grid"),
+                (By.CSS_SELECTOR, ".table"),
+                (By.CSS_SELECTOR, "[id*='grid']"),
+                (By.CSS_SELECTOR, "[id*='table']"),
+                (By.CSS_SELECTOR, "[class*='grid']"),
+                (By.CSS_SELECTOR, "[class*='table']")
+            ]
+            
+            grid_element = None
+            for selector_type, selector in grid_selectors:
+                try:
+                    self.logger.info(f"Trying to find grid with {selector_type}: {selector}")
+                    grid_element = WebDriverWait(self.driver, 5).until(
+                        EC.presence_of_element_located((selector_type, selector))
+                    )
+                    self.logger.info(f"Found grid element with selector: {selector}")
+                    break
+                except Exception:
+                    continue
+            
+            if not grid_element:
+                self.logger.warning("Could not find any grid element. Taking screenshot for debugging.")
+                self.driver.save_screenshot("debug_screenshot.png")
+                self.logger.info("Saved screenshot to debug_screenshot.png")
+                return []
+            
+            # Once we've found a grid container, look for rows
+            self.logger.info("Looking for job rows...")
+            
+            # Try different row selectors
+            row_selectors = [
+                (By.CSS_SELECTOR, "div[role='row']"),
+                (By.CLASS_NAME, "ag-row"),
+                (By.TAG_NAME, "tr"),
+                (By.CSS_SELECTOR, ".row"),
+                (By.CSS_SELECTOR, "[class*='row']")
+            ]
+            
+            job_elements = []
+            for selector_type, selector in row_selectors:
+                try:
+                    # Try to find rows within the grid element first
+                    elements = grid_element.find_elements(selector_type, selector)
+                    if elements:
+                        self.logger.info(f"Found {len(elements)} rows with selector {selector} within grid element")
+                        job_elements = elements
+                        break
+                    
+                    # If that fails, search the entire page
+                    elements = self.driver.find_elements(selector_type, selector)
+                    if elements:
+                        self.logger.info(f"Found {len(elements)} rows with selector {selector} in entire page")
+                        job_elements = elements
+                        break
+                except Exception as e:
+                    self.logger.warning(f"Error finding rows with selector {selector}: {str(e)}")
+            
+            self.logger.info(f"Found {len(job_elements)} potential job elements")
+            
+            # If no job elements found via selectors, try looking for any elements that might contain job info
+            if not job_elements:
+                self.logger.warning("No job rows found with standard selectors. Looking for any potential job elements...")
+                # Look for elements with text that might indicate job listings
+                keywords = ["interpretation", "assignment", "job", "request", "appointment"]
+                for keyword in keywords:
+                    try:
+                        elements = self.driver.find_elements(By.XPATH, f"//*[contains(text(), '{keyword}')]")
+                        if elements:
+                            self.logger.info(f"Found {len(elements)} elements containing '{keyword}'")
+                            for elem in elements[:5]:  # Log the first 5 elements
+                                self.logger.info(f"Element with '{keyword}': {elem.text}")
+                    except Exception:
+                        pass
             
             new_jobs = []
             for job_element in job_elements:
                 try:
-                    # Extract cells from the row
-                    cells = job_element.find_elements(By.CLASS_NAME, "ag-cell")
+                    # Try to get text content of the entire row first to log it
+                    row_text = job_element.text.strip()
+                    if row_text:
+                        self.logger.info(f"Job row text: {row_text}")
                     
-                    if len(cells) >= 4:  # Ensure we have all required cells
-                        job_id = cells[0].text.strip()
-                        client = cells[1].text.strip()
-                        appointment_time = cells[2].text.strip()
-                        duration = cells[3].text.strip()
+                    # Try multiple ways to extract cells from the row
+                    cells = []
+                    
+                    # Method 1: role="gridcell"
+                    cells = job_element.find_elements(By.CSS_SELECTOR, "div[role='gridcell']")
+                    
+                    # Method 2: ag-cell class
+                    if not cells or len(cells) < 3:
+                        cells = job_element.find_elements(By.CLASS_NAME, "ag-cell")
+                    
+                    # Method 3: td elements for table structures
+                    if not cells or len(cells) < 3:
+                        cells = job_element.find_elements(By.TAG_NAME, "td")
+                    
+                    # Method 4: any div that might be a cell
+                    if not cells or len(cells) < 3:
+                        cells = job_element.find_elements(By.TAG_NAME, "div")
+                    
+                    self.logger.info(f"Found {len(cells)} cells in job element")
+                    
+                    # Try to get a job ID
+                    job_id = job_element.get_attribute("row-id") or job_element.get_attribute("id")
+                    
+                    # If we couldn't get an ID attribute, create one from the row content
+                    if not job_id and row_text:
+                        job_id = str(hash(row_text))
+                    elif not job_id and cells and len(cells) > 0:
+                        job_id = str(hash(cells[0].text if cells[0].text else "unknown"))
+                    
+                    # Parse the cells if we have enough
+                    if len(cells) >= 2:  # Even with just 2 cells we might have useful info
+                        # Extract cell contents
+                        cell_texts = [cell.text.strip() for cell in cells]
+                        self.logger.info(f"Cell texts: {cell_texts}")
                         
-                        job_details = {
-                            'id': job_id,
-                            'title': f"Interpretation for {client}",
-                            'client': client,
-                            'date': appointment_time,
-                            'duration': duration,
-                            'description': f"Duration: {duration} minutes\nTime: {appointment_time}\nClient: {client}"
-                        }
-
-                        self.logger.info(f"Found new job: {job_details}")
-                        new_jobs.append(job_details)
-                        self.seen_jobs.add(job_id)
+                        # Try to identify which cells contain what information
+                        client_name = ""
+                        appointment_time = ""
+                        duration = ""
+                        
+                        # Check for col-id attributes first
+                        for i, cell in enumerate(cells):
+                            col_id = cell.get_attribute("col-id")
+                            if col_id == "requestID" and not job_id:
+                                job_id = cell.text.strip()
+                            elif col_id == "customerName":
+                                client_name = cell.text.strip()
+                            elif col_id == "interpretationTime" or col_id == "appointmentTime":
+                                appointment_time = cell.text.strip()
+                            elif col_id == "estimateDuration" or col_id == "duration":
+                                duration = cell.text.strip()
+                        
+                        # If col-id didn't work, try making educated guesses based on content
+                        if not all([client_name, appointment_time]):
+                            for i, text in enumerate(cell_texts):
+                                # Look for date/time format for appointment time
+                                if not appointment_time and ("/" in text or ":" in text or "AM" in text or "PM" in text):
+                                    appointment_time = text
+                                # If a cell has only digits and is short, it might be duration
+                                elif not duration and text.isdigit() and len(text) <= 4:
+                                    duration = text
+                                # If a cell looks like a client name (not a number, not a date)
+                                elif not client_name and text and not text.isdigit() and "/" not in text and ":" not in text:
+                                    client_name = text
+                        
+                        # Fallback to positional extraction if we still don't have values
+                        if not client_name and len(cell_texts) > 1:
+                            client_name = cell_texts[1]  # Often the second column is client name
+                        if not appointment_time and len(cell_texts) > 2:
+                            appointment_time = cell_texts[2]  # Often the third column is date/time
+                        if not duration and len(cell_texts) > 3:
+                            duration = cell_texts[3]  # Often the fourth column is duration
+                        
+                        # Create job details with whatever information we could extract
+                        if client_name or appointment_time:  # As long as we have some meaningful info
+                            job_details = {
+                                'id': job_id,
+                                'title': f"Interpretation for {client_name}" if client_name else "Interpretation Job",
+                                'client': client_name or "Unknown Client",
+                                'date': appointment_time or "Unknown Time",
+                                'duration': duration or "Unknown Duration",
+                                'description': "\n".join(f"{text}" for text in cell_texts if text),
+                                'location': client_name or "Unknown Location"
+                            }
+                            
+                            self.logger.info(f"Extracted job details: {job_details}")
+                            
+                            # Check if this is a new job we haven't seen before
+                            if job_id not in self.seen_jobs:
+                                self.logger.info(f"New job found: {job_id}")
+                                new_jobs.append(job_details)
+                                self.seen_jobs.add(job_id)
+                            else:
+                                self.logger.info(f"Already seen job: {job_id}")
+                    else:
+                        self.logger.warning(f"Not enough cells found: {len(cells)} cells")
+                        
+                        # Even with no cells, if row has text, try to create a job from it
+                        if row_text:
+                            job_details = {
+                                'id': job_id or str(hash(row_text)),
+                                'title': "New Job Posting",
+                                'client': row_text[:30] + "..." if len(row_text) > 30 else row_text,
+                                'date': "Check portal for details",
+                                'duration': "Unknown",
+                                'description': row_text,
+                                'location': "Check portal for details"
+                            }
+                            
+                            if job_id not in self.seen_jobs:
+                                self.logger.info(f"New job found from row text: {job_id}")
+                                new_jobs.append(job_details)
+                                self.seen_jobs.add(job_id)
                 
                 except Exception as e:
                     self.logger.error(f"Error processing job element: {str(e)}")
+                    self.logger.error(traceback.format_exc())
                     continue
             
             if not new_jobs:
@@ -362,6 +648,14 @@ class LSPScraper:
         except Exception as e:
             self.logger.error(f"Error checking jobs: {str(e)}")
             self.logger.error(f"Detailed error: {traceback.format_exc()}")
+            
+            # Take a screenshot for debugging
+            try:
+                self.driver.save_screenshot("error_screenshot.png")
+                self.logger.info("Saved error screenshot to error_screenshot.png")
+            except Exception:
+                pass
+                
             return []
 
     async def process_new_jobs(self, jobs: List[Dict]):
@@ -369,21 +663,29 @@ class LSPScraper:
         for job in jobs:
             subject = f"New Job Available: {job['title']}"
             message = f"""
-            <h2>New Job Available!</h2>
-            <p><strong>Title:</strong> {job['title']}</p>
-            <p><strong>Location:</strong> {job['location']}</p>
-            <p><strong>Date:</strong> {job['date']}</p>
-            <p><strong>Description:</strong> {job['description']}</p>
-            <p><a href="{JOB_POSTINGS_URL}">View Job</a></p>
+<b>New Interpretation Job Available!</b>
+
+<b>Client:</b> {job['client']}
+<b>Date:</b> {job['date']}
+<b>Duration:</b> {job['duration']} minutes
+<b>Location:</b> {job['location']}
+
+<a href="{JOB_POSTINGS_URL}">View Job in Portal</a>
             """
             
-            await self.notification_manager.notify(subject, message)
-            self.logger.info(f"Notification sent for job: {job['id']}")
+            notification_sent = await self.notification_manager.notify(subject, message)
+            if notification_sent:
+                self.logger.info(f"Notification sent for job: {job['id']}")
+            else:
+                self.logger.warning(f"Failed to send notification for job: {job['id']}")
 
     async def run(self):
         """Main execution loop."""
         # Verify notification systems on startup
         await self._verify_notification_systems()
+        
+        # Send startup notification
+        await self.notification_manager.send_telegram("LSP Job Notifier: Application has started and is now monitoring for new job postings.")
         
         while True:
             try:
@@ -393,8 +695,14 @@ class LSPScraper:
                     await asyncio.sleep(60)
                     continue
 
-                # Check for new jobs
-                new_jobs = await self.check_jobs()
+                # Check for new jobs using the direct DOM navigation approach
+                self.logger.info("Checking for new jobs...")
+                new_jobs = await self.check_jobs_direct()
+                
+                # If direct approach didn't work, try the original approach as fallback
+                if not new_jobs and not isinstance(new_jobs, list):
+                    self.logger.warning("Direct approach failed, trying original approach as fallback...")
+                    new_jobs = await self.check_jobs()
                 
                 if new_jobs:
                     self.logger.info(f"Found {len(new_jobs)} new jobs")
@@ -415,7 +723,470 @@ class LSPScraper:
         self._close_selenium()
 
     async def _verify_notification_systems(self):
-        """Verify all notification systems on startup"""
-        self.logger.info("Verifying notification systems...")
-        # Test Telegram
-        await self.notification_manager.verify_telegram_bot() 
+        """Verify Telegram notification system on startup"""
+        self.logger.info("Verifying Telegram notification system...")
+        return await self.notification_manager.verify_telegram_bot()
+
+    async def check_closed_jobs(self) -> List[Dict]:
+        """Check for closed job postings to help with debugging."""
+        try:
+            self._init_selenium()
+            
+            # Navigate to the interpreter portal first
+            portal_url = f"{BASE_URL}/scheduler/#/interpreter-portal"
+            self.logger.info(f"Navigating to interpreter portal: {portal_url}")
+            self.driver.get(portal_url)
+            
+            # Wait for page to load
+            self.logger.info("Waiting for interpreter portal to load...")
+            time.sleep(5)
+            
+            # Save page source for debugging portal page
+            with open("portal_page.html", "w", encoding="utf-8") as f:
+                f.write(self.driver.page_source)
+            self.logger.info("Saved portal page source to portal_page.html for debugging")
+            
+            # Look for the "Closed Jobs" tab or link
+            self.logger.info("Looking for 'Closed Jobs' tab or section...")
+            
+            # Try multiple selectors for the Closed Jobs tab
+            selectors = [
+                "//span[contains(@class, 'tab-text') and text()='Closed Jobs']",
+                "//span[text()='Closed Jobs']",
+                "//a[contains(text(), 'Closed Jobs')]",
+                "//div[contains(text(), 'Closed Jobs')]",
+                "//button[contains(text(), 'Closed Jobs')]"
+            ]
+            
+            tab_found = False
+            for selector in selectors:
+                try:
+                    self.logger.info(f"Trying selector: {selector}")
+                    closed_jobs_element = WebDriverWait(self.driver, 5).until(
+                        EC.presence_of_element_located((By.XPATH, selector))
+                    )
+                    self.logger.info(f"Found 'Closed Jobs' element with selector: {selector}")
+                    
+                    # Try to click on the element or its ancestor
+                    try:
+                        closed_jobs_element.click()
+                        self.logger.info("Clicked directly on 'Closed Jobs' element")
+                        tab_found = True
+                        break
+                    except Exception:
+                        try:
+                            # Try clicking on parent
+                            parent = closed_jobs_element.find_element(By.XPATH, "./..")
+                            parent.click()
+                            self.logger.info("Clicked on parent of 'Closed Jobs' element")
+                            tab_found = True
+                            break
+                        except Exception:
+                            try:
+                                # Try clicking via JavaScript
+                                self.driver.execute_script("arguments[0].click();", closed_jobs_element)
+                                self.logger.info("Clicked 'Closed Jobs' element via JavaScript")
+                                tab_found = True
+                                break
+                            except Exception as e:
+                                self.logger.warning(f"Found element but couldn't click: {str(e)}")
+                except Exception:
+                    continue
+            
+            if not tab_found:
+                self.logger.error("Could not find or click on 'Closed Jobs' tab. Taking screenshot.")
+                self.driver.save_screenshot("closed_jobs_not_found.png")
+                return []
+            
+            # Wait after tab click
+            self.logger.info("Waiting for Closed Jobs content to load after navigation...")
+            time.sleep(5)
+            
+            # Save page source after navigation
+            with open("closed_jobs_page.html", "w", encoding="utf-8") as f:
+                f.write(self.driver.page_source)
+            self.logger.info("Saved closed jobs page source to closed_jobs_page.html for debugging")
+            
+            # Take a screenshot of the closed jobs tab
+            self.driver.save_screenshot("closed_jobs_tab.png")
+            self.logger.info("Saved screenshot of closed jobs tab to closed_jobs_tab.png")
+            
+            # Try multiple approaches to find the grid or table
+            self.logger.info("Looking for job grid or table...")
+            
+            # We'll try to find any of these common grid/table structures
+            grid_selectors = [
+                (By.CLASS_NAME, "ag-root-wrapper"),
+                (By.CLASS_NAME, "ag-center-cols-container"),
+                (By.CSS_SELECTOR, "div[role='grid']"),
+                (By.CSS_SELECTOR, "table"),
+                (By.CSS_SELECTOR, ".grid"),
+                (By.CSS_SELECTOR, ".table"),
+                (By.CSS_SELECTOR, "[id*='grid']"),
+                (By.CSS_SELECTOR, "[id*='table']"),
+                (By.CSS_SELECTOR, "[class*='grid']"),
+                (By.CSS_SELECTOR, "[class*='table']")
+            ]
+            
+            grid_element = None
+            for selector_type, selector in grid_selectors:
+                try:
+                    self.logger.info(f"Trying to find grid with {selector_type}: {selector}")
+                    grid_element = WebDriverWait(self.driver, 5).until(
+                        EC.presence_of_element_located((selector_type, selector))
+                    )
+                    self.logger.info(f"Found grid element with selector: {selector}")
+                    break
+                except Exception:
+                    continue
+            
+            if not grid_element:
+                self.logger.warning("Could not find any grid element. Taking screenshot for debugging.")
+                self.driver.save_screenshot("closed_jobs_debug_screenshot.png")
+                self.logger.info("Saved screenshot to closed_jobs_debug_screenshot.png")
+                return []
+            
+            # Once we've found a grid container, look for rows
+            self.logger.info("Looking for job rows...")
+            
+            # Try different row selectors
+            row_selectors = [
+                (By.CSS_SELECTOR, "div[role='row']"),
+                (By.CLASS_NAME, "ag-row"),
+                (By.TAG_NAME, "tr"),
+                (By.CSS_SELECTOR, ".row"),
+                (By.CSS_SELECTOR, "[class*='row']")
+            ]
+            
+            job_elements = []
+            for selector_type, selector in row_selectors:
+                try:
+                    # Try to find rows within the grid element first
+                    elements = grid_element.find_elements(selector_type, selector)
+                    if elements:
+                        self.logger.info(f"Found {len(elements)} rows with selector {selector} within grid element")
+                        job_elements = elements
+                        break
+                    
+                    # If that fails, search the entire page
+                    elements = self.driver.find_elements(selector_type, selector)
+                    if elements:
+                        self.logger.info(f"Found {len(elements)} rows with selector {selector} in entire page")
+                        job_elements = elements
+                        break
+                except Exception as e:
+                    self.logger.warning(f"Error finding rows with selector {selector}: {str(e)}")
+            
+            self.logger.info(f"Found {len(job_elements)} potential job elements in Closed Jobs tab")
+            
+            # If no job elements found via selectors, log an error and return empty list
+            if not job_elements:
+                self.logger.warning("No job rows found in Closed Jobs tab with standard selectors.")
+                return []
+            
+            closed_jobs = []
+            for job_element in job_elements[:10]:  # Process up to 10 jobs for debugging
+                try:
+                    # Try to get text content of the entire row first to log it
+                    row_text = job_element.text.strip()
+                    if row_text:
+                        self.logger.info(f"Closed job row text: {row_text}")
+                    
+                    # Try multiple ways to extract cells from the row
+                    cells = []
+                    
+                    # Method 1: role="gridcell"
+                    cells = job_element.find_elements(By.CSS_SELECTOR, "div[role='gridcell']")
+                    
+                    # Method 2: ag-cell class
+                    if not cells or len(cells) < 3:
+                        cells = job_element.find_elements(By.CLASS_NAME, "ag-cell")
+                    
+                    # Method 3: td elements for table structures
+                    if not cells or len(cells) < 3:
+                        cells = job_element.find_elements(By.TAG_NAME, "td")
+                    
+                    # Method 4: any div that might be a cell
+                    if not cells or len(cells) < 3:
+                        cells = job_element.find_elements(By.TAG_NAME, "div")
+                    
+                    self.logger.info(f"Found {len(cells)} cells in closed job element")
+                    
+                    # Try to get a job ID
+                    job_id = job_element.get_attribute("row-id") or job_element.get_attribute("id")
+                    
+                    # If we couldn't get an ID attribute, create one from the row content
+                    if not job_id and row_text:
+                        job_id = str(hash(row_text))
+                    elif not job_id and cells and len(cells) > 0:
+                        job_id = str(hash(cells[0].text if cells[0].text else "unknown"))
+                    
+                    # Parse the cells if we have enough
+                    if len(cells) >= 2:  # Even with just 2 cells we might have useful info
+                        # Extract cell contents
+                        cell_texts = [cell.text.strip() for cell in cells]
+                        self.logger.info(f"Cell texts: {cell_texts}")
+                        
+                        # Try to identify which cells contain what information
+                        client_name = ""
+                        appointment_time = ""
+                        duration = ""
+                        
+                        # Check for col-id attributes first
+                        for i, cell in enumerate(cells):
+                            col_id = cell.get_attribute("col-id")
+                            if col_id == "requestID" and not job_id:
+                                job_id = cell.text.strip()
+                            elif col_id == "customerName":
+                                client_name = cell.text.strip()
+                            elif col_id == "interpretationTime" or col_id == "appointmentTime":
+                                appointment_time = cell.text.strip()
+                            elif col_id == "estimateDuration" or col_id == "duration":
+                                duration = cell.text.strip()
+                        
+                        # If col-id didn't work, try making educated guesses based on content
+                        if not all([client_name, appointment_time]):
+                            for i, text in enumerate(cell_texts):
+                                # Look for date/time format for appointment time
+                                if not appointment_time and ("/" in text or ":" in text or "AM" in text or "PM" in text):
+                                    appointment_time = text
+                                # If a cell has only digits and is short, it might be duration
+                                elif not duration and text.isdigit() and len(text) <= 4:
+                                    duration = text
+                                # If a cell looks like a client name (not a number, not a date)
+                                elif not client_name and text and not text.isdigit() and "/" not in text and ":" not in text:
+                                    client_name = text
+                        
+                        # Fallback to positional extraction if we still don't have values
+                        if not client_name and len(cell_texts) > 1:
+                            client_name = cell_texts[1]  # Often the second column is client name
+                        if not appointment_time and len(cell_texts) > 2:
+                            appointment_time = cell_texts[2]  # Often the third column is date/time
+                        if not duration and len(cell_texts) > 3:
+                            duration = cell_texts[3]  # Often the fourth column is duration
+                        
+                        # Create job details with whatever information we could extract
+                        if client_name or appointment_time:  # As long as we have some meaningful info
+                            job_details = {
+                                'id': job_id,
+                                'title': f"Interpretation for {client_name}" if client_name else "Interpretation Job",
+                                'client': client_name or "Unknown Client",
+                                'date': appointment_time or "Unknown Time",
+                                'duration': duration or "Unknown Duration",
+                                'description': "\n".join(f"{text}" for text in cell_texts if text),
+                                'location': client_name or "Unknown Location"
+                            }
+                            
+                            self.logger.info(f"Extracted closed job details: {job_details}")
+                            closed_jobs.append(job_details)
+                    else:
+                        self.logger.warning(f"Not enough cells found in closed job: {len(cells)} cells")
+                
+                except Exception as e:
+                    self.logger.error(f"Error processing closed job element: {str(e)}")
+                    self.logger.error(traceback.format_exc())
+                    continue
+            
+            self.logger.info(f"Found {len(closed_jobs)} closed jobs for debugging")
+            return closed_jobs
+            
+        except Exception as e:
+            self.logger.error(f"Error checking closed jobs: {str(e)}")
+            self.logger.error(f"Detailed error: {traceback.format_exc()}")
+            
+            # Take a screenshot for debugging
+            try:
+                self.driver.save_screenshot("closed_jobs_error_screenshot.png")
+                self.logger.info("Saved error screenshot to closed_jobs_error_screenshot.png")
+            except Exception:
+                pass
+                
+            return []
+
+    async def check_jobs_direct(self) -> List[Dict]:
+        """Check for open jobs by directly navigating the DOM structure."""
+        try:
+            self._init_selenium()
+            
+            # Navigate to the interpreter portal first - this is where we landed after login
+            portal_url = f"{BASE_URL}/scheduler/#/interpreter-portal"
+            self.logger.info(f"Navigating to interpreter portal: {portal_url}")
+            self.driver.get(portal_url)
+            
+            # Wait for page to load
+            self.logger.info("Waiting for interpreter portal to load...")
+            time.sleep(5)
+            
+            # First, find the Open Jobs tab
+            self.logger.info("Looking for 'Open Jobs' tab...")
+            try:
+                # Try different selectors for the Open Jobs tab
+                selectors = [
+                    "//span[text()='Open Jobs']",
+                    "//div[contains(text(), 'Open Jobs')]", 
+                    "//a[contains(text(), 'Open Jobs')]",
+                    "//span[contains(@class, 'tab-text') and text()='Open Jobs']"
+                ]
+                
+                tab_found = False
+                for selector in selectors:
+                    try:
+                        open_jobs_tab = WebDriverWait(self.driver, 5).until(
+                            EC.presence_of_element_located((By.XPATH, selector))
+                        )
+                        self.logger.info(f"Found 'Open Jobs' tab with selector: {selector}")
+                        
+                        # Try to click the tab
+                        open_jobs_tab.click()
+                        tab_found = True
+                        self.logger.info("Clicked on 'Open Jobs' tab")
+                        break
+                    except Exception:
+                        continue
+                
+                if not tab_found:
+                    self.logger.warning("Could not find 'Open Jobs' tab, attempting to continue anyway")
+            except Exception as e:
+                self.logger.warning(f"Error finding/clicking 'Open Jobs' tab: {str(e)}")
+            
+            # Wait after tab click
+            time.sleep(3)
+            
+            # Following the DOM structure from the user's info
+            # Look for the ag-Grid component
+            self.logger.info("Looking for ag-Grid component...")
+            
+            try:
+                # Following the exact structure provided:
+                # 1. Find the AT-INTERPRETER-JOBS component
+                interpreter_jobs = WebDriverWait(self.driver, 10).until(
+                    EC.presence_of_element_located((By.TAG_NAME, "at-interpreter-jobs"))
+                )
+                self.logger.info("Found at-interpreter-jobs component")
+                
+                # 2. Find AG-GRID-ANGULAR element
+                ag_grid = interpreter_jobs.find_element(By.TAG_NAME, "ag-grid-angular")
+                self.logger.info("Found ag-grid-angular component")
+                
+                # 3. Navigate down to the container with the rows
+                # Root wrapper
+                ag_root_wrapper = ag_grid.find_element(By.CLASS_NAME, "ag-root-wrapper")
+                self.logger.info("Found ag-root-wrapper")
+                
+                # Root wrapper body
+                ag_root_wrapper_body = ag_root_wrapper.find_element(By.CLASS_NAME, "ag-root-wrapper-body")
+                self.logger.info("Found ag-root-wrapper-body")
+                
+                # Root
+                ag_root = ag_root_wrapper_body.find_element(By.CLASS_NAME, "ag-root")
+                self.logger.info("Found ag-root")
+                
+                # Body viewport
+                ag_body_viewport = ag_root.find_element(By.CLASS_NAME, "ag-body-viewport")
+                self.logger.info("Found ag-body-viewport")
+                
+                # Center cols clipper
+                ag_center_cols_clipper = ag_body_viewport.find_element(By.CLASS_NAME, "ag-center-cols-clipper")
+                self.logger.info("Found ag-center-cols-clipper")
+                
+                # Center cols viewport
+                ag_center_cols_viewport = ag_center_cols_clipper.find_element(By.CLASS_NAME, "ag-center-cols-viewport")
+                self.logger.info("Found ag-center-cols-viewport")
+                
+                # Center cols container - this holds the rows
+                ag_center_cols_container = ag_center_cols_viewport.find_element(By.CLASS_NAME, "ag-center-cols-container")
+                self.logger.info("Found ag-center-cols-container")
+                
+                # Find all rows directly in this container
+                job_rows = ag_center_cols_container.find_elements(By.CLASS_NAME, "ag-row")
+                self.logger.info(f"Found {len(job_rows)} job rows in the ag-grid")
+                
+                # Process each job row
+                new_jobs = []
+                for row in job_rows:
+                    try:
+                        # Get row text for logging
+                        row_text = row.text.strip()
+                        self.logger.info(f"Job row text: {row_text}")
+                        
+                        # Find all cells in this row (using the direct role='gridcell' attribute)
+                        cells = row.find_elements(By.CSS_SELECTOR, "div[role='gridcell']")
+                        self.logger.info(f"Found {len(cells)} cells in job row")
+                        
+                        # Get row ID from attribute
+                        job_id = row.get_attribute("row-id")
+                        self.logger.info(f"Row ID: {job_id}")
+                        
+                        if len(cells) >= 4:
+                            # Extract data from cells
+                            # According to the user, we look for these specific columns
+                            client_name = ""
+                            appointment_time = ""
+                            duration = ""
+                            
+                            # Check each cell for the col-id attribute
+                            for cell in cells:
+                                col_id = cell.get_attribute("col-id")
+                                cell_text = cell.text.strip()
+                                
+                                self.logger.info(f"Cell col-id: {col_id}, text: {cell_text}")
+                                
+                                if col_id == "requestID" and not job_id:
+                                    job_id = cell_text
+                                elif col_id == "customerName":
+                                    client_name = cell_text
+                                elif col_id == "interpretationTime":
+                                    appointment_time = cell_text
+                                elif col_id == "estimateDuration":
+                                    duration = cell_text
+                            
+                            # If col-id didn't work, try positional (fallback)
+                            if not client_name and len(cells) > 1:
+                                client_name = cells[1].text.strip()
+                            if not appointment_time and len(cells) > 2:
+                                appointment_time = cells[2].text.strip()
+                            if not duration and len(cells) > 3:
+                                duration = cells[3].text.strip()
+                            
+                            # Create job details
+                            job_details = {
+                                'id': job_id,
+                                'title': f"Interpretation for {client_name}" if client_name else "Interpretation Job",
+                                'client': client_name or "Unknown Client",
+                                'date': appointment_time or "Unknown Time",
+                                'duration': duration or "Unknown Duration",
+                                'description': f"Duration: {duration} minutes\nTime: {appointment_time}\nClient: {client_name}",
+                                'location': client_name or "Unknown Location"
+                            }
+                            
+                            self.logger.info(f"Extracted job details: {job_details}")
+                            
+                            # Check if this is a new job we haven't seen before
+                            if job_id not in self.seen_jobs:
+                                self.logger.info(f"New job found: {job_id}")
+                                new_jobs.append(job_details)
+                                self.seen_jobs.add(job_id)
+                            else:
+                                self.logger.info(f"Already seen job: {job_id}")
+                        else:
+                            self.logger.warning(f"Not enough cells in job row: {len(cells)}")
+                    except Exception as e:
+                        self.logger.error(f"Error processing job row: {str(e)}")
+                        self.logger.error(traceback.format_exc())
+                
+                if not new_jobs:
+                    self.logger.info("No new jobs found in the grid")
+                else:
+                    self.logger.info(f"Found {len(new_jobs)} new jobs")
+                
+                return new_jobs
+                
+            except Exception as e:
+                self.logger.error(f"Error navigating DOM structure: {str(e)}")
+                self.logger.error(traceback.format_exc())
+                return []
+                
+        except Exception as e:
+            self.logger.error(f"Error in check_jobs_direct: {str(e)}")
+            self.logger.error(traceback.format_exc())
+            return [] 

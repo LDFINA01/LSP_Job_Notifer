@@ -1279,3 +1279,992 @@ Stacktrace:
 
 
 2025-04-08 09:45:12,704 - LSPScraper - INFO - No new jobs found
+2025-04-17 13:12:17,996 - LSPScraper - INFO - Verifying notification systems...
+2025-04-17 13:12:18,771 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-17 13:12:18,772 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-17 13:12:25,649 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-17 13:12:25,650 - LSPScraper - INFO - Initializing browser for login...
+2025-04-17 13:12:25,650 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 13:12:30,733 - LSPScraper - INFO - Visited login page
+2025-04-17 13:12:30,738 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 13:12:30,742 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-17 13:12:30,742 - LSPScraper - INFO - Page source preview:
+2025-04-17 13:12:30,745 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-17 13:12:30,746 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-17 13:12:33,756 - LSPScraper - INFO - Found username field
+2025-04-17 13:12:33,756 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-17 13:12:33,854 - LSPScraper - INFO - Entered username
+2025-04-17 13:12:33,854 - LSPScraper - INFO - Looking for password field
+2025-04-17 13:12:33,865 - LSPScraper - INFO - Found password field
+2025-04-17 13:12:33,922 - LSPScraper - INFO - Entered password
+2025-04-17 13:12:33,922 - LSPScraper - INFO - Looking for login button
+2025-04-17 13:12:34,934 - LSPScraper - INFO - Found login button
+2025-04-17 13:12:34,934 - LSPScraper - INFO - Clicking login button
+2025-04-17 13:12:34,984 - LSPScraper - INFO - Clicked login button
+2025-04-17 13:12:34,984 - LSPScraper - INFO - Waiting for successful login...
+2025-04-17 13:12:38,017 - LSPScraper - INFO - Successfully logged in
+2025-04-17 13:12:38,021 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 13:12:38,813 - LSPScraper - INFO - Login notification sent successfully
+2025-04-17 13:12:38,831 - LSPScraper - INFO - Waiting for job listings grid to load...
+2025-04-17 13:12:49,010 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF717EC5355+78597]
+	GetHandleVerifier [0x00007FF717EC53B0+78688]
+	(No symbol) [0x00007FF717C791AA]
+	(No symbol) [0x00007FF717CCF149]
+	(No symbol) [0x00007FF717CCF3FC]
+	(No symbol) [0x00007FF717D22467]
+	(No symbol) [0x00007FF717CF712F]
+	(No symbol) [0x00007FF717D1F2BB]
+	(No symbol) [0x00007FF717CF6EC3]
+	(No symbol) [0x00007FF717CC03F8]
+	(No symbol) [0x00007FF717CC1163]
+	GetHandleVerifier [0x00007FF71816EF0D+2870973]
+	GetHandleVerifier [0x00007FF7181696B8+2848360]
+	GetHandleVerifier [0x00007FF718186993+2967875]
+	GetHandleVerifier [0x00007FF717EE019A+188746]
+	GetHandleVerifier [0x00007FF717EE847F+222255]
+	GetHandleVerifier [0x00007FF717ECD2D4+111236]
+	GetHandleVerifier [0x00007FF717ECD482+111666]
+	GetHandleVerifier [0x00007FF717EB35A9+5465]
+	BaseThreadInitThunk [0x00007FFB31937374+20]
+	RtlUserThreadStart [0x00007FFB31A7CC91+33]
+
+2025-04-17 13:12:49,023 - LSPScraper - ERROR - Detailed error: Traceback (most recent call last):
+  File "C:\Users\LuisF\Development\LSP_Job_Notifier\scraper.py", line 309, in check_jobs
+    WebDriverWait(self.driver, 10).until(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.presence_of_element_located((By.CLASS_NAME, "ag-center-cols-container"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\LuisF\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF717EC5355+78597]
+	GetHandleVerifier [0x00007FF717EC53B0+78688]
+	(No symbol) [0x00007FF717C791AA]
+	(No symbol) [0x00007FF717CCF149]
+	(No symbol) [0x00007FF717CCF3FC]
+	(No symbol) [0x00007FF717D22467]
+	(No symbol) [0x00007FF717CF712F]
+	(No symbol) [0x00007FF717D1F2BB]
+	(No symbol) [0x00007FF717CF6EC3]
+	(No symbol) [0x00007FF717CC03F8]
+	(No symbol) [0x00007FF717CC1163]
+	GetHandleVerifier [0x00007FF71816EF0D+2870973]
+	GetHandleVerifier [0x00007FF7181696B8+2848360]
+	GetHandleVerifier [0x00007FF718186993+2967875]
+	GetHandleVerifier [0x00007FF717EE019A+188746]
+	GetHandleVerifier [0x00007FF717EE847F+222255]
+	GetHandleVerifier [0x00007FF717ECD2D4+111236]
+	GetHandleVerifier [0x00007FF717ECD482+111666]
+	GetHandleVerifier [0x00007FF717EB35A9+5465]
+	BaseThreadInitThunk [0x00007FFB31937374+20]
+	RtlUserThreadStart [0x00007FFB31A7CC91+33]
+
+
+2025-04-17 13:12:49,024 - LSPScraper - INFO - No new jobs found
+2025-04-17 13:21:28,367 - LSPScraper - INFO - Verifying notification systems...
+2025-04-17 13:21:28,995 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-17 13:21:28,995 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-17 13:21:30,416 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-17 13:21:30,416 - LSPScraper - INFO - Initializing browser for login...
+2025-04-17 13:21:30,416 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 13:21:34,448 - LSPScraper - INFO - Visited login page
+2025-04-17 13:21:34,452 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 13:21:34,455 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-17 13:21:34,455 - LSPScraper - INFO - Page source preview:
+2025-04-17 13:21:34,458 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-17 13:21:34,458 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-17 13:21:37,468 - LSPScraper - INFO - Found username field
+2025-04-17 13:21:37,468 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-17 13:21:37,565 - LSPScraper - INFO - Entered username
+2025-04-17 13:21:37,565 - LSPScraper - INFO - Looking for password field
+2025-04-17 13:21:37,575 - LSPScraper - INFO - Found password field
+2025-04-17 13:21:37,632 - LSPScraper - INFO - Entered password
+2025-04-17 13:21:37,632 - LSPScraper - INFO - Looking for login button
+2025-04-17 13:21:38,644 - LSPScraper - INFO - Found login button
+2025-04-17 13:21:38,644 - LSPScraper - INFO - Clicking login button
+2025-04-17 13:21:38,690 - LSPScraper - INFO - Clicked login button
+2025-04-17 13:21:38,690 - LSPScraper - INFO - Waiting for successful login...
+2025-04-17 13:21:41,771 - LSPScraper - INFO - Successfully logged in
+2025-04-17 13:21:41,774 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 13:21:42,525 - LSPScraper - INFO - Login notification sent successfully
+2025-04-17 13:21:42,539 - LSPScraper - INFO - Waiting for the job listings grid to load...
+2025-04-17 13:22:12,924 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF717EC5355+78597]
+	GetHandleVerifier [0x00007FF717EC53B0+78688]
+	(No symbol) [0x00007FF717C791AA]
+	(No symbol) [0x00007FF717CCF149]
+	(No symbol) [0x00007FF717CCF3FC]
+	(No symbol) [0x00007FF717D22467]
+	(No symbol) [0x00007FF717CF712F]
+	(No symbol) [0x00007FF717D1F2BB]
+	(No symbol) [0x00007FF717CF6EC3]
+	(No symbol) [0x00007FF717CC03F8]
+	(No symbol) [0x00007FF717CC1163]
+	GetHandleVerifier [0x00007FF71816EF0D+2870973]
+	GetHandleVerifier [0x00007FF7181696B8+2848360]
+	GetHandleVerifier [0x00007FF718186993+2967875]
+	GetHandleVerifier [0x00007FF717EE019A+188746]
+	GetHandleVerifier [0x00007FF717EE847F+222255]
+	GetHandleVerifier [0x00007FF717ECD2D4+111236]
+	GetHandleVerifier [0x00007FF717ECD482+111666]
+	GetHandleVerifier [0x00007FF717EB35A9+5465]
+	BaseThreadInitThunk [0x00007FFB31937374+20]
+	RtlUserThreadStart [0x00007FFB31A7CC91+33]
+
+2025-04-17 13:22:12,926 - LSPScraper - ERROR - Detailed error: Traceback (most recent call last):
+  File "C:\Users\LuisF\Development\LSP_Job_Notifier\scraper.py", line 311, in check_jobs
+    WebDriverWait(self.driver, 30).until(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.presence_of_element_located((By.CLASS_NAME, "ag-root-wrapper"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\LuisF\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF717EC5355+78597]
+	GetHandleVerifier [0x00007FF717EC53B0+78688]
+	(No symbol) [0x00007FF717C791AA]
+	(No symbol) [0x00007FF717CCF149]
+	(No symbol) [0x00007FF717CCF3FC]
+	(No symbol) [0x00007FF717D22467]
+	(No symbol) [0x00007FF717CF712F]
+	(No symbol) [0x00007FF717D1F2BB]
+	(No symbol) [0x00007FF717CF6EC3]
+	(No symbol) [0x00007FF717CC03F8]
+	(No symbol) [0x00007FF717CC1163]
+	GetHandleVerifier [0x00007FF71816EF0D+2870973]
+	GetHandleVerifier [0x00007FF7181696B8+2848360]
+	GetHandleVerifier [0x00007FF718186993+2967875]
+	GetHandleVerifier [0x00007FF717EE019A+188746]
+	GetHandleVerifier [0x00007FF717EE847F+222255]
+	GetHandleVerifier [0x00007FF717ECD2D4+111236]
+	GetHandleVerifier [0x00007FF717ECD482+111666]
+	GetHandleVerifier [0x00007FF717EB35A9+5465]
+	BaseThreadInitThunk [0x00007FFB31937374+20]
+	RtlUserThreadStart [0x00007FFB31A7CC91+33]
+
+
+2025-04-17 13:22:12,926 - LSPScraper - INFO - No new jobs found
+2025-04-17 13:27:12,939 - LSPScraper - INFO - Initializing browser for login...
+2025-04-17 13:27:12,940 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 13:27:12,945 - LSPScraper - INFO - Visited login page
+2025-04-17 13:27:12,949 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 13:27:12,952 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-17 13:27:12,952 - LSPScraper - INFO - Page source preview:
+2025-04-17 13:27:12,967 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-17 13:27:12,967 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-17 13:27:15,974 - LSPScraper - INFO - Found username field
+2025-04-17 13:27:15,974 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-17 13:27:16,042 - LSPScraper - INFO - Entered username
+2025-04-17 13:27:16,042 - LSPScraper - INFO - Looking for password field
+2025-04-17 13:27:16,047 - LSPScraper - INFO - Found password field
+2025-04-17 13:27:16,103 - LSPScraper - INFO - Entered password
+2025-04-17 13:27:16,103 - LSPScraper - INFO - Looking for login button
+2025-04-17 13:27:17,113 - LSPScraper - INFO - Found login button
+2025-04-17 13:27:17,113 - LSPScraper - INFO - Clicking login button
+2025-04-17 13:27:17,152 - LSPScraper - INFO - Clicked login button
+2025-04-17 13:27:17,153 - LSPScraper - INFO - Waiting for successful login...
+2025-04-17 13:27:20,196 - LSPScraper - INFO - Successfully logged in
+2025-04-17 13:27:20,199 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 13:27:20,892 - LSPScraper - INFO - Login notification sent successfully
+2025-04-17 13:27:20,905 - LSPScraper - INFO - Waiting for the job listings grid to load...
+2025-04-17 13:27:51,325 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF717EC5355+78597]
+	GetHandleVerifier [0x00007FF717EC53B0+78688]
+	(No symbol) [0x00007FF717C791AA]
+	(No symbol) [0x00007FF717CCF149]
+	(No symbol) [0x00007FF717CCF3FC]
+	(No symbol) [0x00007FF717D22467]
+	(No symbol) [0x00007FF717CF712F]
+	(No symbol) [0x00007FF717D1F2BB]
+	(No symbol) [0x00007FF717CF6EC3]
+	(No symbol) [0x00007FF717CC03F8]
+	(No symbol) [0x00007FF717CC1163]
+	GetHandleVerifier [0x00007FF71816EF0D+2870973]
+	GetHandleVerifier [0x00007FF7181696B8+2848360]
+	GetHandleVerifier [0x00007FF718186993+2967875]
+	GetHandleVerifier [0x00007FF717EE019A+188746]
+	GetHandleVerifier [0x00007FF717EE847F+222255]
+	GetHandleVerifier [0x00007FF717ECD2D4+111236]
+	GetHandleVerifier [0x00007FF717ECD482+111666]
+	GetHandleVerifier [0x00007FF717EB35A9+5465]
+	BaseThreadInitThunk [0x00007FFB31937374+20]
+	RtlUserThreadStart [0x00007FFB31A7CC91+33]
+
+2025-04-17 13:27:51,326 - LSPScraper - ERROR - Detailed error: Traceback (most recent call last):
+  File "C:\Users\LuisF\Development\LSP_Job_Notifier\scraper.py", line 311, in check_jobs
+    WebDriverWait(self.driver, 30).until(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.presence_of_element_located((By.CLASS_NAME, "ag-root-wrapper"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\LuisF\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF717EC5355+78597]
+	GetHandleVerifier [0x00007FF717EC53B0+78688]
+	(No symbol) [0x00007FF717C791AA]
+	(No symbol) [0x00007FF717CCF149]
+	(No symbol) [0x00007FF717CCF3FC]
+	(No symbol) [0x00007FF717D22467]
+	(No symbol) [0x00007FF717CF712F]
+	(No symbol) [0x00007FF717D1F2BB]
+	(No symbol) [0x00007FF717CF6EC3]
+	(No symbol) [0x00007FF717CC03F8]
+	(No symbol) [0x00007FF717CC1163]
+	GetHandleVerifier [0x00007FF71816EF0D+2870973]
+	GetHandleVerifier [0x00007FF7181696B8+2848360]
+	GetHandleVerifier [0x00007FF718186993+2967875]
+	GetHandleVerifier [0x00007FF717EE019A+188746]
+	GetHandleVerifier [0x00007FF717EE847F+222255]
+	GetHandleVerifier [0x00007FF717ECD2D4+111236]
+	GetHandleVerifier [0x00007FF717ECD482+111666]
+	GetHandleVerifier [0x00007FF717EB35A9+5465]
+	BaseThreadInitThunk [0x00007FFB31937374+20]
+	RtlUserThreadStart [0x00007FFB31A7CC91+33]
+
+
+2025-04-17 13:27:51,326 - LSPScraper - INFO - No new jobs found
+2025-04-17 13:32:51,328 - LSPScraper - INFO - Initializing browser for login...
+2025-04-17 13:32:51,328 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 13:32:51,333 - LSPScraper - INFO - Visited login page
+2025-04-17 13:32:51,338 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 13:32:51,340 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-17 13:32:51,341 - LSPScraper - INFO - Page source preview:
+2025-04-17 13:32:51,355 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-17 13:32:51,355 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-17 13:32:54,362 - LSPScraper - INFO - Found username field
+2025-04-17 13:32:54,362 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-17 13:32:54,433 - LSPScraper - INFO - Entered username
+2025-04-17 13:32:54,434 - LSPScraper - INFO - Looking for password field
+2025-04-17 13:32:54,439 - LSPScraper - INFO - Found password field
+2025-04-17 13:32:54,494 - LSPScraper - INFO - Entered password
+2025-04-17 13:32:54,494 - LSPScraper - INFO - Looking for login button
+2025-04-17 13:32:55,506 - LSPScraper - INFO - Found login button
+2025-04-17 13:32:55,506 - LSPScraper - INFO - Clicking login button
+2025-04-17 13:32:55,544 - LSPScraper - INFO - Clicked login button
+2025-04-17 13:32:55,545 - LSPScraper - INFO - Waiting for successful login...
+2025-04-17 13:32:58,593 - LSPScraper - INFO - Successfully logged in
+2025-04-17 13:32:58,596 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 13:32:59,397 - LSPScraper - INFO - Login notification sent successfully
+2025-04-17 13:32:59,411 - LSPScraper - INFO - Waiting for the job listings grid to load...
+2025-04-17 13:33:29,810 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF717EC5355+78597]
+	GetHandleVerifier [0x00007FF717EC53B0+78688]
+	(No symbol) [0x00007FF717C791AA]
+	(No symbol) [0x00007FF717CCF149]
+	(No symbol) [0x00007FF717CCF3FC]
+	(No symbol) [0x00007FF717D22467]
+	(No symbol) [0x00007FF717CF712F]
+	(No symbol) [0x00007FF717D1F2BB]
+	(No symbol) [0x00007FF717CF6EC3]
+	(No symbol) [0x00007FF717CC03F8]
+	(No symbol) [0x00007FF717CC1163]
+	GetHandleVerifier [0x00007FF71816EF0D+2870973]
+	GetHandleVerifier [0x00007FF7181696B8+2848360]
+	GetHandleVerifier [0x00007FF718186993+2967875]
+	GetHandleVerifier [0x00007FF717EE019A+188746]
+	GetHandleVerifier [0x00007FF717EE847F+222255]
+	GetHandleVerifier [0x00007FF717ECD2D4+111236]
+	GetHandleVerifier [0x00007FF717ECD482+111666]
+	GetHandleVerifier [0x00007FF717EB35A9+5465]
+	BaseThreadInitThunk [0x00007FFB31937374+20]
+	RtlUserThreadStart [0x00007FFB31A7CC91+33]
+
+2025-04-17 13:33:29,811 - LSPScraper - ERROR - Detailed error: Traceback (most recent call last):
+  File "C:\Users\LuisF\Development\LSP_Job_Notifier\scraper.py", line 311, in check_jobs
+    WebDriverWait(self.driver, 30).until(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.presence_of_element_located((By.CLASS_NAME, "ag-root-wrapper"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\LuisF\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF717EC5355+78597]
+	GetHandleVerifier [0x00007FF717EC53B0+78688]
+	(No symbol) [0x00007FF717C791AA]
+	(No symbol) [0x00007FF717CCF149]
+	(No symbol) [0x00007FF717CCF3FC]
+	(No symbol) [0x00007FF717D22467]
+	(No symbol) [0x00007FF717CF712F]
+	(No symbol) [0x00007FF717D1F2BB]
+	(No symbol) [0x00007FF717CF6EC3]
+	(No symbol) [0x00007FF717CC03F8]
+	(No symbol) [0x00007FF717CC1163]
+	GetHandleVerifier [0x00007FF71816EF0D+2870973]
+	GetHandleVerifier [0x00007FF7181696B8+2848360]
+	GetHandleVerifier [0x00007FF718186993+2967875]
+	GetHandleVerifier [0x00007FF717EE019A+188746]
+	GetHandleVerifier [0x00007FF717EE847F+222255]
+	GetHandleVerifier [0x00007FF717ECD2D4+111236]
+	GetHandleVerifier [0x00007FF717ECD482+111666]
+	GetHandleVerifier [0x00007FF717EB35A9+5465]
+	BaseThreadInitThunk [0x00007FFB31937374+20]
+	RtlUserThreadStart [0x00007FFB31A7CC91+33]
+
+
+2025-04-17 13:33:29,812 - LSPScraper - INFO - No new jobs found
+2025-04-17 18:12:40,547 - LSPScraper - INFO - Verifying notification systems...
+2025-04-17 18:12:41,262 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-17 18:12:41,262 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-17 18:12:44,258 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-17 18:12:44,258 - LSPScraper - INFO - Initializing browser for login...
+2025-04-17 18:12:44,258 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:12:49,535 - LSPScraper - INFO - Visited login page
+2025-04-17 18:12:49,540 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:12:49,545 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-17 18:12:49,545 - LSPScraper - INFO - Page source preview:
+2025-04-17 18:12:49,550 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-17 18:12:49,551 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-17 18:12:52,565 - LSPScraper - INFO - Found username field
+2025-04-17 18:12:52,565 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-17 18:12:52,676 - LSPScraper - INFO - Entered username
+2025-04-17 18:12:52,676 - LSPScraper - INFO - Looking for password field
+2025-04-17 18:12:52,688 - LSPScraper - INFO - Found password field
+2025-04-17 18:12:52,755 - LSPScraper - INFO - Entered password
+2025-04-17 18:12:52,756 - LSPScraper - INFO - Looking for login button
+2025-04-17 18:12:53,769 - LSPScraper - INFO - Found login button
+2025-04-17 18:12:53,769 - LSPScraper - INFO - Clicking login button
+2025-04-17 18:12:53,818 - LSPScraper - INFO - Clicked login button
+2025-04-17 18:12:53,818 - LSPScraper - INFO - Waiting for successful login...
+2025-04-17 18:12:56,903 - LSPScraper - INFO - Successfully logged in
+2025-04-17 18:12:56,913 - LSPScraper - INFO - Current URL after login: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:12:57,637 - LSPScraper - INFO - Login notification sent successfully
+2025-04-17 18:12:57,638 - LSPScraper - INFO - Navigating to job postings URL: https://kyrm.lspware.com/scheduler/#/jobs
+2025-04-17 18:12:57,653 - LSPScraper - INFO - Waiting for page to load...
+2025-04-17 18:13:00,654 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-17 18:13:10,791 - LSPScraper - WARNING - Could not find or click 'Open Jobs' tab: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7D2C05355+78597]
+	GetHandleVerifier [0x00007FF7D2C053B0+78688]
+	(No symbol) [0x00007FF7D29B91AA]
+	(No symbol) [0x00007FF7D2A0F149]
+	(No symbol) [0x00007FF7D2A0F3FC]
+	(No symbol) [0x00007FF7D2A62467]
+	(No symbol) [0x00007FF7D2A3712F]
+	(No symbol) [0x00007FF7D2A5F2BB]
+	(No symbol) [0x00007FF7D2A36EC3]
+	(No symbol) [0x00007FF7D2A003F8]
+	(No symbol) [0x00007FF7D2A01163]
+	GetHandleVerifier [0x00007FF7D2EAEF0D+2870973]
+	GetHandleVerifier [0x00007FF7D2EA96B8+2848360]
+	GetHandleVerifier [0x00007FF7D2EC6993+2967875]
+	GetHandleVerifier [0x00007FF7D2C2019A+188746]
+	GetHandleVerifier [0x00007FF7D2C2847F+222255]
+	GetHandleVerifier [0x00007FF7D2C0D2D4+111236]
+	GetHandleVerifier [0x00007FF7D2C0D482+111666]
+	GetHandleVerifier [0x00007FF7D2BF35A9+5465]
+	BaseThreadInitThunk [0x00007FFB31937374+20]
+	RtlUserThreadStart [0x00007FFB31A7CC91+33]
+
+2025-04-17 18:13:10,794 - LSPScraper - INFO - Continuing with current page, assuming we're already on the correct tab
+2025-04-17 18:13:10,794 - LSPScraper - INFO - Waiting for the job listings grid to load...
+2025-04-17 18:13:41,179 - LSPScraper - ERROR - Error checking jobs: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7D2C05355+78597]
+	GetHandleVerifier [0x00007FF7D2C053B0+78688]
+	(No symbol) [0x00007FF7D29B91AA]
+	(No symbol) [0x00007FF7D2A0F149]
+	(No symbol) [0x00007FF7D2A0F3FC]
+	(No symbol) [0x00007FF7D2A62467]
+	(No symbol) [0x00007FF7D2A3712F]
+	(No symbol) [0x00007FF7D2A5F2BB]
+	(No symbol) [0x00007FF7D2A36EC3]
+	(No symbol) [0x00007FF7D2A003F8]
+	(No symbol) [0x00007FF7D2A01163]
+	GetHandleVerifier [0x00007FF7D2EAEF0D+2870973]
+	GetHandleVerifier [0x00007FF7D2EA96B8+2848360]
+	GetHandleVerifier [0x00007FF7D2EC6993+2967875]
+	GetHandleVerifier [0x00007FF7D2C2019A+188746]
+	GetHandleVerifier [0x00007FF7D2C2847F+222255]
+	GetHandleVerifier [0x00007FF7D2C0D2D4+111236]
+	GetHandleVerifier [0x00007FF7D2C0D482+111666]
+	GetHandleVerifier [0x00007FF7D2BF35A9+5465]
+	BaseThreadInitThunk [0x00007FFB31937374+20]
+	RtlUserThreadStart [0x00007FFB31A7CC91+33]
+
+2025-04-17 18:13:41,183 - LSPScraper - ERROR - Detailed error: Traceback (most recent call last):
+  File "C:\Users\LuisF\Development\LSP_Job_Notifier\scraper.py", line 336, in check_jobs
+    WebDriverWait(self.driver, 30).until(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        EC.presence_of_element_located((By.CLASS_NAME, "ag-root-wrapper"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\LuisF\Development\LSP_Job_Notifier\venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7D2C05355+78597]
+	GetHandleVerifier [0x00007FF7D2C053B0+78688]
+	(No symbol) [0x00007FF7D29B91AA]
+	(No symbol) [0x00007FF7D2A0F149]
+	(No symbol) [0x00007FF7D2A0F3FC]
+	(No symbol) [0x00007FF7D2A62467]
+	(No symbol) [0x00007FF7D2A3712F]
+	(No symbol) [0x00007FF7D2A5F2BB]
+	(No symbol) [0x00007FF7D2A36EC3]
+	(No symbol) [0x00007FF7D2A003F8]
+	(No symbol) [0x00007FF7D2A01163]
+	GetHandleVerifier [0x00007FF7D2EAEF0D+2870973]
+	GetHandleVerifier [0x00007FF7D2EA96B8+2848360]
+	GetHandleVerifier [0x00007FF7D2EC6993+2967875]
+	GetHandleVerifier [0x00007FF7D2C2019A+188746]
+	GetHandleVerifier [0x00007FF7D2C2847F+222255]
+	GetHandleVerifier [0x00007FF7D2C0D2D4+111236]
+	GetHandleVerifier [0x00007FF7D2C0D482+111666]
+	GetHandleVerifier [0x00007FF7D2BF35A9+5465]
+	BaseThreadInitThunk [0x00007FFB31937374+20]
+	RtlUserThreadStart [0x00007FFB31A7CC91+33]
+
+
+2025-04-17 18:13:41,187 - LSPScraper - INFO - No new jobs found
+2025-04-17 18:18:21,973 - LSPScraper - INFO - Verifying notification systems...
+2025-04-17 18:18:22,548 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-17 18:18:22,549 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-17 18:18:24,184 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-17 18:18:24,185 - LSPScraper - INFO - Initializing browser for login...
+2025-04-17 18:18:24,185 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:18:28,062 - LSPScraper - INFO - Visited login page
+2025-04-17 18:18:28,067 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:18:28,074 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-17 18:18:28,074 - LSPScraper - INFO - Page source preview:
+2025-04-17 18:18:28,078 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-17 18:18:28,080 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-17 18:18:31,089 - LSPScraper - INFO - Found username field
+2025-04-17 18:18:31,090 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-17 18:18:31,197 - LSPScraper - INFO - Entered username
+2025-04-17 18:18:31,197 - LSPScraper - INFO - Looking for password field
+2025-04-17 18:18:31,210 - LSPScraper - INFO - Found password field
+2025-04-17 18:18:31,270 - LSPScraper - INFO - Entered password
+2025-04-17 18:18:31,271 - LSPScraper - INFO - Looking for login button
+2025-04-17 18:18:32,284 - LSPScraper - INFO - Found login button
+2025-04-17 18:18:32,284 - LSPScraper - INFO - Clicking login button
+2025-04-17 18:18:32,338 - LSPScraper - INFO - Clicked login button
+2025-04-17 18:18:32,338 - LSPScraper - INFO - Waiting for successful login...
+2025-04-17 18:18:37,374 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:18:37,375 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-17 18:18:37,375 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:18:42,863 - LSPScraper - INFO - Login notification sent successfully
+2025-04-17 18:18:42,939 - LSPScraper - INFO - Saved portal page source to portal_after_login.html
+2025-04-17 18:18:42,939 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:18:42,945 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-17 18:18:48,018 - LSPScraper - INFO - Saved portal page source to portal_page.html for debugging
+2025-04-17 18:18:48,018 - LSPScraper - INFO - Looking for 'Open Jobs' tab or section...
+2025-04-17 18:18:48,019 - LSPScraper - INFO - Trying selector: //span[contains(@class, 'tab-text') and text()='Open Jobs']
+2025-04-17 18:18:48,031 - LSPScraper - INFO - Found 'Open Jobs' element with selector: //span[contains(@class, 'tab-text') and text()='Open Jobs']
+2025-04-17 18:18:48,131 - LSPScraper - INFO - Clicked directly on 'Open Jobs' element
+2025-04-17 18:18:48,131 - LSPScraper - INFO - Waiting for content to load after navigation...
+2025-04-17 18:18:53,206 - LSPScraper - INFO - Saved jobs page source to jobs_page.html for debugging
+2025-04-17 18:18:53,207 - LSPScraper - INFO - Looking for job grid or table...
+2025-04-17 18:18:53,207 - LSPScraper - INFO - Trying to find grid with class name: ag-root-wrapper
+2025-04-17 18:18:53,216 - LSPScraper - INFO - Found grid element with selector: ag-root-wrapper
+2025-04-17 18:18:53,216 - LSPScraper - INFO - Looking for job rows...
+2025-04-17 18:18:53,230 - LSPScraper - INFO - Found 6 rows with selector div[role='row'] within grid element
+2025-04-17 18:18:53,230 - LSPScraper - INFO - Found 6 potential job elements
+2025-04-17 18:18:53,282 - LSPScraper - INFO - Found 0 cells in job element
+2025-04-17 18:18:53,353 - LSPScraper - WARNING - Not enough cells found: 0 cells
+2025-04-17 18:18:53,406 - LSPScraper - INFO - Found 0 cells in job element
+2025-04-17 18:18:53,444 - LSPScraper - WARNING - Not enough cells found: 0 cells
+2025-04-17 18:18:53,544 - LSPScraper - INFO - Found 49 cells in job element
+2025-04-17 18:18:53,916 - LSPScraper - INFO - Cell texts: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+2025-04-17 18:18:54,123 - LSPScraper - INFO - Found 7 cells in job element
+2025-04-17 18:18:54,190 - LSPScraper - INFO - Cell texts: ['', '', '', '', '', '', '']
+2025-04-17 18:18:54,245 - LSPScraper - INFO - Found 0 cells in job element
+2025-04-17 18:18:54,252 - LSPScraper - WARNING - Not enough cells found: 0 cells
+2025-04-17 18:18:54,281 - LSPScraper - INFO - Found 0 cells in job element
+2025-04-17 18:18:54,290 - LSPScraper - WARNING - Not enough cells found: 0 cells
+2025-04-17 18:18:54,290 - LSPScraper - INFO - No new jobs found in the grid
+2025-04-17 18:18:54,290 - LSPScraper - INFO - No new jobs found
+2025-04-17 18:31:28,252 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-17 18:31:28,253 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-17 18:31:29,871 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-17 18:31:29,871 - LSPScraper - INFO - Initializing browser for login...
+2025-04-17 18:31:29,871 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:31:34,764 - LSPScraper - INFO - Visited login page
+2025-04-17 18:31:34,768 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:31:34,773 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-17 18:31:34,773 - LSPScraper - INFO - Page source preview:
+2025-04-17 18:31:34,776 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-17 18:31:34,777 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-17 18:31:37,787 - LSPScraper - INFO - Found username field
+2025-04-17 18:31:37,787 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-17 18:31:37,888 - LSPScraper - INFO - Entered username
+2025-04-17 18:31:37,889 - LSPScraper - INFO - Looking for password field
+2025-04-17 18:31:37,899 - LSPScraper - INFO - Found password field
+2025-04-17 18:31:37,962 - LSPScraper - INFO - Entered password
+2025-04-17 18:31:37,963 - LSPScraper - INFO - Looking for login button
+2025-04-17 18:31:38,975 - LSPScraper - INFO - Found login button
+2025-04-17 18:31:38,975 - LSPScraper - INFO - Clicking login button
+2025-04-17 18:31:39,024 - LSPScraper - INFO - Clicked login button
+2025-04-17 18:31:39,025 - LSPScraper - INFO - Waiting for successful login...
+2025-04-17 18:31:44,054 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:31:44,054 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-17 18:31:44,055 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:31:49,620 - LSPScraper - INFO - Login notification sent successfully
+2025-04-17 18:31:49,698 - LSPScraper - INFO - Saved portal page source to portal_after_login.html
+2025-04-17 18:31:49,699 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:31:49,707 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-17 18:31:54,778 - LSPScraper - INFO - Saved portal page source to portal_page.html for debugging
+2025-04-17 18:31:54,778 - LSPScraper - INFO - Looking for 'Closed Jobs' tab or section...
+2025-04-17 18:31:54,778 - LSPScraper - INFO - Trying selector: //span[contains(@class, 'tab-text') and text()='Closed Jobs']
+2025-04-17 18:31:54,790 - LSPScraper - INFO - Found 'Closed Jobs' element with selector: //span[contains(@class, 'tab-text') and text()='Closed Jobs']
+2025-04-17 18:31:54,935 - LSPScraper - INFO - Clicked directly on 'Closed Jobs' element
+2025-04-17 18:31:54,936 - LSPScraper - INFO - Waiting for Closed Jobs content to load after navigation...
+2025-04-17 18:32:00,028 - LSPScraper - INFO - Saved closed jobs page source to closed_jobs_page.html for debugging
+2025-04-17 18:32:00,094 - LSPScraper - INFO - Saved screenshot of closed jobs tab to closed_jobs_tab.png
+2025-04-17 18:32:00,095 - LSPScraper - INFO - Looking for job grid or table...
+2025-04-17 18:32:00,095 - LSPScraper - INFO - Trying to find grid with class name: ag-root-wrapper
+2025-04-17 18:32:00,104 - LSPScraper - INFO - Found grid element with selector: ag-root-wrapper
+2025-04-17 18:32:00,104 - LSPScraper - INFO - Looking for job rows...
+2025-04-17 18:32:00,114 - LSPScraper - INFO - Found 6 rows with selector div[role='row'] within grid element
+2025-04-17 18:32:00,114 - LSPScraper - INFO - Found 6 potential job elements in Closed Jobs tab
+2025-04-17 18:32:00,160 - LSPScraper - INFO - Found 0 cells in closed job element
+2025-04-17 18:32:00,173 - LSPScraper - WARNING - Not enough cells found in closed job: 0 cells
+2025-04-17 18:32:00,200 - LSPScraper - INFO - Found 0 cells in closed job element
+2025-04-17 18:32:00,208 - LSPScraper - WARNING - Not enough cells found in closed job: 0 cells
+2025-04-17 18:32:00,247 - LSPScraper - INFO - Found 49 cells in closed job element
+2025-04-17 18:32:00,546 - LSPScraper - INFO - Cell texts: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+2025-04-17 18:32:00,723 - LSPScraper - INFO - Found 7 cells in closed job element
+2025-04-17 18:32:00,781 - LSPScraper - INFO - Cell texts: ['', '', '', '', '', '', '']
+2025-04-17 18:32:00,830 - LSPScraper - INFO - Found 0 cells in closed job element
+2025-04-17 18:32:00,839 - LSPScraper - WARNING - Not enough cells found in closed job: 0 cells
+2025-04-17 18:32:00,865 - LSPScraper - INFO - Found 0 cells in closed job element
+2025-04-17 18:32:00,873 - LSPScraper - WARNING - Not enough cells found in closed job: 0 cells
+2025-04-17 18:32:00,873 - LSPScraper - INFO - Found 0 closed jobs for debugging
+2025-04-17 18:34:13,692 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-17 18:34:13,693 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-17 18:34:15,295 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-17 18:34:15,295 - LSPScraper - INFO - Initializing browser for login...
+2025-04-17 18:34:15,295 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:34:19,133 - LSPScraper - INFO - Visited login page
+2025-04-17 18:34:19,137 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:34:19,142 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-17 18:34:19,142 - LSPScraper - INFO - Page source preview:
+2025-04-17 18:34:19,145 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-17 18:34:19,146 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-17 18:34:22,156 - LSPScraper - INFO - Found username field
+2025-04-17 18:34:22,157 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-17 18:34:22,257 - LSPScraper - INFO - Entered username
+2025-04-17 18:34:22,258 - LSPScraper - INFO - Looking for password field
+2025-04-17 18:34:22,268 - LSPScraper - INFO - Found password field
+2025-04-17 18:34:22,331 - LSPScraper - INFO - Entered password
+2025-04-17 18:34:22,331 - LSPScraper - INFO - Looking for login button
+2025-04-17 18:34:23,345 - LSPScraper - INFO - Found login button
+2025-04-17 18:34:23,345 - LSPScraper - INFO - Clicking login button
+2025-04-17 18:34:23,393 - LSPScraper - INFO - Clicked login button
+2025-04-17 18:34:23,394 - LSPScraper - INFO - Waiting for successful login...
+2025-04-17 18:34:28,427 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:34:28,427 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-17 18:34:28,428 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:34:34,214 - LSPScraper - INFO - Login notification sent successfully
+2025-04-17 18:34:34,318 - LSPScraper - INFO - Saved portal page source to portal_after_login.html
+2025-04-17 18:34:34,318 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:34:34,323 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-17 18:34:39,382 - LSPScraper - INFO - Saved portal screenshot to portal_screen.png
+2025-04-17 18:34:39,456 - LSPScraper - INFO - Saved portal source to portal_direct.html
+2025-04-17 18:34:39,456 - LSPScraper - INFO - Looking for ag-grid structure...
+2025-04-17 18:34:39,457 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-17 18:34:39,469 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-17 18:34:39,574 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-17 18:34:42,574 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-17 18:34:42,584 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-17 18:34:42,593 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-17 18:34:42,603 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-17 18:34:42,612 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-17 18:34:42,621 - LSPScraper - INFO - Found ag-root
+2025-04-17 18:34:42,630 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-17 18:34:42,639 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-17 18:34:42,648 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-17 18:34:42,658 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-17 18:34:42,667 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-17 18:34:42,732 - LSPScraper - INFO - Saved grid screenshot to grid_screen.png
+2025-04-17 18:34:42,750 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 11:30 AM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-17 18:34:42,761 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-17 18:34:42,767 - LSPScraper - INFO - Row ID: 17717
+2025-04-17 18:34:42,779 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-17 18:34:42,790 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-17 18:34:42,800 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 11:30 AM EDT
+2025-04-17 18:34:42,811 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-17 18:34:42,823 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-17 18:34:42,833 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-17 18:34:42,843 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-17 18:34:42,844 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 11:30 AM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 11:30 AM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-17 18:34:42,844 - LSPScraper - INFO - New job found: 17717
+2025-04-17 18:34:42,844 - LSPScraper - INFO - Found 1 new jobs
+2025-04-17 18:36:00,302 - LSPScraper - INFO - Verifying notification systems...
+2025-04-17 18:36:00,711 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-17 18:36:00,711 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-17 18:36:02,299 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-17 18:36:02,299 - LSPScraper - INFO - Initializing browser for login...
+2025-04-17 18:36:02,299 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:36:08,131 - LSPScraper - INFO - Visited login page
+2025-04-17 18:36:08,135 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:36:08,138 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-17 18:36:08,138 - LSPScraper - INFO - Page source preview:
+2025-04-17 18:36:08,141 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-17 18:36:08,142 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-17 18:36:11,153 - LSPScraper - INFO - Found username field
+2025-04-17 18:36:11,153 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-17 18:36:11,256 - LSPScraper - INFO - Entered username
+2025-04-17 18:36:11,256 - LSPScraper - INFO - Looking for password field
+2025-04-17 18:36:11,267 - LSPScraper - INFO - Found password field
+2025-04-17 18:36:11,334 - LSPScraper - INFO - Entered password
+2025-04-17 18:36:11,334 - LSPScraper - INFO - Looking for login button
+2025-04-17 18:36:12,347 - LSPScraper - INFO - Found login button
+2025-04-17 18:36:12,347 - LSPScraper - INFO - Clicking login button
+2025-04-17 18:36:12,396 - LSPScraper - INFO - Clicked login button
+2025-04-17 18:36:12,396 - LSPScraper - INFO - Waiting for successful login...
+2025-04-17 18:36:17,425 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:36:17,426 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-17 18:36:17,426 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:36:23,139 - LSPScraper - INFO - Login notification sent successfully
+2025-04-17 18:36:23,218 - LSPScraper - INFO - Saved portal page source to portal_after_login.html
+2025-04-17 18:36:23,218 - LSPScraper - INFO - Checking for new jobs using direct DOM navigation approach...
+2025-04-17 18:36:23,219 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:36:23,224 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-17 18:36:28,291 - LSPScraper - INFO - Saved portal screenshot to portal_screen.png
+2025-04-17 18:36:28,362 - LSPScraper - INFO - Saved portal source to portal_direct.html
+2025-04-17 18:36:28,363 - LSPScraper - INFO - Looking for ag-grid structure...
+2025-04-17 18:36:28,363 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-17 18:36:28,374 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-17 18:36:28,473 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-17 18:36:31,475 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-17 18:36:31,485 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-17 18:36:31,495 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-17 18:36:31,504 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-17 18:36:31,514 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-17 18:36:31,523 - LSPScraper - INFO - Found ag-root
+2025-04-17 18:36:31,532 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-17 18:36:31,543 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-17 18:36:31,552 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-17 18:36:31,562 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-17 18:36:31,572 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-17 18:36:31,639 - LSPScraper - INFO - Saved grid screenshot to grid_screen.png
+2025-04-17 18:36:31,656 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 11:30 AM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-17 18:36:31,667 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-17 18:36:31,674 - LSPScraper - INFO - Row ID: 17717
+2025-04-17 18:36:31,686 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-17 18:36:31,698 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-17 18:36:31,708 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 11:30 AM EDT
+2025-04-17 18:36:31,719 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-17 18:36:31,732 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-17 18:36:31,744 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-17 18:36:31,754 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-17 18:36:31,755 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 11:30 AM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 11:30 AM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-17 18:36:31,755 - LSPScraper - INFO - New job found: 17717
+2025-04-17 18:36:31,755 - LSPScraper - INFO - Found 1 new jobs
+2025-04-17 18:36:31,755 - LSPScraper - INFO - Found 1 new jobs
+2025-04-17 18:36:34,346 - LSPScraper - INFO - Notification sent for job: 17717
+2025-04-17 18:37:37,126 - LSPScraper - INFO - Verifying notification systems...
+2025-04-17 18:37:37,754 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-17 18:37:37,755 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-17 18:37:39,392 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-17 18:37:39,392 - LSPScraper - INFO - Initializing browser for login...
+2025-04-17 18:37:39,392 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:37:43,409 - LSPScraper - INFO - Visited login page
+2025-04-17 18:37:43,413 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:37:43,416 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-17 18:37:43,416 - LSPScraper - INFO - Page source preview:
+2025-04-17 18:37:43,420 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-17 18:37:43,421 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-17 18:37:46,432 - LSPScraper - INFO - Found username field
+2025-04-17 18:37:46,432 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-17 18:37:46,548 - LSPScraper - INFO - Entered username
+2025-04-17 18:37:46,548 - LSPScraper - INFO - Looking for password field
+2025-04-17 18:37:46,560 - LSPScraper - INFO - Found password field
+2025-04-17 18:37:46,625 - LSPScraper - INFO - Entered password
+2025-04-17 18:37:46,625 - LSPScraper - INFO - Looking for login button
+2025-04-17 18:37:47,638 - LSPScraper - INFO - Found login button
+2025-04-17 18:37:47,639 - LSPScraper - INFO - Clicking login button
+2025-04-17 18:37:47,685 - LSPScraper - INFO - Clicked login button
+2025-04-17 18:37:47,685 - LSPScraper - INFO - Waiting for successful login...
+2025-04-17 18:37:52,714 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:37:52,714 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-17 18:37:52,715 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:37:58,215 - LSPScraper - INFO - Login notification sent successfully
+2025-04-17 18:37:58,292 - LSPScraper - INFO - Saved portal page source to portal_after_login.html
+2025-04-17 18:37:58,292 - LSPScraper - INFO - Checking for new jobs using direct DOM navigation approach...
+2025-04-17 18:37:58,292 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:37:58,298 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-17 18:38:03,356 - LSPScraper - INFO - Saved portal screenshot to portal_screen.png
+2025-04-17 18:38:03,426 - LSPScraper - INFO - Saved portal source to portal_direct.html
+2025-04-17 18:38:03,426 - LSPScraper - INFO - Looking for ag-grid structure...
+2025-04-17 18:38:03,426 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-17 18:38:03,438 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-17 18:38:03,544 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-17 18:38:06,545 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-17 18:38:06,555 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-17 18:38:06,564 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-17 18:38:06,574 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-17 18:38:06,584 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-17 18:38:06,594 - LSPScraper - INFO - Found ag-root
+2025-04-17 18:38:06,603 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-17 18:38:06,613 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-17 18:38:06,623 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-17 18:38:06,632 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-17 18:38:06,642 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-17 18:38:06,704 - LSPScraper - INFO - Saved grid screenshot to grid_screen.png
+2025-04-17 18:38:06,722 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 11:30 AM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-17 18:38:06,733 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-17 18:38:06,742 - LSPScraper - INFO - Row ID: 17717
+2025-04-17 18:38:06,755 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-17 18:38:06,765 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-17 18:38:06,776 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 11:30 AM EDT
+2025-04-17 18:38:06,788 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-17 18:38:06,799 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-17 18:38:06,811 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-17 18:38:06,822 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-17 18:38:06,823 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 11:30 AM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 11:30 AM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-17 18:38:06,823 - LSPScraper - INFO - New job found: 17717
+2025-04-17 18:38:06,823 - LSPScraper - INFO - Found 1 new jobs
+2025-04-17 18:38:06,823 - LSPScraper - INFO - Found 1 new jobs
+2025-04-17 18:38:09,277 - LSPScraper - INFO - Notification sent for job: 17717
+2025-04-17 18:42:45,983 - LSPScraper - INFO - Verifying Telegram notification system...
+2025-04-17 18:42:46,817 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-17 18:42:46,818 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-17 18:42:48,639 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-17 18:42:48,640 - LSPScraper - INFO - Initializing browser for login...
+2025-04-17 18:42:48,640 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:42:52,849 - LSPScraper - INFO - Visited login page
+2025-04-17 18:42:52,853 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:42:52,857 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-17 18:42:52,857 - LSPScraper - INFO - Page source preview:
+2025-04-17 18:42:52,862 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-17 18:42:52,862 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-17 18:42:55,875 - LSPScraper - INFO - Found username field
+2025-04-17 18:42:55,875 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-17 18:42:56,014 - LSPScraper - INFO - Entered username
+2025-04-17 18:42:56,014 - LSPScraper - INFO - Looking for password field
+2025-04-17 18:42:56,026 - LSPScraper - INFO - Found password field
+2025-04-17 18:42:56,091 - LSPScraper - INFO - Entered password
+2025-04-17 18:42:56,091 - LSPScraper - INFO - Looking for login button
+2025-04-17 18:42:57,105 - LSPScraper - INFO - Found login button
+2025-04-17 18:42:57,105 - LSPScraper - INFO - Clicking login button
+2025-04-17 18:42:57,151 - LSPScraper - INFO - Clicked login button
+2025-04-17 18:42:57,151 - LSPScraper - INFO - Waiting for successful login...
+2025-04-17 18:43:02,180 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:43:02,180 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-17 18:43:02,180 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:43:07,655 - LSPScraper - INFO - Login notification sent successfully
+2025-04-17 18:43:07,730 - LSPScraper - INFO - Saved portal page source to portal_after_login.html
+2025-04-17 18:43:07,730 - LSPScraper - INFO - Checking for new jobs...
+2025-04-17 18:43:07,730 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:43:07,736 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-17 18:43:09,288 - LSPScraper - INFO - Initializing browser for login...
+2025-04-17 18:43:09,288 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:43:09,296 - LSPScraper - INFO - Visited login page
+2025-04-17 18:43:09,370 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-17 18:43:09,374 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-17 18:43:09,375 - LSPScraper - INFO - Page source preview:
+2025-04-17 18:43:09,392 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-17 18:43:09,394 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-17 18:43:12,404 - LSPScraper - INFO - Found username field
+2025-04-17 18:43:12,404 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-17 18:43:12,489 - LSPScraper - INFO - Entered username
+2025-04-17 18:43:12,490 - LSPScraper - INFO - Looking for password field
+2025-04-17 18:43:12,499 - LSPScraper - INFO - Found password field
+2025-04-17 18:43:12,556 - LSPScraper - INFO - Entered password
+2025-04-17 18:43:12,556 - LSPScraper - INFO - Looking for login button
+2025-04-17 18:43:12,736 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-17 18:43:12,748 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-17 18:43:12,850 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-17 18:43:13,572 - LSPScraper - INFO - Found login button
+2025-04-17 18:43:13,572 - LSPScraper - INFO - Clicking login button
+2025-04-17 18:43:13,616 - LSPScraper - INFO - Clicked login button
+2025-04-17 18:43:13,616 - LSPScraper - INFO - Waiting for successful login...
+2025-04-17 18:43:15,850 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-17 18:43:15,860 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-17 18:43:15,869 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-17 18:43:15,880 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-17 18:43:15,888 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-17 18:43:15,900 - LSPScraper - INFO - Found ag-root
+2025-04-17 18:43:15,909 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-17 18:43:15,918 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-17 18:43:15,930 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-17 18:43:15,939 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-17 18:43:15,949 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-17 18:43:15,966 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 11:30 AM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-17 18:43:15,977 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-17 18:43:15,984 - LSPScraper - INFO - Row ID: 17717
+2025-04-17 18:43:16,005 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-17 18:43:16,026 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-17 18:43:16,044 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 11:30 AM EDT
+2025-04-17 18:43:16,058 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-17 18:43:16,081 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-17 18:43:16,099 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-17 18:43:16,112 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-17 18:43:16,112 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 11:30 AM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 11:30 AM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-17 18:43:16,112 - LSPScraper - INFO - New job found: 17717
+2025-04-17 18:43:16,112 - LSPScraper - INFO - Found 1 new jobs
+2025-04-17 18:43:16,112 - LSPScraper - INFO - Found 1 new jobs
+2025-04-17 18:43:16,605 - LSPScraper - INFO - Notification sent for job: 17717
+2025-04-17 18:43:18,653 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:43:18,654 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-17 18:43:18,654 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:43:24,381 - LSPScraper - INFO - Login notification sent successfully
+2025-04-17 18:43:24,454 - LSPScraper - INFO - Saved portal page source to portal_after_login.html
+2025-04-17 18:43:24,455 - LSPScraper - INFO - Checking for new jobs using direct DOM navigation approach...
+2025-04-17 18:43:24,455 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-17 18:43:24,461 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-17 18:43:29,527 - LSPScraper - INFO - Saved portal screenshot to portal_screen.png
+2025-04-17 18:43:29,601 - LSPScraper - INFO - Saved portal source to portal_direct.html
+2025-04-17 18:43:29,601 - LSPScraper - INFO - Looking for ag-grid structure...
+2025-04-17 18:43:29,601 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-17 18:43:29,613 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-17 18:43:29,720 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-17 18:43:32,721 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-17 18:43:32,730 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-17 18:43:32,742 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-17 18:43:32,751 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-17 18:43:32,760 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-17 18:43:32,770 - LSPScraper - INFO - Found ag-root
+2025-04-17 18:43:32,779 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-17 18:43:32,788 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-17 18:43:32,798 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-17 18:43:32,807 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-17 18:43:32,817 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-17 18:43:32,875 - LSPScraper - INFO - Saved grid screenshot to grid_screen.png
+2025-04-17 18:43:32,891 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 11:30 AM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-17 18:43:32,901 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-17 18:43:32,907 - LSPScraper - INFO - Row ID: 17717
+2025-04-17 18:43:32,918 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-17 18:43:32,929 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-17 18:43:32,940 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 11:30 AM EDT
+2025-04-17 18:43:32,952 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-17 18:43:32,965 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-17 18:43:32,976 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-17 18:43:32,987 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-17 18:43:32,988 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 11:30 AM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 11:30 AM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-17 18:43:32,988 - LSPScraper - INFO - Already seen job: 17717
+2025-04-17 18:43:32,988 - LSPScraper - INFO - No new jobs found in the grid
+2025-04-17 18:43:32,989 - LSPScraper - INFO - No new jobs found
