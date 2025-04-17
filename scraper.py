@@ -234,6 +234,8 @@ class LSPScraper:
                         self.logger.error(f"Error sending login notification: {str(e)}")
                     
                     return True
+                
+                self.driver.get("https://kyrm.lspware.com/scheduler/#/interpreter-portal")
                     
                 # As a fallback, check for elements that appear after login
                 WebDriverWait(self.driver, 10).until(
@@ -305,9 +307,9 @@ class LSPScraper:
             self.driver.get(JOB_POSTINGS_URL)
             
             # Wait for AG-Grid to load and be visible
-            self.logger.info("Waiting for job listings grid to load...")
-            WebDriverWait(self.driver, 10).until(
-                EC.presence_of_element_located((By.CLASS_NAME, "ag-center-cols-container"))
+            self.logger.info("Waiting for the job listings grid to load...")
+            WebDriverWait(self.driver, 30).until(
+                EC.presence_of_element_located((By.CLASS_NAME, "ag-root-wrapper"))
             )
             
             # Additional wait to ensure grid data is loaded
