@@ -711,7 +711,7 @@ class LSPScraper:
                     self.logger.info("No new jobs found")
 
                 # Wait before next check
-                await asyncio.sleep(300)  # 5 minutes
+                await asyncio.sleep(30)  # 30 seconds instead of 300 (5 minutes)
 
             except Exception as e:
                 self.logger.error(f"Error in main loop: {str(e)}")
@@ -719,8 +719,16 @@ class LSPScraper:
 
     async def cleanup(self):
         """Clean up resources."""
+        try:
+            # Send shutdown notification
+            await self.notification_manager.send_telegram("LSP Job Notifier: Application has closed.")
+            self.logger.info("Sent application shutdown notification")
+        except Exception as e:
+            self.logger.error(f"Error sending shutdown notification: {str(e)}")
+        
         await self._close_session()
         self._close_selenium()
+        self.logger.info("Application resources cleaned up")
 
     async def _verify_notification_systems(self):
         """Verify Telegram notification system on startup"""
@@ -1189,4 +1197,30 @@ class LSPScraper:
         except Exception as e:
             self.logger.error(f"Error in check_jobs_direct: {str(e)}")
             self.logger.error(traceback.format_exc())
-            return [] 
+            return []
+
+if __name__ == "__main__":
+    import signal
+    import sys
+    
+    scraper = LSPScraper()
+    loop = asyncio.get_event_loop()
+    
+    # Set up signal handlers for graceful shutdown
+    def shutdown_handler(sig, frame):
+        print("Shutting down...")
+        loop.run_until_complete(scraper.cleanup())
+        loop.stop()
+        sys.exit(0)
+    
+    # Register shutdown handlers
+    signal.signal(signal.SIGINT, shutdown_handler)  # Ctrl+C
+    signal.signal(signal.SIGTERM, shutdown_handler)  # Termination signal
+    
+    try:
+        loop.run_until_complete(scraper.run())
+    except KeyboardInterrupt:
+        pass
+    finally:
+        loop.run_until_complete(scraper.cleanup())
+        loop.close() 
