@@ -16,10 +16,6 @@ JOB_POSTINGS_URL = f"{BASE_URL}/scheduler/#/jobs"
 # Notification Settings
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
-EMAIL_SMTP_SERVER = os.getenv('EMAIL_SMTP_SERVER')
-EMAIL_SMTP_PORT = int(os.getenv('EMAIL_SMTP_PORT', '587'))
-EMAIL_USERNAME = os.getenv('EMAIL_USERNAME')
-EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
 
 # Scraping Settings
 SCRAPE_INTERVAL = int(os.getenv('SCRAPE_INTERVAL', '300'))

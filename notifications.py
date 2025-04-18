@@ -1,6 +1,3 @@
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 import telegram
 import logging
 import os
@@ -9,11 +6,7 @@ import traceback
 import json
 from config import (
     TELEGRAM_BOT_TOKEN,
-    TELEGRAM_CHAT_ID,
-    EMAIL_SMTP_SERVER,
-    EMAIL_SMTP_PORT,
-    EMAIL_USERNAME,
-    EMAIL_PASSWORD
+    TELEGRAM_CHAT_ID
 )
 
 class NotificationManager:
@@ -21,10 +14,7 @@ class NotificationManager:
         self.logger = logging.getLogger(__name__)
         self.telegram_bot = None
         
-        # Print values to help debug
-        self.logger.info(f"TELEGRAM_BOT_TOKEN: {TELEGRAM_BOT_TOKEN[:4]}...{TELEGRAM_BOT_TOKEN[-4:] if TELEGRAM_BOT_TOKEN else 'None'}")
-        self.logger.info(f"TELEGRAM_CHAT_ID: {TELEGRAM_CHAT_ID}")
-        
+        # Initialize Telegram bot if configured
         if TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID:
             self.logger.info(f"Initializing Telegram bot with token: {TELEGRAM_BOT_TOKEN[:4]}...{TELEGRAM_BOT_TOKEN[-4:]} and chat ID: {TELEGRAM_CHAT_ID}")
             try:
@@ -111,43 +101,8 @@ class NotificationManager:
             self.logger.error(f"Detailed error: {traceback.format_exc()}")
             return False
 
-    def send_email(self, subject, message):
-        """Send notification via email."""
-        if not all([EMAIL_SMTP_SERVER, EMAIL_SMTP_PORT, EMAIL_USERNAME, EMAIL_PASSWORD]):
-            self.logger.warning("Email notifications not configured")
-            return False
-
-        try:
-            msg = MIMEMultipart()
-            msg['From'] = EMAIL_USERNAME
-            msg['To'] = EMAIL_USERNAME
-            msg['Subject'] = subject
-
-            msg.attach(MIMEText(message, 'html'))
-
-            with smtplib.SMTP(EMAIL_SMTP_SERVER, EMAIL_SMTP_PORT) as server:
-                server.starttls()
-                server.login(EMAIL_USERNAME, EMAIL_PASSWORD)
-                server.send_message(msg)
-
-            return True
-        except Exception as e:
-            self.logger.error(f"Failed to send email notification: {str(e)}")
-            return False
-
     async def notify(self, subject, message):
-        """Send notifications through all configured channels."""
-        success = True
-
-        # Send Telegram notification
-        if self.telegram_bot:
-            # Format message with HTML for subject but only if it contains HTML tags
-            formatted_message = f"<b>{subject}</b>\n\n{message}" if '<' in message else f"{subject}\n\n{message}"
-            telegram_success = await self.send_telegram(formatted_message)
-            success = success and telegram_success
-
-        # Send email notification
-        email_success = self.send_email(subject, message)
-        success = success and email_success
-
-        return success 
+        """Send notifications through Telegram."""
+        # Format message with HTML for subject
+        formatted_message = f"<b>{subject}</b>\n\n{message}" if '<' in message else f"{subject}\n\n{message}"
+        return await self.send_telegram(formatted_message) 
