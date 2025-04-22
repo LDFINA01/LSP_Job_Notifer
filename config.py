@@ -24,6 +24,11 @@ SCRAPE_INTERVAL = int(os.getenv('SCRAPE_INTERVAL', '300'))
 LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')
 LOG_FILE = os.getenv('LOG_FILE', 'logs/scraper.log')
 
+# File Management
+MAX_DATA_FILES = int(os.getenv('MAX_DATA_FILES', '5'))  # Maximum HTML files to keep
+MAX_SCREENSHOT_FILES = int(os.getenv('MAX_SCREENSHOT_FILES', '5'))  # Maximum screenshot files to keep
+CLEANUP_OLD_FILES = os.getenv('CLEANUP_OLD_FILES', 'True').lower() in ('true', 'yes', '1')
+
 # Headers
 DEFAULT_HEADERS = {
     'Content-Type': 'application/json;charset=UTF-8',

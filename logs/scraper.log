@@ -10131,3 +10131,1047 @@ Spanish - Other Appearance
 2025-04-22 17:04:10,429 - LSPScraper - INFO - Waiting for login form elements...
 2025-04-22 17:04:11,315 - LSPScraper - INFO - Sent application shutdown notification
 2025-04-22 17:04:31,740 - LSPScraper - INFO - Application resources cleaned up
+2025-04-22 17:09:42,590 - LSPScraper - INFO - Verifying Telegram notification system...
+2025-04-22 17:09:43,582 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-22 17:09:43,582 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-22 17:09:45,361 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-22 17:09:45,362 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 17:09:45,362 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 17:09:48,375 - LSPScraper - INFO - Visited login page
+2025-04-22 17:09:48,379 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 17:09:48,383 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 17:09:48,383 - LSPScraper - INFO - Page source preview:
+2025-04-22 17:09:48,387 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 17:09:48,387 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 17:09:51,399 - LSPScraper - INFO - Found username field
+2025-04-22 17:09:51,399 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 17:09:51,498 - LSPScraper - INFO - Entered username
+2025-04-22 17:09:51,498 - LSPScraper - INFO - Looking for password field
+2025-04-22 17:09:51,510 - LSPScraper - INFO - Found password field
+2025-04-22 17:09:51,564 - LSPScraper - INFO - Entered password
+2025-04-22 17:09:51,564 - LSPScraper - INFO - Looking for login button
+2025-04-22 17:09:52,576 - LSPScraper - INFO - Found login button
+2025-04-22 17:09:52,576 - LSPScraper - INFO - Clicking login button
+2025-04-22 17:09:52,620 - LSPScraper - INFO - Clicked login button
+2025-04-22 17:09:52,620 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 17:09:57,649 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:09:57,649 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 17:09:57,649 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:10:03,153 - LSPScraper - INFO - Login notification sent successfully
+2025-04-22 17:10:03,227 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 17:10:03,227 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 17:10:03,227 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:10:03,233 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 17:10:08,234 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 17:10:08,246 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 17:10:08,352 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 17:10:11,353 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-22 17:10:11,362 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-22 17:10:11,371 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-22 17:10:11,379 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-22 17:10:11,387 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-22 17:10:11,395 - LSPScraper - INFO - Found ag-root
+2025-04-22 17:10:11,402 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-22 17:10:11,411 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-22 17:10:11,419 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-22 17:10:11,429 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-22 17:10:11,437 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-22 17:10:11,454 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 12:00 PM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-22 17:10:11,463 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-22 17:10:11,469 - LSPScraper - INFO - Row ID: 17717
+2025-04-22 17:10:11,481 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-22 17:10:11,491 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-22 17:10:11,501 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 12:00 PM EDT
+2025-04-22 17:10:11,510 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-22 17:10:11,521 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-22 17:10:11,530 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-22 17:10:11,539 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-22 17:10:11,539 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 12:00 PM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 12:00 PM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-22 17:10:11,539 - LSPScraper - INFO - New job found: 17717
+2025-04-22 17:10:11,539 - LSPScraper - INFO - Found 1 new jobs
+2025-04-22 17:10:11,539 - LSPScraper - INFO - Found 1 new jobs
+2025-04-22 17:10:12,030 - LSPScraper - INFO - Notification sent for job: 17717
+2025-04-22 17:10:42,042 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 17:10:42,043 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 17:10:42,049 - LSPScraper - INFO - Visited login page
+2025-04-22 17:10:42,091 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 17:10:42,093 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 17:10:42,093 - LSPScraper - INFO - Page source preview:
+2025-04-22 17:10:42,106 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 17:10:42,106 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 17:10:45,134 - LSPScraper - INFO - Found username field
+2025-04-22 17:10:45,134 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 17:10:45,262 - LSPScraper - INFO - Entered username
+2025-04-22 17:10:45,262 - LSPScraper - INFO - Looking for password field
+2025-04-22 17:10:45,268 - LSPScraper - INFO - Found password field
+2025-04-22 17:10:45,328 - LSPScraper - INFO - Entered password
+2025-04-22 17:10:45,328 - LSPScraper - INFO - Looking for login button
+2025-04-22 17:10:46,337 - LSPScraper - INFO - Found login button
+2025-04-22 17:10:46,337 - LSPScraper - INFO - Clicking login button
+2025-04-22 17:10:46,374 - LSPScraper - INFO - Clicked login button
+2025-04-22 17:10:46,374 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 17:10:51,410 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:10:51,411 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 17:10:51,411 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:10:56,941 - LSPScraper - INFO - Login notification sent successfully
+2025-04-22 17:10:57,013 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 17:10:57,013 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 17:10:57,013 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:10:57,018 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 17:11:02,019 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 17:11:02,027 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 17:11:02,136 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 17:11:05,136 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-22 17:11:05,142 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-22 17:11:05,147 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-22 17:11:05,152 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-22 17:11:05,157 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-22 17:11:05,162 - LSPScraper - INFO - Found ag-root
+2025-04-22 17:11:05,167 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-22 17:11:05,172 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-22 17:11:05,177 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-22 17:11:05,181 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-22 17:11:05,187 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-22 17:11:05,197 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 12:00 PM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-22 17:11:05,202 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-22 17:11:05,206 - LSPScraper - INFO - Row ID: 17717
+2025-04-22 17:11:05,215 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-22 17:11:05,223 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-22 17:11:05,232 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 12:00 PM EDT
+2025-04-22 17:11:05,240 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-22 17:11:05,251 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-22 17:11:05,259 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-22 17:11:05,269 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-22 17:11:05,269 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 12:00 PM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 12:00 PM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-22 17:11:05,269 - LSPScraper - INFO - Already seen job: 17717
+2025-04-22 17:11:05,269 - LSPScraper - INFO - No new jobs found in the grid
+2025-04-22 17:11:05,269 - LSPScraper - INFO - No new jobs found
+2025-04-22 17:11:35,281 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 17:11:35,281 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 17:11:35,288 - LSPScraper - INFO - Visited login page
+2025-04-22 17:11:35,331 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 17:11:35,334 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 17:11:35,334 - LSPScraper - INFO - Page source preview:
+2025-04-22 17:11:35,347 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 17:11:35,347 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 17:11:38,354 - LSPScraper - INFO - Found username field
+2025-04-22 17:11:38,354 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 17:11:38,424 - LSPScraper - INFO - Entered username
+2025-04-22 17:11:38,424 - LSPScraper - INFO - Looking for password field
+2025-04-22 17:11:38,429 - LSPScraper - INFO - Found password field
+2025-04-22 17:11:38,485 - LSPScraper - INFO - Entered password
+2025-04-22 17:11:38,485 - LSPScraper - INFO - Looking for login button
+2025-04-22 17:11:39,494 - LSPScraper - INFO - Found login button
+2025-04-22 17:11:39,494 - LSPScraper - INFO - Clicking login button
+2025-04-22 17:11:39,532 - LSPScraper - INFO - Clicked login button
+2025-04-22 17:11:39,532 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 17:11:44,569 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:11:44,569 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 17:11:44,569 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:11:50,325 - LSPScraper - INFO - Login notification sent successfully
+2025-04-22 17:11:50,397 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 17:11:50,397 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 17:11:50,397 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:11:50,402 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 17:11:55,402 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 17:11:55,414 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 17:11:55,555 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 17:11:57,140 - LSPScraper - INFO - Sent application shutdown notification
+2025-04-22 17:12:17,538 - LSPScraper - INFO - Application resources cleaned up
+2025-04-22 17:13:41,527 - LSPScraper - INFO - Verifying Telegram notification system...
+2025-04-22 17:13:42,442 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-22 17:13:42,442 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-22 17:13:43,968 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-22 17:13:43,968 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 17:13:43,968 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 17:13:47,054 - LSPScraper - INFO - Visited login page
+2025-04-22 17:13:47,057 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 17:13:47,061 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 17:13:47,061 - LSPScraper - INFO - Page source preview:
+2025-04-22 17:13:47,065 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 17:13:47,065 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 17:13:50,074 - LSPScraper - INFO - Found username field
+2025-04-22 17:13:50,074 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 17:13:50,169 - LSPScraper - INFO - Entered username
+2025-04-22 17:13:50,169 - LSPScraper - INFO - Looking for password field
+2025-04-22 17:13:50,179 - LSPScraper - INFO - Found password field
+2025-04-22 17:13:50,232 - LSPScraper - INFO - Entered password
+2025-04-22 17:13:50,232 - LSPScraper - INFO - Looking for login button
+2025-04-22 17:13:51,245 - LSPScraper - INFO - Found login button
+2025-04-22 17:13:51,245 - LSPScraper - INFO - Clicking login button
+2025-04-22 17:13:51,288 - LSPScraper - INFO - Clicked login button
+2025-04-22 17:13:51,288 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 17:13:56,317 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:13:56,317 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 17:13:56,317 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:14:01,401 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 17:14:01,401 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 17:14:01,401 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:14:01,406 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 17:14:06,406 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 17:14:06,417 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 17:14:06,511 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 17:14:09,512 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-22 17:14:09,521 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-22 17:14:09,529 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-22 17:14:09,537 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-22 17:14:09,546 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-22 17:14:09,554 - LSPScraper - INFO - Found ag-root
+2025-04-22 17:14:09,563 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-22 17:14:09,571 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-22 17:14:09,579 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-22 17:14:09,588 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-22 17:14:09,596 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-22 17:14:09,613 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 12:00 PM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-22 17:14:09,622 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-22 17:14:09,627 - LSPScraper - INFO - Row ID: 17717
+2025-04-22 17:14:09,639 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-22 17:14:09,648 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-22 17:14:09,658 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 12:00 PM EDT
+2025-04-22 17:14:09,667 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-22 17:14:09,678 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-22 17:14:09,687 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-22 17:14:09,696 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-22 17:14:09,697 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 12:00 PM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 12:00 PM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-22 17:14:09,697 - LSPScraper - INFO - New job found: 17717
+2025-04-22 17:14:09,697 - LSPScraper - INFO - Found 1 new jobs
+2025-04-22 17:14:09,697 - LSPScraper - INFO - Found 1 new jobs
+2025-04-22 17:14:10,439 - LSPScraper - INFO - Notification sent for job: 17717
+2025-04-22 17:14:40,449 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 17:14:40,449 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 17:14:40,455 - LSPScraper - INFO - Visited login page
+2025-04-22 17:14:40,498 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 17:14:40,501 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 17:14:40,501 - LSPScraper - INFO - Page source preview:
+2025-04-22 17:14:40,513 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 17:14:40,514 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 17:14:43,521 - LSPScraper - INFO - Found username field
+2025-04-22 17:14:43,521 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 17:14:43,588 - LSPScraper - INFO - Entered username
+2025-04-22 17:14:43,588 - LSPScraper - INFO - Looking for password field
+2025-04-22 17:14:43,593 - LSPScraper - INFO - Found password field
+2025-04-22 17:14:43,648 - LSPScraper - INFO - Entered password
+2025-04-22 17:14:43,648 - LSPScraper - INFO - Looking for login button
+2025-04-22 17:14:44,657 - LSPScraper - INFO - Found login button
+2025-04-22 17:14:44,657 - LSPScraper - INFO - Clicking login button
+2025-04-22 17:14:44,696 - LSPScraper - INFO - Clicked login button
+2025-04-22 17:14:44,696 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 17:14:49,733 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:14:49,733 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 17:14:49,733 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:14:54,811 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 17:14:54,812 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 17:14:54,812 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:14:54,817 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 17:14:59,817 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 17:14:59,828 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 17:14:59,954 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 17:15:02,955 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-22 17:15:02,964 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-22 17:15:02,973 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-22 17:15:02,982 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-22 17:15:02,990 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-22 17:15:02,999 - LSPScraper - INFO - Found ag-root
+2025-04-22 17:15:03,007 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-22 17:15:03,017 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-22 17:15:03,025 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-22 17:15:03,034 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-22 17:15:03,043 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-22 17:15:03,058 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 12:00 PM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-22 17:15:03,067 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-22 17:15:03,072 - LSPScraper - INFO - Row ID: 17717
+2025-04-22 17:15:03,084 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-22 17:15:03,093 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-22 17:15:03,102 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 12:00 PM EDT
+2025-04-22 17:15:03,111 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-22 17:15:03,122 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-22 17:15:03,132 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-22 17:15:03,141 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-22 17:15:03,141 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 12:00 PM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 12:00 PM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-22 17:15:03,141 - LSPScraper - INFO - Already seen job: 17717
+2025-04-22 17:15:03,141 - LSPScraper - INFO - No new jobs found in the grid
+2025-04-22 17:15:03,141 - LSPScraper - INFO - No new jobs found
+2025-04-22 17:15:33,152 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 17:15:33,152 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 17:15:33,159 - LSPScraper - INFO - Visited login page
+2025-04-22 17:15:33,205 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 17:15:33,208 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 17:15:33,208 - LSPScraper - INFO - Page source preview:
+2025-04-22 17:15:33,220 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 17:15:33,220 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 17:15:36,229 - LSPScraper - INFO - Found username field
+2025-04-22 17:15:36,229 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 17:15:36,308 - LSPScraper - INFO - Entered username
+2025-04-22 17:15:36,309 - LSPScraper - INFO - Looking for password field
+2025-04-22 17:15:36,317 - LSPScraper - INFO - Found password field
+2025-04-22 17:15:36,372 - LSPScraper - INFO - Entered password
+2025-04-22 17:15:36,372 - LSPScraper - INFO - Looking for login button
+2025-04-22 17:15:37,388 - LSPScraper - INFO - Found login button
+2025-04-22 17:15:37,388 - LSPScraper - INFO - Clicking login button
+2025-04-22 17:15:37,458 - LSPScraper - INFO - Clicked login button
+2025-04-22 17:15:37,458 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 17:15:42,494 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:15:42,494 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 17:15:42,494 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:15:47,611 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 17:15:47,611 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 17:15:47,611 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:15:47,617 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 17:15:52,617 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 17:15:52,626 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 17:15:52,738 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 17:15:55,739 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-22 17:15:55,745 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-22 17:15:55,750 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-22 17:15:55,755 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-22 17:15:55,760 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-22 17:15:55,765 - LSPScraper - INFO - Found ag-root
+2025-04-22 17:15:55,770 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-22 17:15:55,775 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-22 17:15:55,780 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-22 17:15:55,785 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-22 17:15:55,790 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-22 17:15:55,801 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 12:00 PM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-22 17:15:55,806 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-22 17:15:55,810 - LSPScraper - INFO - Row ID: 17717
+2025-04-22 17:15:55,820 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-22 17:15:55,829 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-22 17:15:55,838 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 12:00 PM EDT
+2025-04-22 17:15:55,847 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-22 17:15:55,858 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-22 17:15:55,867 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-22 17:15:55,877 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-22 17:15:55,877 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 12:00 PM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 12:00 PM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-22 17:15:55,877 - LSPScraper - INFO - Already seen job: 17717
+2025-04-22 17:15:55,877 - LSPScraper - INFO - No new jobs found in the grid
+2025-04-22 17:15:55,877 - LSPScraper - INFO - No new jobs found
+2025-04-22 17:16:25,885 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 17:16:25,886 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 17:16:25,892 - LSPScraper - INFO - Visited login page
+2025-04-22 17:16:25,932 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 17:16:25,935 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 17:16:25,935 - LSPScraper - INFO - Page source preview:
+2025-04-22 17:16:25,946 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 17:16:25,947 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 17:16:28,953 - LSPScraper - INFO - Found username field
+2025-04-22 17:16:28,953 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 17:16:29,018 - LSPScraper - INFO - Entered username
+2025-04-22 17:16:29,018 - LSPScraper - INFO - Looking for password field
+2025-04-22 17:16:29,023 - LSPScraper - INFO - Found password field
+2025-04-22 17:16:29,078 - LSPScraper - INFO - Entered password
+2025-04-22 17:16:29,078 - LSPScraper - INFO - Looking for login button
+2025-04-22 17:16:30,090 - LSPScraper - INFO - Found login button
+2025-04-22 17:16:30,090 - LSPScraper - INFO - Clicking login button
+2025-04-22 17:16:30,129 - LSPScraper - INFO - Clicked login button
+2025-04-22 17:16:30,129 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 17:16:35,166 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:16:35,166 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 17:16:35,166 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 17:16:36,999 - LSPScraper - INFO - Sent application shutdown notification
+2025-04-22 17:16:57,474 - LSPScraper - INFO - Application resources cleaned up
+2025-04-22 18:01:27,551 - LSPScraper - INFO - Verifying Telegram notification system...
+2025-04-22 18:01:28,282 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-22 18:01:28,282 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-22 18:01:30,561 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-22 18:01:30,561 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 18:01:30,561 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:01:34,890 - LSPScraper - INFO - Visited login page
+2025-04-22 18:01:34,894 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:01:34,898 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 18:01:34,898 - LSPScraper - INFO - Page source preview:
+2025-04-22 18:01:34,901 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 18:01:34,901 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 18:01:37,918 - LSPScraper - INFO - Found username field
+2025-04-22 18:01:37,918 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 18:01:38,094 - LSPScraper - INFO - Entered username
+2025-04-22 18:01:38,094 - LSPScraper - INFO - Looking for password field
+2025-04-22 18:01:38,106 - LSPScraper - INFO - Found password field
+2025-04-22 18:01:38,165 - LSPScraper - INFO - Entered password
+2025-04-22 18:01:38,165 - LSPScraper - INFO - Looking for login button
+2025-04-22 18:01:39,178 - LSPScraper - INFO - Found login button
+2025-04-22 18:01:39,178 - LSPScraper - INFO - Clicking login button
+2025-04-22 18:01:39,224 - LSPScraper - INFO - Clicked login button
+2025-04-22 18:01:39,224 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 18:01:44,253 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:01:44,253 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 18:01:44,253 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:01:49,335 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 18:01:49,335 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 18:01:49,335 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:01:49,341 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 18:01:54,341 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 18:01:54,352 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 18:01:54,446 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 18:01:57,447 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-22 18:01:57,456 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-22 18:01:57,464 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-22 18:01:57,472 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-22 18:01:57,481 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-22 18:01:57,489 - LSPScraper - INFO - Found ag-root
+2025-04-22 18:01:57,498 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-22 18:01:57,506 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-22 18:01:57,514 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-22 18:01:57,522 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-22 18:01:57,532 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-22 18:01:57,549 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 12:00 PM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-22 18:01:57,558 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-22 18:01:57,622 - LSPScraper - INFO - Row ID: 17717
+2025-04-22 18:01:57,633 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-22 18:01:57,642 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-22 18:01:57,651 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 12:00 PM EDT
+2025-04-22 18:01:57,660 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-22 18:01:57,671 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-22 18:01:57,680 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-22 18:01:57,689 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-22 18:01:57,689 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 12:00 PM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 12:00 PM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-22 18:01:57,689 - LSPScraper - INFO - New job found: 17717
+2025-04-22 18:01:57,689 - LSPScraper - INFO - Found 1 new jobs
+2025-04-22 18:01:57,690 - LSPScraper - INFO - Found 1 new jobs
+2025-04-22 18:01:58,477 - LSPScraper - INFO - Notification sent for job: 17717
+2025-04-22 18:02:28,489 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 18:02:28,489 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:02:28,496 - LSPScraper - INFO - Visited login page
+2025-04-22 18:02:28,538 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:02:28,540 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 18:02:28,540 - LSPScraper - INFO - Page source preview:
+2025-04-22 18:02:28,551 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 18:02:28,551 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 18:02:31,559 - LSPScraper - INFO - Found username field
+2025-04-22 18:02:31,559 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 18:02:31,639 - LSPScraper - INFO - Entered username
+2025-04-22 18:02:31,639 - LSPScraper - INFO - Looking for password field
+2025-04-22 18:02:31,646 - LSPScraper - INFO - Found password field
+2025-04-22 18:02:31,705 - LSPScraper - INFO - Entered password
+2025-04-22 18:02:31,705 - LSPScraper - INFO - Looking for login button
+2025-04-22 18:02:32,713 - LSPScraper - INFO - Found login button
+2025-04-22 18:02:32,714 - LSPScraper - INFO - Clicking login button
+2025-04-22 18:02:32,753 - LSPScraper - INFO - Clicked login button
+2025-04-22 18:02:32,753 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 18:02:37,790 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:02:37,790 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 18:02:37,791 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:02:42,869 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 18:02:42,869 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 18:02:42,869 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:02:42,874 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 18:02:47,875 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 18:02:47,883 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 18:02:47,968 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 18:02:50,969 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-22 18:02:50,975 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-22 18:02:50,981 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-22 18:02:50,986 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-22 18:02:50,991 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-22 18:02:50,998 - LSPScraper - INFO - Found ag-root
+2025-04-22 18:02:51,003 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-22 18:02:51,008 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-22 18:02:51,014 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-22 18:02:51,019 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-22 18:02:51,024 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-22 18:02:51,035 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 12:00 PM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-22 18:02:51,041 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-22 18:02:51,045 - LSPScraper - INFO - Row ID: 17717
+2025-04-22 18:02:51,055 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-22 18:02:51,065 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-22 18:02:51,074 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 12:00 PM EDT
+2025-04-22 18:02:51,085 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-22 18:02:51,096 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-22 18:02:51,105 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-22 18:02:51,116 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-22 18:02:51,116 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 12:00 PM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 12:00 PM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-22 18:02:51,116 - LSPScraper - INFO - Already seen job: 17717
+2025-04-22 18:02:51,116 - LSPScraper - INFO - No new jobs found in the grid
+2025-04-22 18:02:51,116 - LSPScraper - INFO - No new jobs found
+2025-04-22 18:03:21,132 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 18:03:21,132 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:03:21,138 - LSPScraper - INFO - Visited login page
+2025-04-22 18:03:21,184 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:03:21,187 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 18:03:21,187 - LSPScraper - INFO - Page source preview:
+2025-04-22 18:03:21,199 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 18:03:21,199 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 18:03:24,206 - LSPScraper - INFO - Found username field
+2025-04-22 18:03:24,206 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 18:03:24,289 - LSPScraper - INFO - Entered username
+2025-04-22 18:03:24,289 - LSPScraper - INFO - Looking for password field
+2025-04-22 18:03:24,295 - LSPScraper - INFO - Found password field
+2025-04-22 18:03:24,350 - LSPScraper - INFO - Entered password
+2025-04-22 18:03:24,350 - LSPScraper - INFO - Looking for login button
+2025-04-22 18:03:25,362 - LSPScraper - INFO - Found login button
+2025-04-22 18:03:25,362 - LSPScraper - INFO - Clicking login button
+2025-04-22 18:03:25,399 - LSPScraper - INFO - Clicked login button
+2025-04-22 18:03:25,400 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 18:03:30,435 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:03:30,435 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 18:03:30,435 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:03:35,535 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 18:03:35,535 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 18:03:35,535 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:03:35,542 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 18:03:40,542 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 18:03:40,550 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 18:03:40,636 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 18:03:43,636 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-22 18:03:43,642 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-22 18:03:43,647 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-22 18:03:43,652 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-22 18:03:43,657 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-22 18:03:43,662 - LSPScraper - INFO - Found ag-root
+2025-04-22 18:03:43,667 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-22 18:03:43,680 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-22 18:03:43,694 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-22 18:03:43,712 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-22 18:03:43,728 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-22 18:03:43,738 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 12:00 PM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-22 18:03:43,744 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-22 18:03:43,747 - LSPScraper - INFO - Row ID: 17717
+2025-04-22 18:03:43,757 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-22 18:03:43,766 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-22 18:03:43,774 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 12:00 PM EDT
+2025-04-22 18:03:43,784 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-22 18:03:43,797 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-22 18:03:43,806 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-22 18:03:43,816 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-22 18:03:43,816 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 12:00 PM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 12:00 PM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-22 18:03:43,816 - LSPScraper - INFO - Already seen job: 17717
+2025-04-22 18:03:43,816 - LSPScraper - INFO - No new jobs found in the grid
+2025-04-22 18:03:43,816 - LSPScraper - INFO - No new jobs found
+2025-04-22 18:04:13,393 - LSPScraper - INFO - Sent application shutdown notification
+2025-04-22 18:04:33,856 - LSPScraper - INFO - Application resources cleaned up
+2025-04-22 18:04:43,666 - LSPScraper - INFO - Verifying Telegram notification system...
+2025-04-22 18:04:44,524 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-22 18:04:44,525 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-22 18:04:46,219 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-22 18:04:46,219 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 18:04:46,219 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:04:49,961 - LSPScraper - INFO - Visited login page
+2025-04-22 18:04:49,965 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:04:49,969 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 18:04:49,969 - LSPScraper - INFO - Page source preview:
+2025-04-22 18:04:49,972 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 18:04:49,972 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 18:04:52,983 - LSPScraper - INFO - Found username field
+2025-04-22 18:04:52,983 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 18:04:53,080 - LSPScraper - INFO - Entered username
+2025-04-22 18:04:53,081 - LSPScraper - INFO - Looking for password field
+2025-04-22 18:04:53,091 - LSPScraper - INFO - Found password field
+2025-04-22 18:04:53,147 - LSPScraper - INFO - Entered password
+2025-04-22 18:04:53,147 - LSPScraper - INFO - Looking for login button
+2025-04-22 18:04:54,160 - LSPScraper - INFO - Found login button
+2025-04-22 18:04:54,160 - LSPScraper - INFO - Clicking login button
+2025-04-22 18:04:54,206 - LSPScraper - INFO - Clicked login button
+2025-04-22 18:04:54,206 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 18:04:59,239 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:04:59,239 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 18:04:59,239 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:05:04,320 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 18:05:04,320 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 18:05:04,320 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:05:04,325 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 18:05:09,326 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 18:05:09,338 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 18:05:09,446 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 18:05:12,447 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-22 18:05:12,456 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-22 18:05:12,464 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-22 18:05:12,472 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-22 18:05:12,481 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-22 18:05:12,489 - LSPScraper - INFO - Found ag-root
+2025-04-22 18:05:12,497 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-22 18:05:12,505 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-22 18:05:12,513 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-22 18:05:12,522 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-22 18:05:12,530 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-22 18:05:12,545 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 12:00 PM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-22 18:05:12,554 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-22 18:05:12,559 - LSPScraper - INFO - Row ID: 17717
+2025-04-22 18:05:12,570 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-22 18:05:12,580 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-22 18:05:12,592 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 12:00 PM EDT
+2025-04-22 18:05:12,603 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-22 18:05:12,614 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-22 18:05:12,624 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-22 18:05:12,634 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-22 18:05:12,634 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 12:00 PM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 12:00 PM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-22 18:05:12,634 - LSPScraper - INFO - New job found: 17717
+2025-04-22 18:05:12,634 - LSPScraper - INFO - Found 1 new jobs
+2025-04-22 18:05:12,634 - LSPScraper - INFO - Found 1 new jobs
+2025-04-22 18:05:13,461 - LSPScraper - INFO - Notification sent for job: 17717
+2025-04-22 18:05:43,466 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 18:05:43,466 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:05:43,474 - LSPScraper - INFO - Visited login page
+2025-04-22 18:05:43,523 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:05:43,526 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 18:05:43,526 - LSPScraper - INFO - Page source preview:
+2025-04-22 18:05:43,538 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 18:05:43,538 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 18:05:46,544 - LSPScraper - INFO - Found username field
+2025-04-22 18:05:46,544 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 18:05:46,614 - LSPScraper - INFO - Entered username
+2025-04-22 18:05:46,614 - LSPScraper - INFO - Looking for password field
+2025-04-22 18:05:46,621 - LSPScraper - INFO - Found password field
+2025-04-22 18:05:46,673 - LSPScraper - INFO - Entered password
+2025-04-22 18:05:46,673 - LSPScraper - INFO - Looking for login button
+2025-04-22 18:05:47,682 - LSPScraper - INFO - Found login button
+2025-04-22 18:05:47,682 - LSPScraper - INFO - Clicking login button
+2025-04-22 18:05:47,723 - LSPScraper - INFO - Clicked login button
+2025-04-22 18:05:47,724 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 18:05:52,760 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:05:52,760 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 18:05:52,760 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:05:57,901 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 18:05:57,902 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 18:05:57,902 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:05:57,908 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 18:06:02,909 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 18:06:02,917 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 18:06:02,998 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 18:06:05,999 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-22 18:06:06,005 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-22 18:06:06,010 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-22 18:06:06,015 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-22 18:06:06,020 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-22 18:06:06,035 - LSPScraper - INFO - Found ag-root
+2025-04-22 18:06:06,050 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-22 18:06:06,075 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-22 18:06:06,086 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-22 18:06:06,091 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-22 18:06:06,096 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-22 18:06:06,106 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 12:00 PM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-22 18:06:06,112 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-22 18:06:06,115 - LSPScraper - INFO - Row ID: 17717
+2025-04-22 18:06:06,125 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-22 18:06:06,134 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-22 18:06:06,143 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 12:00 PM EDT
+2025-04-22 18:06:06,153 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-22 18:06:06,163 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-22 18:06:06,172 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-22 18:06:06,181 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-22 18:06:06,182 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 12:00 PM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 12:00 PM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-22 18:06:06,182 - LSPScraper - INFO - Already seen job: 17717
+2025-04-22 18:06:06,182 - LSPScraper - INFO - No new jobs found in the grid
+2025-04-22 18:06:06,182 - LSPScraper - INFO - No new jobs found
+2025-04-22 18:06:33,614 - LSPScraper - INFO - Sent application shutdown notification
+2025-04-22 18:06:54,027 - LSPScraper - INFO - Application resources cleaned up
+2025-04-22 18:09:15,768 - LSPScraper - INFO - Verifying Telegram notification system...
+2025-04-22 18:09:16,795 - LSPScraper - INFO - Sent application shutdown notification
+2025-04-22 18:09:16,795 - LSPScraper - INFO - Application resources cleaned up
+2025-04-22 18:09:22,068 - LSPScraper - INFO - Verifying Telegram notification system...
+2025-04-22 18:09:22,921 - LSPScraper - INFO - Setting up Chrome WebDriver
+2025-04-22 18:09:22,921 - LSPScraper - INFO - Initializing Chrome directly
+2025-04-22 18:09:24,777 - LSPScraper - INFO - Chrome WebDriver initialized successfully
+2025-04-22 18:09:24,777 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 18:09:24,777 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:09:28,836 - LSPScraper - INFO - Visited login page
+2025-04-22 18:09:28,840 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:09:28,843 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 18:09:28,843 - LSPScraper - INFO - Page source preview:
+2025-04-22 18:09:28,847 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 18:09:28,848 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 18:09:31,859 - LSPScraper - INFO - Found username field
+2025-04-22 18:09:31,859 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 18:09:31,965 - LSPScraper - INFO - Entered username
+2025-04-22 18:09:31,965 - LSPScraper - INFO - Looking for password field
+2025-04-22 18:09:31,976 - LSPScraper - INFO - Found password field
+2025-04-22 18:09:32,052 - LSPScraper - INFO - Entered password
+2025-04-22 18:09:32,052 - LSPScraper - INFO - Looking for login button
+2025-04-22 18:09:33,064 - LSPScraper - INFO - Found login button
+2025-04-22 18:09:33,064 - LSPScraper - INFO - Clicking login button
+2025-04-22 18:09:33,108 - LSPScraper - INFO - Clicked login button
+2025-04-22 18:09:33,108 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 18:09:38,137 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:09:38,137 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 18:09:38,137 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:09:43,215 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 18:09:43,215 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 18:09:43,215 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:09:43,220 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 18:09:48,221 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 18:09:48,233 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 18:09:48,324 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 18:09:51,325 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-22 18:09:51,334 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-22 18:09:51,343 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-22 18:09:51,352 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-22 18:09:51,361 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-22 18:09:51,372 - LSPScraper - INFO - Found ag-root
+2025-04-22 18:09:51,381 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-22 18:09:51,390 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-22 18:09:51,398 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-22 18:09:51,407 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-22 18:09:51,416 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-22 18:09:51,431 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 12:00 PM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-22 18:09:51,440 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-22 18:09:51,446 - LSPScraper - INFO - Row ID: 17717
+2025-04-22 18:09:51,458 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-22 18:09:51,468 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-22 18:09:51,478 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 12:00 PM EDT
+2025-04-22 18:09:51,487 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-22 18:09:51,498 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-22 18:09:51,507 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-22 18:09:51,517 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-22 18:09:51,518 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 12:00 PM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 12:00 PM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-22 18:09:51,518 - LSPScraper - INFO - New job found: 17717
+2025-04-22 18:09:51,518 - LSPScraper - INFO - Found 1 new jobs
+2025-04-22 18:09:51,518 - LSPScraper - INFO - Found 1 new jobs
+2025-04-22 18:09:52,275 - LSPScraper - INFO - Notification sent for job: 17717
+2025-04-22 18:10:22,286 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 18:10:22,286 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:10:22,293 - LSPScraper - INFO - Visited login page
+2025-04-22 18:10:22,337 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:10:22,340 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 18:10:22,340 - LSPScraper - INFO - Page source preview:
+2025-04-22 18:10:22,353 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 18:10:22,353 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 18:10:25,360 - LSPScraper - INFO - Found username field
+2025-04-22 18:10:25,360 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 18:10:25,429 - LSPScraper - INFO - Entered username
+2025-04-22 18:10:25,429 - LSPScraper - INFO - Looking for password field
+2025-04-22 18:10:25,434 - LSPScraper - INFO - Found password field
+2025-04-22 18:10:25,487 - LSPScraper - INFO - Entered password
+2025-04-22 18:10:25,487 - LSPScraper - INFO - Looking for login button
+2025-04-22 18:10:26,495 - LSPScraper - INFO - Found login button
+2025-04-22 18:10:26,495 - LSPScraper - INFO - Clicking login button
+2025-04-22 18:10:26,532 - LSPScraper - INFO - Clicked login button
+2025-04-22 18:10:26,533 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 18:10:31,571 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:10:31,571 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 18:10:31,571 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:10:36,658 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 18:10:36,659 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 18:10:36,659 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:10:36,665 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 18:10:41,665 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 18:10:41,673 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 18:10:41,753 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 18:10:44,754 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-22 18:10:44,761 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-22 18:10:44,767 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-22 18:10:44,773 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-22 18:10:44,779 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-22 18:10:44,785 - LSPScraper - INFO - Found ag-root
+2025-04-22 18:10:44,790 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-22 18:10:44,806 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-22 18:10:44,841 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-22 18:10:44,861 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-22 18:10:44,867 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-22 18:10:44,879 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 12:00 PM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-22 18:10:44,886 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-22 18:10:44,891 - LSPScraper - INFO - Row ID: 17717
+2025-04-22 18:10:44,903 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-22 18:10:44,912 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-22 18:10:44,923 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 12:00 PM EDT
+2025-04-22 18:10:44,933 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-22 18:10:44,945 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-22 18:10:44,955 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-22 18:10:44,965 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-22 18:10:44,966 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 12:00 PM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 12:00 PM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-22 18:10:44,966 - LSPScraper - INFO - Already seen job: 17717
+2025-04-22 18:10:44,966 - LSPScraper - INFO - No new jobs found in the grid
+2025-04-22 18:10:44,966 - LSPScraper - INFO - No new jobs found
+2025-04-22 18:11:14,967 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 18:11:14,967 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:11:14,974 - LSPScraper - INFO - Visited login page
+2025-04-22 18:11:15,016 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:11:15,018 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 18:11:15,018 - LSPScraper - INFO - Page source preview:
+2025-04-22 18:11:15,030 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 18:11:15,030 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 18:11:18,036 - LSPScraper - INFO - Found username field
+2025-04-22 18:11:18,036 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 18:11:18,103 - LSPScraper - INFO - Entered username
+2025-04-22 18:11:18,103 - LSPScraper - INFO - Looking for password field
+2025-04-22 18:11:18,109 - LSPScraper - INFO - Found password field
+2025-04-22 18:11:18,162 - LSPScraper - INFO - Entered password
+2025-04-22 18:11:18,162 - LSPScraper - INFO - Looking for login button
+2025-04-22 18:11:19,178 - LSPScraper - INFO - Found login button
+2025-04-22 18:11:19,178 - LSPScraper - INFO - Clicking login button
+2025-04-22 18:11:19,225 - LSPScraper - INFO - Clicked login button
+2025-04-22 18:11:19,225 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 18:11:24,261 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:11:24,261 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 18:11:24,262 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:11:29,338 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 18:11:29,339 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 18:11:29,339 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:11:29,344 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 18:11:34,344 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 18:11:34,353 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 18:11:34,435 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 18:11:37,436 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-22 18:11:37,442 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-22 18:11:37,447 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-22 18:11:37,452 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-22 18:11:37,457 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-22 18:11:37,462 - LSPScraper - INFO - Found ag-root
+2025-04-22 18:11:37,467 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-22 18:11:37,481 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-22 18:11:37,500 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-22 18:11:37,524 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-22 18:11:37,532 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-22 18:11:37,542 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 12:00 PM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-22 18:11:37,548 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-22 18:11:37,552 - LSPScraper - INFO - Row ID: 17717
+2025-04-22 18:11:37,561 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-22 18:11:37,571 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-22 18:11:37,580 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 12:00 PM EDT
+2025-04-22 18:11:37,589 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-22 18:11:37,599 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-22 18:11:37,609 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-22 18:11:37,618 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-22 18:11:37,619 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 12:00 PM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 12:00 PM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-22 18:11:37,619 - LSPScraper - INFO - Already seen job: 17717
+2025-04-22 18:11:37,619 - LSPScraper - INFO - No new jobs found in the grid
+2025-04-22 18:11:37,619 - LSPScraper - INFO - No new jobs found
+2025-04-22 18:12:07,627 - LSPScraper - INFO - Initializing browser for login...
+2025-04-22 18:12:07,627 - LSPScraper - INFO - Attempting to visit login page: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:12:07,633 - LSPScraper - INFO - Visited login page
+2025-04-22 18:12:07,674 - LSPScraper - INFO - Current URL: https://kyrm.lspware.com/scheduler/#/login
+2025-04-22 18:12:07,676 - LSPScraper - INFO - Page title: Workforce OS
+2025-04-22 18:12:07,676 - LSPScraper - INFO - Page source preview:
+2025-04-22 18:12:07,688 - LSPScraper - INFO - <html lang="en" class="mdl-js"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no"
+2025-04-22 18:12:07,688 - LSPScraper - INFO - Waiting for login form elements...
+2025-04-22 18:12:10,694 - LSPScraper - INFO - Found username field
+2025-04-22 18:12:10,694 - LSPScraper - INFO - Attempting to enter username: Luisfinale02@outlook.com
+2025-04-22 18:12:10,760 - LSPScraper - INFO - Entered username
+2025-04-22 18:12:10,760 - LSPScraper - INFO - Looking for password field
+2025-04-22 18:12:10,765 - LSPScraper - INFO - Found password field
+2025-04-22 18:12:10,818 - LSPScraper - INFO - Entered password
+2025-04-22 18:12:10,818 - LSPScraper - INFO - Looking for login button
+2025-04-22 18:12:11,828 - LSPScraper - INFO - Found login button
+2025-04-22 18:12:11,828 - LSPScraper - INFO - Clicking login button
+2025-04-22 18:12:11,865 - LSPScraper - INFO - Clicked login button
+2025-04-22 18:12:11,865 - LSPScraper - INFO - Waiting for successful login...
+2025-04-22 18:12:16,902 - LSPScraper - INFO - URL after login attempt: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:12:16,903 - LSPScraper - INFO - Successfully logged in based on URL change, found pattern: /interpreter-portal
+2025-04-22 18:12:16,903 - LSPScraper - INFO - Login appears successful. Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:12:21,979 - LSPScraper - INFO - Saved portal page source to data/portal_after_login.html
+2025-04-22 18:12:21,979 - LSPScraper - INFO - Checking for new jobs...
+2025-04-22 18:12:21,979 - LSPScraper - INFO - Navigating to interpreter portal: https://kyrm.lspware.com/scheduler/#/interpreter-portal
+2025-04-22 18:12:21,984 - LSPScraper - INFO - Waiting for interpreter portal to load...
+2025-04-22 18:12:26,984 - LSPScraper - INFO - Looking for 'Open Jobs' tab...
+2025-04-22 18:12:26,997 - LSPScraper - INFO - Found 'Open Jobs' tab with selector: //span[text()='Open Jobs']
+2025-04-22 18:12:27,093 - LSPScraper - INFO - Clicked on 'Open Jobs' tab
+2025-04-22 18:12:30,093 - LSPScraper - INFO - Looking for ag-Grid component...
+2025-04-22 18:12:30,102 - LSPScraper - INFO - Found at-interpreter-jobs component
+2025-04-22 18:12:30,111 - LSPScraper - INFO - Found ag-grid-angular component
+2025-04-22 18:12:30,119 - LSPScraper - INFO - Found ag-root-wrapper
+2025-04-22 18:12:30,127 - LSPScraper - INFO - Found ag-root-wrapper-body
+2025-04-22 18:12:30,136 - LSPScraper - INFO - Found ag-root
+2025-04-22 18:12:30,144 - LSPScraper - INFO - Found ag-body-viewport
+2025-04-22 18:12:30,153 - LSPScraper - INFO - Found ag-center-cols-clipper
+2025-04-22 18:12:30,162 - LSPScraper - INFO - Found ag-center-cols-viewport
+2025-04-22 18:12:30,167 - LSPScraper - INFO - Found ag-center-cols-container
+2025-04-22 18:12:30,173 - LSPScraper - INFO - Found 1 job rows in the ag-grid
+2025-04-22 18:12:30,183 - LSPScraper - INFO - Job row text: 17717
+KRM Lexington
+04/23/2025 12:00 PM EDT
+120
+  501 W 6th Street, Suite 250, Lexington, KY, 40508
+Spanish - Other Appearance
+68.64
+2025-04-22 18:12:30,189 - LSPScraper - INFO - Found 7 cells in job row
+2025-04-22 18:12:30,193 - LSPScraper - INFO - Row ID: 17717
+2025-04-22 18:12:30,203 - LSPScraper - INFO - Cell col-id: requestID, text: 17717
+2025-04-22 18:12:30,212 - LSPScraper - INFO - Cell col-id: customerName, text: KRM Lexington
+2025-04-22 18:12:30,221 - LSPScraper - INFO - Cell col-id: interpretationTime, text: 04/23/2025 12:00 PM EDT
+2025-04-22 18:12:30,230 - LSPScraper - INFO - Cell col-id: estimateDuration, text: 120
+2025-04-22 18:12:30,241 - LSPScraper - INFO - Cell col-id: whereStr, text: 501 W 6th Street, Suite 250, Lexington, KY, 40508
+2025-04-22 18:12:30,250 - LSPScraper - INFO - Cell col-id: requestDesc, text: Spanish - Other Appearance
+2025-04-22 18:12:30,259 - LSPScraper - INFO - Cell col-id: timeAndDistance.distanceInMile, text: 68.64
+2025-04-22 18:12:30,259 - LSPScraper - INFO - Extracted job details: {'id': '17717', 'title': 'Interpretation for KRM Lexington', 'client': 'KRM Lexington', 'date': '04/23/2025 12:00 PM EDT', 'duration': '120', 'description': 'Duration: 120 minutes\nTime: 04/23/2025 12:00 PM EDT\nClient: KRM Lexington', 'location': 'KRM Lexington'}
+2025-04-22 18:12:30,259 - LSPScraper - INFO - Already seen job: 17717
+2025-04-22 18:12:30,259 - LSPScraper - INFO - No new jobs found in the grid
+2025-04-22 18:12:30,259 - LSPScraper - INFO - No new jobs found
+2025-04-22 18:12:48,082 - LSPScraper - INFO - Sent application shutdown notification
+2025-04-22 18:13:08,482 - LSPScraper - INFO - Application resources cleaned up
