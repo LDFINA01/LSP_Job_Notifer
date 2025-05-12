@@ -82,16 +82,41 @@ class LSPScraper:
             try:
                 self.logger.info("Setting up Chrome WebDriver")
                 chrome_options = Options()
-                chrome_options.add_argument('--headless')
-                chrome_options.add_argument('--no-sandbox')
+                
+                # Use the following options for a more stealthy approach 
+                # (less likely to be detected as automated browser)
+                chrome_options.add_argument('--headless=new')  # Use newer headless implementation
+                chrome_options.add_argument('--disable-blink-features=AutomationControlled')
                 chrome_options.add_argument('--disable-dev-shm-usage')
-                chrome_options.add_argument('--disable-gpu')
-                chrome_options.add_argument('--log-level=3')  # Suppress console messages
+                chrome_options.add_argument('--no-sandbox')
+                chrome_options.add_argument('--window-size=1920,1080')  # Set a standard window size
+                chrome_options.add_argument('--start-maximized')
+                
+                # Disable logging
+                chrome_options.add_argument('--log-level=3')
+                
+                # Set user agent to match a regular Chrome browser
+                chrome_options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36')
+                
+                # Exclude the "Chrome is being controlled by automated test software" info bar
+                chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+                chrome_options.add_experimental_option('useAutomationExtension', False)
                 
                 # Try direct approach first (works on most modern systems)
                 try:
                     self.logger.info("Initializing Chrome directly")
                     self.driver = webdriver.Chrome(options=chrome_options)
+                    
+                    # Apply additional settings directly to the driver
+                    self.driver.execute_cdp_cmd('Network.setUserAgentOverride', {
+                        "userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
+                    })
+                    
+                    # Execute stealth JS 
+                    self.driver.execute_script(
+                        "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
+                    )
+                    
                     self.logger.info("Chrome WebDriver initialized successfully")
                     return
                 except Exception as e1:
@@ -116,6 +141,17 @@ class LSPScraper:
                             self.logger.info(f"Found driver at: {full_path}")
                             service = Service(full_path)
                             self.driver = webdriver.Chrome(service=service, options=chrome_options)
+                            
+                            # Apply additional settings
+                            self.driver.execute_cdp_cmd('Network.setUserAgentOverride', {
+                                "userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
+                            })
+                            
+                            # Execute stealth JS
+                            self.driver.execute_script(
+                                "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
+                            )
+                            
                             self.logger.info("Chrome WebDriver initialized with explicit path")
                             return
                     
@@ -123,6 +159,16 @@ class LSPScraper:
                     service = Service(driver_dir)
                     self.driver = webdriver.Chrome(service=service, options=chrome_options)
                     self.logger.info("Chrome WebDriver initialized with directory path")
+                    
+                    # Apply additional settings
+                    self.driver.execute_cdp_cmd('Network.setUserAgentOverride', {
+                        "userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
+                    })
+                    
+                    # Execute stealth JS
+                    self.driver.execute_script(
+                        "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
+                    )
                 except Exception as e2:
                     self.logger.error(f"WebDriver Manager approach failed: {str(e2)}")
                     raise Exception(f"All initialization methods failed: {str(e1)} and {str(e2)}")
@@ -351,25 +397,93 @@ class LSPScraper:
             return None
 
     async def process_new_jobs(self, jobs: List[Dict]):
-        """Process new job postings and send notifications."""
+        """Process and notify about new jobs."""
+        self.logger.info(f"Processing {len(jobs)} new jobs")
+        
         for job in jobs:
-            subject = f"New Job Available: {job['title']}"
-            message = f"""
-<b>New Interpretation Job Available!</b>
-
-<b>Client:</b> {job['client']}
-<b>Date:</b> {job['date']}
-<b>Duration:</b> {job['duration']} minutes
-<b>Location:</b> {job['location']}
-
-<a href="{JOB_POSTINGS_URL}">View Job in Portal</a>
-            """
+            self.logger.info(f"Processing job: {job}")
             
-            notification_sent = await self.notification_manager.notify(subject, message)
-            if notification_sent:
-                self.logger.info(f"Notification sent for job: {job['id']}")
+            # Convert legacy format if needed
+            job_data = self._normalize_job_format(job)
+            
+            # Create a detailed notification message
+            subject = f"New Job Available: {job_data['client_name']}"
+            
+            message = (
+                f"<b>Client:</b> {job_data['client_name']}\n"
+                f"<b>Time:</b> {job_data['appointment_time']}\n"
+                f"<b>Duration:</b> {job_data['duration']}\n"
+                f"<b>Location:</b> {job_data['location']}\n\n"
+                f"<b>Job ID:</b> {job_data['id']}"
+            )
+            
+            # Try to send notification with extra retry logic
+            max_retries = 3
+            for attempt in range(max_retries):
+                try:
+                    self.logger.info(f"Sending notification for job (attempt {attempt+1}/{max_retries})")
+                    notification_sent = await self.notification_manager.notify(subject, message)
+                    
+                    if notification_sent:
+                        self.logger.info(f"Notification sent for job: {job_data['id']}")
+                        break
+                    else:
+                        self.logger.warning(f"Failed to send notification, attempt {attempt+1}/{max_retries}")
+                        if attempt < max_retries - 1:
+                            await asyncio.sleep(2)  # Wait before retry
+                except Exception as e:
+                    self.logger.error(f"Error sending notification: {str(e)}")
+                    if attempt < max_retries - 1:
+                        await asyncio.sleep(2)  # Wait before retry
             else:
-                self.logger.warning(f"Failed to send notification for job: {job['id']}")
+                self.logger.error(f"All attempts to send notification failed for job: {job_data['id']}")
+    
+    def _normalize_job_format(self, job):
+        """Normalize job data from different formats to a standard format"""
+        # Initialize with default empty values
+        normalized_job = {
+            "id": "",
+            "client_name": "",
+            "appointment_time": "",
+            "duration": "",
+            "location": "",
+            "description": ""
+        }
+        
+        # Check what format the job data is in and convert appropriately
+        if isinstance(job, dict):
+            # If job already has the expected keys, use them directly
+            for key in normalized_job:
+                if key in job:
+                    normalized_job[key] = job[key]
+            
+            # Handle legacy format with different key names
+            if "client" in job and not normalized_job["client_name"]:
+                normalized_job["client_name"] = job["client"]
+            
+            if "title" in job:
+                if not normalized_job["description"]:
+                    normalized_job["description"] = job["title"]
+            
+            if "date" in job and not normalized_job["appointment_time"]:
+                normalized_job["appointment_time"] = job["date"]
+                
+            # Ensure we have an ID
+            if not normalized_job["id"] and "id" in job:
+                normalized_job["id"] = job["id"]
+            elif not normalized_job["id"]:
+                # Generate a random ID if none exists
+                import random
+                normalized_job["id"] = f"job-{random.randint(1000, 9999)}"
+        
+        # Ensure we have at least basic info for the notification
+        if not normalized_job["client_name"]:
+            normalized_job["client_name"] = "Unknown Client"
+            
+        if not normalized_job["description"]:
+            normalized_job["description"] = "Job details not available"
+        
+        return normalized_job
 
     async def run(self):
         """Main execution loop."""
@@ -446,6 +560,16 @@ class LSPScraper:
             self.logger.info("Waiting for interpreter portal to load...")
             time.sleep(5)
             
+            # Save screenshot for debugging
+            screenshot_path = os.path.join("data", "portal_screen.png")
+            self.driver.save_screenshot(screenshot_path)
+            self.logger.info(f"Saved portal screenshot to {screenshot_path}")
+
+            # Save page source for debugging
+            with open(os.path.join("data", "portal_direct.html"), "w", encoding="utf-8") as f:
+                f.write(self.driver.page_source)
+            self.logger.info("Saved portal page source")
+            
             # First, find the Open Jobs tab
             self.logger.info("Looking for 'Open Jobs' tab...")
             try:
@@ -454,23 +578,34 @@ class LSPScraper:
                     "//span[text()='Open Jobs']",
                     "//div[contains(text(), 'Open Jobs')]", 
                     "//a[contains(text(), 'Open Jobs')]",
-                    "//span[contains(@class, 'tab-text') and text()='Open Jobs']"
+                    "//span[contains(@class, 'tab-text') and text()='Open Jobs']",
+                    "//li[contains(@class, 'mat-tab-label')]//span[contains(text(), 'Open Jobs')]"
                 ]
                 
                 tab_found = False
                 for selector in selectors:
                     try:
+                        self.logger.info(f"Trying selector: {selector}")
                         open_jobs_tab = WebDriverWait(self.driver, 5).until(
-                            EC.presence_of_element_located((By.XPATH, selector))
+                            EC.element_to_be_clickable((By.XPATH, selector))
                         )
                         self.logger.info(f"Found 'Open Jobs' tab with selector: {selector}")
                         
+                        # Take screenshot before click
+                        self.driver.save_screenshot(os.path.join("data", "before_tab_click.png"))
+                        
                         # Try to click the tab
-                        open_jobs_tab.click()
+                        self.logger.info(f"Clicking tab element: {open_jobs_tab.text}")
+                        self.driver.execute_script("arguments[0].click();", open_jobs_tab)
                         tab_found = True
                         self.logger.info("Clicked on 'Open Jobs' tab")
+                        
+                        # Take screenshot after click
+                        time.sleep(2)
+                        self.driver.save_screenshot(os.path.join("data", "after_tab_click.png"))
                         break
-                    except Exception:
+                    except Exception as tab_ex:
+                        self.logger.warning(f"Error with selector {selector}: {str(tab_ex)}")
                         continue
                 
                 if not tab_found:
@@ -481,136 +616,164 @@ class LSPScraper:
             # Wait after tab click
             time.sleep(3)
             
-            # Following the DOM structure from the user's info
-            # Look for the ag-Grid component
-            self.logger.info("Looking for ag-Grid component...")
+            # Save page source after clicking tab
+            with open(os.path.join("data", "after_tab_click.html"), "w", encoding="utf-8") as f:
+                f.write(self.driver.page_source)
             
+            # Try multiple approaches to find jobs
+            
+            # Approach 1: Find any grid component
+            self.logger.info("Approach 1: Looking for any grid component...")
             try:
-                # Following the exact structure provided:
-                # 1. Find the AT-INTERPRETER-JOBS component
-                interpreter_jobs = WebDriverWait(self.driver, 10).until(
-                    EC.presence_of_element_located((By.TAG_NAME, "at-interpreter-jobs"))
-                )
-                self.logger.info("Found at-interpreter-jobs component")
+                # Look for ag-grid components
+                grid_elements = self.driver.find_elements(By.CSS_SELECTOR, 
+                                                     "ag-grid-angular, .ag-root, [role='grid'], table.grid")
                 
-                # 2. Find AG-GRID-ANGULAR element
-                ag_grid = interpreter_jobs.find_element(By.TAG_NAME, "ag-grid-angular")
-                self.logger.info("Found ag-grid-angular component")
-                
-                # 3. Navigate down to the container with the rows
-                # Root wrapper
-                ag_root_wrapper = ag_grid.find_element(By.CLASS_NAME, "ag-root-wrapper")
-                self.logger.info("Found ag-root-wrapper")
-                
-                # Root wrapper body
-                ag_root_wrapper_body = ag_root_wrapper.find_element(By.CLASS_NAME, "ag-root-wrapper-body")
-                self.logger.info("Found ag-root-wrapper-body")
-                
-                # Root
-                ag_root = ag_root_wrapper_body.find_element(By.CLASS_NAME, "ag-root")
-                self.logger.info("Found ag-root")
-                
-                # Body viewport
-                ag_body_viewport = ag_root.find_element(By.CLASS_NAME, "ag-body-viewport")
-                self.logger.info("Found ag-body-viewport")
-                
-                # Center cols clipper
-                ag_center_cols_clipper = ag_body_viewport.find_element(By.CLASS_NAME, "ag-center-cols-clipper")
-                self.logger.info("Found ag-center-cols-clipper")
-                
-                # Center cols viewport
-                ag_center_cols_viewport = ag_center_cols_clipper.find_element(By.CLASS_NAME, "ag-center-cols-viewport")
-                self.logger.info("Found ag-center-cols-viewport")
-                
-                # Center cols container - this holds the rows
-                ag_center_cols_container = ag_center_cols_viewport.find_element(By.CLASS_NAME, "ag-center-cols-container")
-                self.logger.info("Found ag-center-cols-container")
-                
-                # Find all rows directly in this container
-                job_rows = ag_center_cols_container.find_elements(By.CLASS_NAME, "ag-row")
-                self.logger.info(f"Found {len(job_rows)} job rows in the ag-grid")
-                
-                # Process each job row
-                new_jobs = []
-                for row in job_rows:
-                    try:
-                        # Get row text for logging
-                        row_text = row.text.strip()
-                        self.logger.info(f"Job row text: {row_text}")
-                        
-                        # Find all cells in this row (using the direct role='gridcell' attribute)
-                        cells = row.find_elements(By.CSS_SELECTOR, "div[role='gridcell']")
-                        self.logger.info(f"Found {len(cells)} cells in job row")
-                        
-                        # Get row ID from attribute
-                        job_id = row.get_attribute("row-id")
-                        self.logger.info(f"Row ID: {job_id}")
-                        
-                        if len(cells) >= 4:
-                            # Extract data from cells
-                            # According to the user, we look for these specific columns
-                            client_name = ""
-                            appointment_time = ""
-                            duration = ""
+                if grid_elements:
+                    self.logger.info(f"Found {len(grid_elements)} grid elements")
+                    # Take screenshot of the grid
+                    self.driver.save_screenshot(os.path.join("data", "grid_screen.png"))
+                    
+                    new_jobs = []
+                    # For each grid, try to extract rows
+                    for idx, grid in enumerate(grid_elements):
+                        try:
+                            # Try to find rows with various selectors
+                            rows = grid.find_elements(By.CSS_SELECTOR, 
+                                                  "div[role='row'], .ag-row, tr")
                             
-                            # Check each cell for the col-id attribute
-                            for cell in cells:
-                                col_id = cell.get_attribute("col-id")
-                                cell_text = cell.text.strip()
-                                
-                                self.logger.info(f"Cell col-id: {col_id}, text: {cell_text}")
-                                
-                                if col_id == "requestID" and not job_id:
-                                    job_id = cell_text
-                                elif col_id == "customerName":
-                                    client_name = cell_text
-                                elif col_id == "interpretationTime":
-                                    appointment_time = cell_text
-                                elif col_id == "estimateDuration":
-                                    duration = cell_text
+                            self.logger.info(f"Grid {idx} has {len(rows)} rows")
+                            
+                            # Process each row to extract job information
+                            for row in rows:
+                                try:
+                                    # Skip header rows
+                                    if "header" in row.get_attribute("class").lower():
+                                        continue
+                                        
+                                    # Get row text for logging
+                                    row_text = row.text.strip()
                                     
-                            # Create job details
-                            job_details = {
-                                'id': job_id,
-                                'title': f"Interpretation for {client_name}" if client_name else "Interpretation Job",
-                                'client': client_name or "Unknown Client",
-                                'date': appointment_time or "Unknown Time",
-                                'duration': duration or "Unknown Duration",
-                                'description': f"Duration: {duration} minutes\nTime: {appointment_time}\nClient: {client_name}",
-                                'location': client_name or "Unknown Location"
-                            }
-                            
-                            self.logger.info(f"Extracted job details: {job_details}")
-                            
-                            # Check if this is a new job we haven't seen before
-                            if job_id not in self.seen_jobs:
-                                self.logger.info(f"New job found: {job_id}")
-                                new_jobs.append(job_details)
-                                self.seen_jobs.add(job_id)
-                            else:
-                                self.logger.info(f"Already seen job: {job_id}")
-                        else:
-                            self.logger.warning(f"Not enough cells in job row: {len(cells)}")
-                    except Exception as e:
-                        self.logger.error(f"Error processing job row: {str(e)}")
-                        self.logger.error(traceback.format_exc())
-                
-                if not new_jobs:
-                    self.logger.info("No new jobs found in the grid")
-                else:
-                    self.logger.info(f"Found {len(new_jobs)} new jobs")
-                
-                return new_jobs
-                
+                                    # Only process if row has content
+                                    if not row_text:
+                                        continue
+                                        
+                                    self.logger.info(f"Processing row: {row_text}")
+                                    
+                                    # Extract job ID
+                                    job_id = row.get_attribute("row-id") or f"job-{idx}-{rows.index(row)}"
+                                    
+                                    # Find cells
+                                    cells = row.find_elements(By.CSS_SELECTOR, 
+                                                          "div[role='gridcell'], .ag-cell, td")
+                                    
+                                    # If no job details but row has text, create a simple job entry
+                                    if len(cells) < 2 and row_text:
+                                        # Create job with the row text
+                                        job_details = {
+                                            "id": job_id,
+                                            "client_name": row_text,
+                                            "appointment_time": "",
+                                            "duration": "",
+                                            "location": "",
+                                            "description": row_text
+                                        }
+                                        new_jobs.append(job_details)
+                                        self.logger.info(f"Added simplified job: {job_details}")
+                                        continue
+                                    
+                                    # Normal job extraction with cells
+                                    job_details = self._extract_job_details_from_cells(job_id, cells)
+                                    
+                                    # Check if job is already seen
+                                    if job_details["id"] not in self.seen_jobs:
+                                        new_jobs.append(job_details)
+                                        self.seen_jobs.add(job_details["id"])
+                                except Exception as row_ex:
+                                    self.logger.warning(f"Error processing row: {str(row_ex)}")
+                        except Exception as grid_ex:
+                            self.logger.warning(f"Error processing grid {idx}: {str(grid_ex)}")
+                    
+                    return new_jobs
             except Exception as e:
-                self.logger.error(f"Error navigating DOM structure: {str(e)}")
-                self.logger.error(traceback.format_exc())
-                return []
+                self.logger.warning(f"Error in approach 1: {str(e)}")
+            
+            # Approach 2: Look for any tables or list elements that might contain jobs
+            self.logger.info("Approach 2: Looking for any tables or job lists...")
+            try:
+                job_containers = self.driver.find_elements(By.CSS_SELECTOR, 
+                                                       "table, ul.job-list, div.job-container")
                 
-        except Exception as e:
-            self.logger.error(f"Error in check_jobs_direct: {str(e)}")
-            self.logger.error(traceback.format_exc())
+                if job_containers:
+                    self.logger.info(f"Found {len(job_containers)} potential job containers")
+                    # Further processing logic here
+            except Exception as e:
+                self.logger.warning(f"Error in approach 2: {str(e)}")
+            
+            # If we couldn't find jobs with either approach, return empty list
             return []
+            
+        except Exception as e:
+            self.logger.error(f"Error checking for jobs: {str(e)}")
+            self.logger.error(f"Traceback: {traceback.format_exc()}")
+            return []
+    
+    def _extract_job_details_from_cells(self, job_id, cells):
+        """Extract job details from cells in a grid row"""
+        # Default values
+        job_details = {
+            "id": job_id,
+            "client_name": "",
+            "appointment_time": "",
+            "duration": "",
+            "location": "",
+            "description": ""
+        }
+        
+        # Check for col-id attribute in cells
+        for idx, cell in enumerate(cells):
+            try:
+                col_id = cell.get_attribute("col-id")
+                cell_text = cell.text.strip()
+                
+                self.logger.info(f"Cell {idx} col-id: {col_id}, text: {cell_text}")
+                
+                # Map cell to job details based on col-id or position
+                if col_id:
+                    if col_id == "requestID":
+                        job_details["id"] = cell_text or job_id
+                    elif col_id == "customerName" or col_id == "customer":
+                        job_details["client_name"] = cell_text
+                    elif col_id == "interpretationTime" or col_id == "scheduledTime":
+                        job_details["appointment_time"] = cell_text
+                    elif col_id == "estimateDuration" or col_id == "duration":
+                        job_details["duration"] = cell_text
+                    elif col_id == "address" or col_id == "location":
+                        job_details["location"] = cell_text
+                else:
+                    # If no col-id, use position-based mapping
+                    if idx == 0:
+                        job_details["id"] = cell_text or job_id
+                    elif idx == 1:
+                        job_details["client_name"] = cell_text
+                    elif idx == 2:
+                        job_details["appointment_time"] = cell_text
+                    elif idx == 3:
+                        job_details["duration"] = cell_text
+                    elif idx == 4:
+                        job_details["location"] = cell_text
+            except Exception as e:
+                self.logger.warning(f"Error processing cell {idx}: {str(e)}")
+        
+        # Create description from available details
+        job_details["description"] = (
+            f"Client: {job_details['client_name']}\n"
+            f"Time: {job_details['appointment_time']}\n"
+            f"Duration: {job_details['duration']}\n"
+            f"Location: {job_details['location']}"
+        )
+        
+        return job_details
 
     def _clean_old_files(self):
         """Clean up old data and screenshot files to prevent disk space issues."""
